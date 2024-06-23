@@ -1,5 +1,6 @@
 using UnityEngine;
-
+//Base Script
+//Other scripts can inherit from base script
 public class Vehicle : MonoBehaviour
 {
     public void Start()
