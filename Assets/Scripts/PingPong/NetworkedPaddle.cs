@@ -11,7 +11,7 @@ public class NetworkedPaddle : NetworkBehaviour
 
     void Update()
     {
-        if (!HasStateAuthority)
+        if (!Object.HasStateAuthority)
         {
             return;
         }
