@@ -81,13 +81,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         if (sessionList.Count > 0)
         {
             // Join the first available session
-            await runner.StartGame(new StartGameArgs
-            {
-                GameMode = GameMode.Client,
-                SessionName = sessionList[0].Name,
-                Scene = SceneRef.FromIndex(SceneManager.GetActiveScene().buildIndex),
-                SceneManager = gameObject.GetComponent<NetworkSceneManagerDefault>() ?? gameObject.AddComponent<NetworkSceneManagerDefault>()
-            });
+            CreateOrJoinSession(GameMode.Client, "PingPongGame");
         }
         else
         {
