@@ -1,8 +1,9 @@
+using Fusion;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NetworkedPaddle : MonoBehaviour
+public class NetworkedPaddle : NetworkBehaviour
 {
     public float speed = 5f;
     public float speed2 = 5f;
@@ -10,6 +11,11 @@ public class NetworkedPaddle : MonoBehaviour
 
     void Update()
     {
+        if (!HasStateAuthority)
+        {
+            return;
+        }
+
         float moveX = 0f;
         float moveY = 0f;
 
