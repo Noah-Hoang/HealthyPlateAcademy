@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Capsule : MonoBehaviour
+public class Paddle : MonoBehaviour
 {
     public float speed = 5f;
     public float speed2 = 5f;
