@@ -16,7 +16,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     void Start()
     {
         // Initialize the NetworkRunner
-        _networkRunner = gameObject.AddComponent<NetworkRunner>();
+        _networkRunner = gameObject.GetComponent<NetworkRunner>();
         _networkRunner.AddCallbacks(this);
 
         // Start by joining the session lobby
