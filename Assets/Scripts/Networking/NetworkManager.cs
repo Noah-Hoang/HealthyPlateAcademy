@@ -46,7 +46,8 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         if (runner.IsServer)
         {
             Vector3 position = new Vector3(-3, 0, 0);
-            runner.Spawn(paddlePrefab, position, Quaternion.identity, player);
+            NetworkObject myObject = runner.Spawn(paddlePrefab, position, Quaternion.identity, inputAuthority: runner.LocalPlayer);
+            runner.SetPlayerObject(player, myObject);
 
             if (runner.ActivePlayers.Count() == 2)
             {
