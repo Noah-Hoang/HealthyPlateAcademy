@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
+using System.Linq;
 
 public class PlayerSpawner : SimulationBehaviour, IPlayerJoined
 {
@@ -9,10 +10,15 @@ public class PlayerSpawner : SimulationBehaviour, IPlayerJoined
 
     public void PlayerJoined(PlayerRef player)
     {
+        Runner.ActivePlayers.Count();
         if (player == Runner.LocalPlayer)
         {
             Debug.Log("HELLO");
-            Runner.Spawn(playerPrefab, Vector3.zero, Quaternion.identity, player);
+            Runner.Spawn(playerPrefab, new Vector3(-5,0,0), Quaternion.identity, player);
+        }
+        if (Runner.ActivePlayers.Count() == 1)
+        {
+            Runner.Spawn(playerPrefab, new Vector3(5,0,0), Quaternion.identity, player);
         }
     }
 
