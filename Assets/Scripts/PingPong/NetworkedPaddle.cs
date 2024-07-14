@@ -24,25 +24,25 @@ public class NetworkedPaddle : NetworkBehaviour
             if (Input.GetKey(KeyCode.W))
             {
                 Debug.Log("UP");
-                moveY = 0.1f * speed * Time.deltaTime;
+                moveY = 0.1f * speed * Runner.DeltaTime;
             }
 
             if (Input.GetKey(KeyCode.S))
             {
                 Debug.Log("DOWN");
-                moveY = -0.1f * speed * Time.deltaTime;
+                moveY = -0.1f * speed * Runner.DeltaTime;
             }
 
             if (Input.GetKey(KeyCode.A))
             {
                 Debug.Log("LEFT");
-                moveX = -0.1f * speed2 * Time.deltaTime;
+                moveX = -0.1f * speed2 * Runner.DeltaTime;
             }
 
             if (Input.GetKey(KeyCode.D))
             {
                 Debug.Log("RIGHT");
-                moveX = 0.1f * speed2 * Time.deltaTime;
+                moveX = 0.1f * speed2 * Runner.DeltaTime;
             }
 
         transform.Translate(0, moveY, 0);
