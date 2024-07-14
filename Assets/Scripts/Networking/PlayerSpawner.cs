@@ -10,16 +10,19 @@ public class PlayerSpawner : SimulationBehaviour, IPlayerJoined
 
     public void PlayerJoined(PlayerRef player)
     {
-        Runner.ActivePlayers.Count();
+        //Runner.LocalPlayer is always a reference to your computer. player is a reference to whoever's computer joined.
         if (player == Runner.LocalPlayer)
         {
-            Debug.Log("HELLO");
-            Runner.Spawn(playerPrefab, new Vector3(-5,0,0), Quaternion.identity, player);
+            if(Runner.ActivePlayers.Count() == 1)
+            {
+                Runner.Spawn(playerPrefab, new Vector3(-5, 0, 0), Quaternion.identity, player);
+            }
+            else if (Runner.ActivePlayers.Count() == 2)
+            {
+                Runner.Spawn(playerPrefab, new Vector3(5, 0, 0), Quaternion.identity, player);
+            }
         }
-        if (Runner.ActivePlayers.Count() == 1)
-        {
-            Runner.Spawn(playerPrefab, new Vector3(5,0,0), Quaternion.identity, player);
-        }
+        
     }
 
     // Start is called before the first frame update
