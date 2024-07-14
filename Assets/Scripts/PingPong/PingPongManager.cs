@@ -27,7 +27,7 @@ public class PingPongManager : NetworkBehaviour
         if (HasStateAuthority)
         {
 
-            Runner.Despawn(ballPrefab);
+            //Runner.Despawn(ballPrefab);
             Runner.Spawn(ballPrefab, Vector3.zero, Quaternion.identity);
         }
     }
