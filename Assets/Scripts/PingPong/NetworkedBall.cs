@@ -21,7 +21,7 @@ public class NetworkedBall : NetworkBehaviour
 
     void LaunchBall()
     {
-        Vector3 direction = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)).normalized;
+        Vector3 direction = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0.0f).normalized;
         rb.velocity = direction * initialSpeed;
     }
 
