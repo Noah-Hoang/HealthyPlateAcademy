@@ -22,7 +22,6 @@ public class PlayerSpawner : SimulationBehaviour, IPlayerJoined
                 Runner.Spawn(playerPrefab, new Vector3(5, 0, 0), Quaternion.identity, player);
             }
         }
-        
     }
 
     // Start is called before the first frame update
