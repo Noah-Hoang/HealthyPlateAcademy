@@ -11,7 +11,7 @@ public class BallSpawner : SimulationBehaviour, IPlayerJoined
 
     public void SpawnBall()
     {
-        if ((player == Runner.LocalPlayer) && (Runner.ActivePlayers.Count() == 2))
+        if (Runner.ActivePlayers.Count() == 2)
         {
             Debug.Log("HELLO" + Runner.LocalPlayer.PlayerId);
             Runner.Spawn(ballPrefab, Vector3.zero, Quaternion.identity);
@@ -20,7 +20,10 @@ public class BallSpawner : SimulationBehaviour, IPlayerJoined
 
     public void PlayerJoined(PlayerRef player)
     {
-        SpawnBall();
+        if (player == Runner.LocalPlayer)
+        {
+            SpawnBall();
+        }
     }
 
     void Start()
