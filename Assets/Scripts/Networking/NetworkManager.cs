@@ -43,17 +43,17 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
-        if (runner.IsServer)
-        {
-            Vector3 position = new Vector3(-3, 0, 0);
-            NetworkObject myObject = runner.Spawn(paddlePrefab, position, Quaternion.identity, inputAuthority: runner.LocalPlayer);
-            runner.SetPlayerObject(player, myObject);
+        //if (player == runner.LocalPlayer)
+        //{
+        //    Vector3 position = new Vector3(-3, 0, 0);
+        //    NetworkObject myObject = runner.Spawn(paddlePrefab, position, Quaternion.identity, runner.LocalPlayer);
+        //    //runner.SetPlayerObject(player, myObject);
+        //}
 
-            if (runner.ActivePlayers.Count() == 2)
-            {
-                Vector3 ballPosition = Vector3.zero;
-                runner.Spawn(ballPrefab, ballPosition, Quaternion.identity);
-            }
+        if (runner.ActivePlayers.Count() == 2)
+        {
+            Vector3 ballPosition = Vector3.zero;
+            runner.Spawn(ballPrefab, ballPosition, Quaternion.identity);
         }
     }
 

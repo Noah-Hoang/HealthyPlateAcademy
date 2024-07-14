@@ -7,10 +7,11 @@ public class NetworkedPaddle : NetworkBehaviour
 {
     public float speed = 5f;
     public float speed2 = 5f;
-    public GameObject capsule;
 
-    void Update()
+    public override void FixedUpdateNetwork()
     {
+        base.FixedUpdateNetwork();
+
         if (!Object.HasStateAuthority)
         {
             return;
@@ -19,8 +20,6 @@ public class NetworkedPaddle : NetworkBehaviour
         float moveX = 0f;
         float moveY = 0f;
 
-        if (capsule == gameObject)
-        {
             Debug.Log("Capsule");
             if (Input.GetKey(KeyCode.W))
             {
@@ -45,7 +44,6 @@ public class NetworkedPaddle : NetworkBehaviour
                 Debug.Log("RIGHT");
                 moveX = 0.1f * speed2 * Time.deltaTime;
             }
-        }
 
         transform.Translate(0, moveY, 0);
         transform.Translate(moveX, 0, 0);
