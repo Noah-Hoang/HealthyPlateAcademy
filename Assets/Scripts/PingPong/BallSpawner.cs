@@ -10,7 +10,6 @@ public class BallSpawner : SimulationBehaviour, IPlayerJoined
 
     public void PlayerJoined(PlayerRef player)
     {
-        //if (player == Runner.LocalPlayer)
         if (Runner.IsSharedModeMasterClient)
         {
             SpawnBall();
