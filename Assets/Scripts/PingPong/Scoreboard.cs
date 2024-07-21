@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Scoreboard : MonoBehaviour
 {
-    public int playerOneScore;
-    public int playerTwoScore;
+    public int score;
 
     // Start is called before the first frame update
     void Start()
@@ -21,14 +20,6 @@ public class Scoreboard : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("LeftBound"))
-        {
-            playerOneScore += 1;
-        }
-
-        else if (other.CompareTag("RightBound"))
-        {
-            playerTwoScore += 1;    
-        }
+        score += 1;
     }
 }
