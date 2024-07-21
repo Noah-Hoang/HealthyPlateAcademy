@@ -9,6 +9,10 @@ public class Scoreboard : NetworkBehaviour
     public GameObject ballPrefab;
     public TMP_Text scoreText;
 
+    // Define the networked variable with a callback
+    [Networked, OnChangedRender(nameof(OnScoreChanged))]
+    public int networkedScore { get; set; }
+
     private void OnTriggerEnter(Collider other)
     {
         if (HasStateAuthority)
@@ -19,10 +23,6 @@ public class Scoreboard : NetworkBehaviour
         }
     }
 
-
-    // Define the networked variable with a callback
-    [Networked, OnChangedRender(nameof(OnScoreChanged))]
-    public int networkedScore { get; set; }
 
     // The callback method that gets called when the variable changes
     private void OnScoreChanged()
