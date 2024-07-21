@@ -21,6 +21,14 @@ public class Scoreboard : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-            
+        if (other.CompareTag("LeftBound"))
+        {
+            playerOneScore += 1;
+        }
+
+        else if (other.CompareTag("RightBound"))
+        {
+            playerTwoScore += 1;    
+        }
     }
 }
