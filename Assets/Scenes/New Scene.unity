@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -241,8 +241,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 179642864a89e7246801e678d2d92e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerOneScore: 0
-  playerTwoScore: 0
+  ballPrefab: {fileID: 5520682527037550746, guid: ce3467e048bebff43991dead2a2923c6, type: 3}
+  localScore: 0
+  _networkedScore: 0
 --- !u!1 &619024120
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,8 +362,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 179642864a89e7246801e678d2d92e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerOneScore: 0
-  playerTwoScore: 0
+  ballPrefab: {fileID: 5520682527037550746, guid: ce3467e048bebff43991dead2a2923c6, type: 3}
+  localScore: 0
+  _networkedScore: 0
 --- !u!1 &765862233
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,7 +912,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1982326262}
-  - component: {fileID: 1982326261}
   - component: {fileID: 1982326260}
   - component: {fileID: 1982326263}
   m_Layer: 0
@@ -947,20 +948,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1982326261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1982326259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b32b5c79bef6c1948aa66be864131b39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 0
-  ballPrefab: {fileID: 5520682527037550746, guid: ce3467e048bebff43991dead2a2923c6, type: 3}
 --- !u!4 &1982326262
 Transform:
   m_ObjectHideFlags: 0
@@ -995,7 +982,8 @@ MonoBehaviour:
   Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
-  - {fileID: 1982326261}
+  - {fileID: 313005560}
+  - {fileID: 619024125}
 --- !u!33 &3595695751581852633
 MeshFilter:
   m_ObjectHideFlags: 0

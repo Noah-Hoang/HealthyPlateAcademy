@@ -5,7 +5,8 @@ using Fusion;
 
 public class Scoreboard : NetworkBehaviour
 {
-    public int score;
+    public GameObject ballPrefab;
+    public int localScore;
 
     // Define the networked variable with a callback
     [Networked]
@@ -34,7 +35,13 @@ public class Scoreboard : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        score += 1;
-        networkedScore += 1;
+        localScore += 1;
+
+        if (HasStateAuthority)
+        {
+            networkedScore += 1;
+            Runner.Despawn(ballPrefab.GetComponent<NetworkObject>());
+            Runner.Spawn(ballPrefab, Vector3.zero, Quaternion.identity);
+        }
     }
 }
