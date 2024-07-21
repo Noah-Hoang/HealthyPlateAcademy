@@ -10,7 +10,7 @@ public class Scoreboard : NetworkBehaviour
     public TMP_Text scoreText;
 
     // Define the networked variable with a callback
-    [Networked, OnChangedRender(nameof(OnScoreChanged))]
+    [Networked][OnChangedRender(nameof(OnScoreChanged))]
     public int networkedScore { get; set; }
 
     private void OnTriggerEnter(Collider other)
