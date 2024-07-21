@@ -7,7 +7,15 @@ using UnityEngine;
 public class BallSpawner : SimulationBehaviour, IPlayerJoined
 {
     public GameObject ballPrefab;
-    // Start is called before the first frame update
+
+    public void PlayerJoined(PlayerRef player)
+    {
+        //if (player == Runner.LocalPlayer)
+        if (Runner.IsSharedModeMasterClient)
+        {
+            SpawnBall();
+        }
+    }
 
     public void SpawnBall()
     {
@@ -16,24 +24,5 @@ public class BallSpawner : SimulationBehaviour, IPlayerJoined
             Debug.Log("HELLO" + Runner.LocalPlayer.PlayerId);
             Runner.Spawn(ballPrefab, Vector3.zero, Quaternion.identity);
         }
-    }
-
-    public void PlayerJoined(PlayerRef player)
-    {
-        if (player == Runner.LocalPlayer)
-        {
-            SpawnBall();
-        }
-    }
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
