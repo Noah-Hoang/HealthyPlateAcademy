@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
+using TMPro;
 
 public class Scoreboard : NetworkBehaviour
 {
     public GameObject ballPrefab;
-    public int localScore;
+    public TMP_Text scoreText;
 
     // Define the networked variable with a callback
     [Networked]
@@ -35,7 +36,7 @@ public class Scoreboard : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        localScore += 1;
+        scoreText.text = networkedScore.ToString();
 
         if (HasStateAuthority)
         {
