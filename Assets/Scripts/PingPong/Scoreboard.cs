@@ -40,7 +40,7 @@ public class Scoreboard : NetworkBehaviour
         if (HasStateAuthority)
         {
             networkedScore += 1;
-            Runner.Despawn(ballPrefab.GetComponent<NetworkObject>());
+            Runner.Despawn(other.gameObject.GetComponent<NetworkObject>());
             Runner.Spawn(ballPrefab, Vector3.zero, Quaternion.identity);
         }
     }
