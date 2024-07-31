@@ -34,4 +34,14 @@ public class NetworkedBall : NetworkBehaviour
             rb.velocity = newDirection * initialSpeed;
         }
     }
+
+    public override void FixedUpdateNetwork()
+    {
+        base.FixedUpdateNetwork();
+        if (Object.HasStateAuthority)
+        {
+            // Ensure the ball maintains a consistent speed
+            rb.velocity = rb.velocity.normalized * initialSpeed;
+        }
+    }
 }
