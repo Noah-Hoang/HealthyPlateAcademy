@@ -22,7 +22,6 @@ public class BallSpawner : SimulationBehaviour, IPlayerJoined
         //Checks that there are 2 players 
         if (Runner.ActivePlayers.Count() == 2)
         {
-            Debug.Log("HELLO" + Runner.LocalPlayer.PlayerId);
             Runner.Spawn(ballPrefab, Vector3.zero, Quaternion.identity);
         }
     }
