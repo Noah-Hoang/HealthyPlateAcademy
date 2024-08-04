@@ -14,10 +14,7 @@ public class SpawnChef : SimulationBehaviour, IPlayerJoined
         //Runner.LocalPlayer is always a reference to your computer. player is a reference to whoever's computer joined.
         if (player == Runner.LocalPlayer)
         {
-            Debug.Log(Runner.ActivePlayers.Count());
             Transform spawnPoint = spawnPointList[Runner.ActivePlayers.Count() - 1];
-            Debug.Log(spawnPoint.position);
-            Debug.Log(spawnPoint.rotation);
             Runner.Spawn(playerPrefab, spawnPoint.position, spawnPoint.rotation, player);
         }
     }
