@@ -13,7 +13,7 @@ public class PlayerSpawner : SimulationBehaviour, IPlayerJoined
         //Runner.LocalPlayer is always a reference to your computer. player is a reference to whoever's computer joined.
         if (player == Runner.LocalPlayer)
         {
-            if(Runner.ActivePlayers.Count() == 1)
+            if (Runner.ActivePlayers.Count() == 1)
             {
                 Runner.Spawn(playerPrefab, new Vector3(-5, 0, 0), Quaternion.identity, player);
             }

@@ -14,7 +14,7 @@ public class Scoreboard : NetworkBehaviour
     //Things in brackets are attributes
     //They are attached to the variable below it
     //Networked means that the variable is networked. OnChangedRender checks to see if the variable is changed and if it is, calls back to the OnScoreChanged method
-    [Networked][OnChangedRender(nameof(OnScoreChanged))]
+    [Networked, OnChangedRender(nameof(OnScoreChanged))]
     public int networkedScore { get; set; }
 
     private void OnTriggerEnter(Collider other)

@@ -35,6 +35,7 @@ public class NetworkedBall : NetworkBehaviour
         }
     }
 
+    //this method syncs update calls independent from internet speed
     public override void FixedUpdateNetwork()
     {
         base.FixedUpdateNetwork();
