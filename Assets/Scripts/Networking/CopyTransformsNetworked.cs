@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fusion;
 
-public class CopyTransformsNetworked : MonoBehaviour
+//TOD: Use transform reference and copy its position and rotation
+public class CopyTransformsNetworked : NetworkBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform targetTransform;
 
-    // Update is called once per frame
-    void Update()
+    public override void FixedUpdateNetwork()
     {
-        
+        base.FixedUpdateNetwork();
+
+        transform.position = targetTransform.position;
+        transform.rotation = targetTransform.rotation;
     }
 }
