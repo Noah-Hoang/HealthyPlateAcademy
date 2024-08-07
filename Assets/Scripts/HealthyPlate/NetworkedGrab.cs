@@ -5,28 +5,44 @@ using Fusion;
 
 public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Networked, OnChangedRender(nameof(OnHeldChanged))]
+    public bool onHeld { get; set; }
 
-    // Update is called once per frame
-    void Update()
+    public void OnHeldChanged()
     {
-        
-    }
 
-    public void OnGrab()
-    {
-        if (!Object.HasStateAuthority)
-        {
-            Object.RequestStateAuthority();
-        }
     }
 
     public void StateAuthorityChanged()
     {
         Debug.Log("State Authority Changed to " + Runner.LocalPlayer.PlayerId);
+    }
+
+    public void CheckIfHeld()
+    {
+        if (onHeld)
+        {
+           //stop from being grabbed by another person   
+        }
+    }
+
+    public void OnGrab()
+    {
+        OnHeldChangedRPC(true);
+        if (!Object.HasStateAuthority)
+        {
+            Object.RequestStateAuthority();          
+        }
+    }
+
+    public void OnRelease()
+    {
+        OnHeldChangedRPC(false);
+    }
+
+    [Rpc]
+    public void OnHeldChangedRPC(bool onHeldState)
+    {
+        onHeld = onHeldState;
     }
 }
