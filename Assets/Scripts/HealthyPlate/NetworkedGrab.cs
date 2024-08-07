@@ -6,38 +6,22 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
 {
-    [Networked, OnChangedRender(nameof(OnHeldChanged))]
+    [Networked, OnChangedRender(nameof(ChangeInteractable))]
     public bool onHeld { get; set; }
     public XRGrabInteractable interactable;
 
-    public void OnHeldChanged()
-    {
-        if (Object.HasStateAuthority)
-        {
-            return;
-        }
-        if (onHeld == true)
-        {
-            interactable.enabled = false;
-        }
-        else if (onHeld == false)
-        {
-            interactable.enabled = true;
-        }
-    }
-
-    public void StateAuthorityChanged()
-    {
-        Debug.Log("State Authority Changed to " + Runner.LocalPlayer.PlayerId);
-    }
-
     public void OnGrab()
     {
-        OnHeldChangedRPC(true);
         if (!Object.HasStateAuthority)
         {
-            Object.RequestStateAuthority();          
+            Object.RequestStateAuthority();
         }
+        else if (Object.HasStateAuthority)
+        {
+            ChangeInteractableRPC();
+        }
+
+        OnHeldChangedRPC(true);
     }
 
     public void OnRelease()
@@ -49,5 +33,51 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
     public void OnHeldChangedRPC(bool onHeldState)
     {
         onHeld = onHeldState;
+    }
+
+    public void StateAuthorityChanged()
+    {
+        Debug.Log("State Authority Changed to " + Runner.LocalPlayer.PlayerId);
+        
+        if (onHeld)
+        {
+            ChangeInteractableRPC();
+        }
+    }
+
+    [Rpc]
+    public void ChangeInteractableRPC()
+    {
+        if (Object.HasStateAuthority)
+        {
+            interactable.enabled = true;
+            return;
+        }
+
+        if (onHeld == true)
+        {
+            interactable.enabled = false;
+        }
+        else if (onHeld == false)
+        {
+            interactable.enabled = true;
+        }
+    }
+    public void ChangeInteractable()
+    {
+        if (Object.HasStateAuthority)
+        {
+            interactable.enabled = true;
+            return;
+        }
+
+        if (onHeld == true)
+        {
+            interactable.enabled = false;
+        }
+        else if (onHeld == false)
+        {
+            interactable.enabled = true;
+        }
     }
 }
