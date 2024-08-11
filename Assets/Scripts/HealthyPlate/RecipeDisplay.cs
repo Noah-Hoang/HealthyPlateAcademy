@@ -6,11 +6,11 @@ using TMPro;
 
 public class RecipeDisplay : MonoBehaviour
 {
-    public TMPro.TextMeshPro ingredientName;
-    public TMPro.TextMeshPro ingredientType;
-    public TMPro.TextMeshPro ingredientUnit;
-    public TMPro.TextMeshPro ingredientMeasurement;
-    public TMPro.TextMeshPro ingredientCalories;
+    public TMP_Text ingredientName;
+    public TMP_Text ingredientType;
+    public TMP_Text ingredientUnit;
+    public TMP_Text ingredientMeasurement;
+    public TMP_Text ingredientCalories;
     public RecipeSO pbjRecipe;
 
     // Start is called before the first frame update
