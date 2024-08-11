@@ -12,16 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745694a5fc4e7534ab6a4518051fd8da, type: 3}
   m_Name: PB&J
   m_EditorClassIdentifier: 
-  ingredients:
+  ingredientHolders:
   - ingredient: {fileID: 11400000, guid: ce557737ebcbfe94397e6bb5aa18e281, type: 2}
     quantity: 2
     unit: 14
     unitMeasurement: 2
+    calories: 50
   - ingredient: {fileID: 11400000, guid: c1aa2736c9798a14abbf3cdd652fb712, type: 2}
     quantity: 1
     unit: 0
-    unitMeasurement: 50
+    unitMeasurement: 1
+    calories: 50
   - ingredient: {fileID: 11400000, guid: acc629f3e5bd4434f93c735cbf72dc79, type: 2}
     quantity: 1
     unit: 0
-    unitMeasurement: 50
+    unitMeasurement: 1
+    calories: 50
