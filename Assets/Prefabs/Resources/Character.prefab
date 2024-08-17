@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2531360283265043793}
+  - component: {fileID: 2201044110992227582}
   - component: {fileID: 1608916297679662970}
   - component: {fileID: 457995416332551561}
   - component: {fileID: 2228297313895194282}
@@ -36,6 +37,25 @@ Transform:
   - {fileID: 453102092439334343}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2201044110992227582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258931293804298532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc6c824bd075d34a9e3b6291b41b9ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'We use Enable If Local Player so that each player doesn''t control each
+    other''s rigs. We use NetworkedTransformers because all the rigs are off for
+    the players except for the ones that they are using. The NetworkedTransformers
+    copies the movement of the rigs to networked game objects so taht the player
+    movement can be seen across the network.
+
+'
 --- !u!114 &1608916297679662970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -760,7 +780,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1767192434, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5166131410779649166}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5167925059111895691, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 2871490289482697136}
   m_SourcePrefab: {fileID: 100100000, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
 --- !u!114 &17914361975805613 stripped
 MonoBehaviour:
@@ -842,6 +865,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496880615cd240be960d436c1c8ae570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6901031787075442121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5167925059111895691, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 1764649835442198338}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2871490289482697136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6901031787075442121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc6c824bd075d34a9e3b6291b41b9ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Handles all the movement for the character
 --- !u!1001 &3696477296312121672
 PrefabInstance:
   m_ObjectHideFlags: 0

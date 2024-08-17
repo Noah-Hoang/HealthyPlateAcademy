@@ -1,5 +1,8 @@
 using UnityEngine;
 
+//There can only be either a scriptable object or a struct, not both
+//This script is a scriptable object
+//Line below adds a new menu option for creation
 [CreateAssetMenu(fileName = "New Ingredient", menuName = "Cooking/Ingredient")]
 public class IngredientSO : ScriptableObject
 {
