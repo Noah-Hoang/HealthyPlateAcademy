@@ -1933,7 +1933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onHeld: 0
-  interactable: {fileID: 0}
+  interactable: {fileID: 4769098102699571202}
 --- !u!1 &810021789
 GameObject:
   m_ObjectHideFlags: 0
@@ -4505,9 +4505,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1451525476}
+  - component: {fileID: 1451525477}
   - component: {fileID: 1451525475}
   - component: {fileID: 1451525474}
-  - component: {fileID: 1451525477}
   m_Layer: 0
   m_Name: Prototype Runner
   m_TagString: Untagged
@@ -13583,7 +13583,19 @@ MonoBehaviour:
         m_CallState: 2
   m_LastSelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 796350647}
+        m_TargetAssemblyTypeName: NetworkedGrab, Assembly-CSharp
+        m_MethodName: OnRelease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
