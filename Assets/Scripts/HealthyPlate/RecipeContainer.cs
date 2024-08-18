@@ -48,13 +48,18 @@ public class RecpieContainer : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        //other.transform.root gets the parent game object
         if (other.transform.root.gameObject.tag == "Ingredient")
         {
+            //Goes through all of the IngredientRequiremt in ingredientRequirements
             for (int i = 0; i < ingredientRequirements.Count; i++)
             {
-                if (other.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO == ingredientRequirements[i].ingredientSO)
+                //Checks if what was thrown in is an ingredient from ingredientRequirements
+                //Uses index to check with the list
+                if (ingredientRequirements[i].ingredientSO == other.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO)
                 {
                     ingredientRequirements[i].currentQuantity += 1;
+                    //checks to see if the quantity requirement is met for the ingredient
                     if (ingredientRequirements[i].currentQuantity == ingredientRequirements[i].requiredQuantity)
                     {
                         ingredientRequirements[i].hasEnough = true;
@@ -66,6 +71,8 @@ public class RecpieContainer : MonoBehaviour
 
             for (int j = 0; j < ingredientRequirements.Count; j++)
             {
+                //Checks if even one of the requirements isn't enough and if so, returns out
+                //Once all ingredients have enough of the quantity, recipe is successful
                 if (!ingredientRequirements[j].hasEnough)
                 {
                     return;
