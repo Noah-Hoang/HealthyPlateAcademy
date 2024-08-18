@@ -5,9 +5,10 @@ using UnityEngine;
 public class RecpieContainer : MonoBehaviour
 {
     [System.Serializable]
-    public struct IngredientRequirement
+    public class IngredientRequirement
     {
         public string name;
+        public IngredientSO ingredientSO;
         public int requiredQuantity;
         public int currentQuantity;
         public bool hasEnough;
@@ -18,17 +19,60 @@ public class RecpieContainer : MonoBehaviour
 
     public void Start()
     {
+        //ingredientHolder is a reference to IngredientHolder that is in the RecipeSO
+        //recipe being a reference to the RecipeSO script
+        //This foreach goes through all the ingredientHolders in RecipeSO and sets them to ingredientHolder
         foreach (IngredientHolder ingredientHolder in recipe.ingredientHolders)
         {
+            //Sets IngredientRequirement to itself and allows for the variables to be changed
             IngredientRequirement newRequirement = new IngredientRequirement
             {
+                //name is being set to the name of the ingredient by going through RecipeSO and then IngredientSO to get the ingredient name
                 name = ingredientHolder.ingredient.name,           // Set the name from the ingredient holder
+                ingredientSO = ingredientHolder.ingredient,
+                //requiredQuantity is being set equal to the quantity from RecipeSO
                 requiredQuantity = ingredientHolder.quantity,     // Set the required quantity from the ingredient holder
                 currentQuantity = 0,                              // Initialize current quantity to 0
                 hasEnough = false                                 // Initially, set hasEnough to false
             };
-
+            //Adds all the new additons from above to the ingredientRequirements list
             ingredientRequirements.Add(newRequirement);
+        }
+    }
+    //Add OnTriggerEnter
+    //Check if the tag is ingredient
+    //Get ingredient component to check if it is part of recipe
+    //If it is part of recipe, destroy the game object and to the ingredient requirement for the specific ingredient and then if requirements are met, set hasEnough equal to true
+    //Every time an ingredient is added, check to see if hasEnough is true for all ingredients
+    //Once all ingredients are in, use HealthyPlayManager singleton to track when recipe is completed
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.root.gameObject.tag == "Ingredient")
+        {
+            for (int i = 0; i < ingredientRequirements.Count; i++)
+            {
+                if (other.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO == ingredientRequirements[i].ingredientSO)
+                {
+                    ingredientRequirements[i].currentQuantity += 1;
+                    if (ingredientRequirements[i].currentQuantity == ingredientRequirements[i].requiredQuantity)
+                    {
+                        ingredientRequirements[i].hasEnough = true;
+                    }
+                    
+                    Destroy(other.transform.root.gameObject);
+                }
+            }
+
+            for (int j = 0; j < ingredientRequirements.Count; j++)
+            {
+                if (!ingredientRequirements[j].hasEnough)
+                {
+                    return;
+                }
+            }
+            Debug.Log("Recipe Successful");
+            HealthyPlateManager.Instance.onRecipeSucceded.Invoke();
         }
     }
 }

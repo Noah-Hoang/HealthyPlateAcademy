@@ -122,8 +122,8 @@ GameObject:
   - component: {fileID: 8134703806136945199}
   - component: {fileID: 4631312782008754448}
   m_Layer: 0
-  m_Name: BaseGrabbable
-  m_TagString: Untagged
+  m_Name: _BaseGrabbable
+  m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

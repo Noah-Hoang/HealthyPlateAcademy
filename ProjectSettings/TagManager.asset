@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LeftBound
   - RightBound
+  - Ingredient
   layers:
   - Default
   - TransparentFX
