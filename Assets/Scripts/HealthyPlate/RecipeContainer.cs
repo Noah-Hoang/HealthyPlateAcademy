@@ -22,16 +22,17 @@ public class RecpieContainer : MonoBehaviour
         //ingredientHolder is a reference to IngredientHolder that is in the RecipeSO
         //recipe being a reference to the RecipeSO script
         //This foreach goes through all the ingredientHolders in RecipeSO and sets them to ingredientHolder
-        foreach (IngredientHolder ingredientHolder in recipe.ingredientHolders)
+        for (int i = 0; i < recipe.ingredientHolders.Count; i++)
         {
+
             //Sets IngredientRequirement to itself and allows for the variables to be changed
             IngredientRequirement newRequirement = new IngredientRequirement
             {
                 //name is being set to the name of the ingredient by going through RecipeSO and then IngredientSO to get the ingredient name
-                name = ingredientHolder.ingredient.name,           // Set the name from the ingredient holder
-                ingredientSO = ingredientHolder.ingredient,
+                name = recipe.ingredientHolders[i].ingredient.name,           // Set the name from the ingredient holder
+                ingredientSO = recipe.ingredientHolders[i].ingredient,
                 //requiredQuantity is being set equal to the quantity from RecipeSO
-                requiredQuantity = ingredientHolder.quantity,     // Set the required quantity from the ingredient holder
+                requiredQuantity = recipe.ingredientHolders[i].quantity,     // Set the required quantity from the ingredient holder
                 currentQuantity = 0,                              // Initialize current quantity to 0
                 hasEnough = false                                 // Initially, set hasEnough to false
             };
@@ -69,6 +70,7 @@ public class RecpieContainer : MonoBehaviour
                 }
             }
 
+            //Returns out so that the onRecipeSucceded event isn't called unless every ingredient has the required amount
             for (int j = 0; j < ingredientRequirements.Count; j++)
             {
                 //Checks if even one of the requirements isn't enough and if so, returns out

@@ -4551,6 +4551,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a01f464c5bf478458da6fe43214f04f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalTime: 10
+  remainingTime: 0
+  recipeOngoing: 0
+  money: 0
+  recipeList: 
   onRecipeAssigned:
     m_PersistentCalls:
       m_Calls: []
@@ -4560,11 +4565,6 @@ MonoBehaviour:
   onRecipeFailed:
     m_PersistentCalls:
       m_Calls: []
-  recipeList: 
-  totalTime: 0
-  remainingTime: 0
-  recipeOngoing: 0
-  money: 0
 --- !u!4 &1531295013
 Transform:
   m_ObjectHideFlags: 0
