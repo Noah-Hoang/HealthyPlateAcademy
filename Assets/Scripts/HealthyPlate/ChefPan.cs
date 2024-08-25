@@ -20,6 +20,10 @@ public class ChefPan : MonoBehaviour
     {
         if (other.transform.root.gameObject.tag == "Ingredient")
         {
+            if (other.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO.searedPrefab == null)
+            {
+                return;
+            }
             Instantiate(other.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO.searedPrefab,other.transform.root.position, other.transform.root.rotation);
             Destroy(other.transform.root.gameObject);
         }
