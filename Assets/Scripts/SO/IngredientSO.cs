@@ -8,4 +8,8 @@ public class IngredientSO : ScriptableObject
 {
     public string ingredientName;  // Name of the ingredient (e.g., "Flour")
     public IngredientTypeEnum type;            // Type of ingredient (e.g., "Dry", "Liquid")
+
+    public GameObject cutPrefab;
+    public GameObject friedPrefab;
+    public GameObject searedPrefab;
 }
