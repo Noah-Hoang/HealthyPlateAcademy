@@ -1144,6 +1144,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 734423113}
     m_Modifications:
+    - target: {fileID: -2915100214185508306, guid: 3269414b00449a84e93cfb0708c2578c, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1612455154803284, guid: 3269414b00449a84e93cfb0708c2578c, type: 3}
       propertyPath: m_Name
       value: kitchen3 (2)
@@ -2194,6 +2198,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 734423113}
     m_Modifications:
+    - target: {fileID: -2915100214185508306, guid: 3269414b00449a84e93cfb0708c2578c, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1612455154803284, guid: 3269414b00449a84e93cfb0708c2578c, type: 3}
       propertyPath: m_Name
       value: kitchen3 (5)
@@ -5385,6 +5393,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 734423113}
     m_Modifications:
+    - target: {fileID: -2333610499195661605, guid: 39901c1939e25764691ce53ec271fce9, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1368359482789646, guid: 39901c1939e25764691ce53ec271fce9, type: 3}
       propertyPath: m_Name
       value: fryer (1)
@@ -6436,6 +6448,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4235446095110800, guid: e10fede4dfa4dc44993e243587acc79c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6894185432366251113, guid: e10fede4dfa4dc44993e243587acc79c, type: 3}
+      propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -10938,6 +10954,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 734423113}
     m_Modifications:
+    - target: {fileID: -2915100214185508306, guid: 3269414b00449a84e93cfb0708c2578c, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1612455154803284, guid: 3269414b00449a84e93cfb0708c2578c, type: 3}
       propertyPath: m_Name
       value: kitchen3 (1)
@@ -14005,6 +14025,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 734423113}
     m_Modifications:
+    - target: {fileID: -2915100214185508306, guid: 3269414b00449a84e93cfb0708c2578c, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1612455154803284, guid: 3269414b00449a84e93cfb0708c2578c, type: 3}
       propertyPath: m_Name
       value: kitchen3 (4)
@@ -20804,6 +20828,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4236962849801068, guid: 96ac34453f9446e45a751c6713116e40, type: 3}
   m_PrefabInstance: {fileID: 1781764228}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1787808537 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7071814214323971651, guid: 555b6788aa2f3c541b269bd2a0d34b55, type: 3}
+  m_PrefabInstance: {fileID: 7834208589776993128}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1787808543
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787808537}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.02707559, y: 0.3092941, z: 0.5338718}
+  m_Center: {x: 0.2694956, y: 0.0030301039, z: -0.33855155}
 --- !u!1001 &1796057919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22794,6 +22844,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 734423113}
     m_Modifications:
+    - target: {fileID: -2915100214185508306, guid: 3269414b00449a84e93cfb0708c2578c, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1612455154803284, guid: 3269414b00449a84e93cfb0708c2578c, type: 3}
       propertyPath: m_Name
       value: kitchen3 (3)
@@ -25222,6 +25276,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 734423113}
     m_Modifications:
+    - target: {fileID: 183271544307201437, guid: a92b44a9c94f7f4418370170cfbc769c, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2760597056420908670, guid: a92b44a9c94f7f4418370170cfbc769c, type: 3}
       propertyPath: m_RootOrder
       value: 132
@@ -25614,6 +25672,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 227546191333768687, guid: 6a0bf1e1e24b165459819d8a4dd2558d, type: 3}
+      propertyPath: m_Drag
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 227546191333768687, guid: 6a0bf1e1e24b165459819d8a4dd2558d, type: 3}
+      propertyPath: m_AngularDrag
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 227546191333768687, guid: 6a0bf1e1e24b165459819d8a4dd2558d, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2650564752414970740, guid: 6a0bf1e1e24b165459819d8a4dd2558d, type: 3}
       propertyPath: SortKey
       value: 850457304
@@ -25628,7 +25698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8107649794117811409, guid: 6a0bf1e1e24b165459819d8a4dd2558d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.53228486
+      value: -0.44
       objectReference: {fileID: 0}
     - target: {fileID: 8107649794117811409, guid: 6a0bf1e1e24b165459819d8a4dd2558d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -26515,7 +26585,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7071814214323971651, guid: 555b6788aa2f3c541b269bd2a0d34b55, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1787808543}
   m_SourcePrefab: {fileID: 100100000, guid: 555b6788aa2f3c541b269bd2a0d34b55, type: 3}
 --- !u!1001 &8033024014913503361
 PrefabInstance:
