@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.Events;
 
 public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
 {
     [Networked, OnChangedRender(nameof(ChangeInteractable))]
     public bool onHeld { get; set; }
     public XRGrabInteractable interactable;
+
+    public static UnityEvent<GameObject> OnObjectGrabbed;
+    public static UnityEvent<GameObject> OnObjectReleased;
 
     //If you don't have state authority over the object, you get it and returns out of the method
     public void OnGrab()
@@ -20,6 +24,8 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
         }
  
         OnHeldChangedRPC(true);
+
+        OnObjectGrabbed.Invoke(gameObject);
     }
 
     //Is called when state authority is changed and calls the two methods inside
@@ -28,13 +34,16 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
         Debug.Log("State Authority Changed to " + Runner.LocalPlayer.PlayerId);
 
         OnHeldChangedRPC(true);
+
+        OnObjectGrabbed.Invoke(gameObject);
     }
 
     //Is called when object is released and sets the onHeld variable to false
     public void OnRelease()
     {
-        Debug.Log("Hello");
         OnHeldChangedRPC(false);
+
+        OnObjectReleased.Invoke(gameObject);
     }
   
     //Determines the value of the onHeld variable
