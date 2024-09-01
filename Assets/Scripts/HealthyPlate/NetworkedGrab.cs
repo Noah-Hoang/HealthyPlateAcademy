@@ -11,8 +11,8 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
     public bool onHeld { get; set; }
     public XRGrabInteractable interactable;
 
-    public static UnityEvent<GameObject> OnObjectGrabbed;
-    public static UnityEvent<GameObject> OnObjectReleased;
+    public static UnityEvent<GameObject> OnObjectGrabbed = new UnityEvent<GameObject>();
+    public static UnityEvent<GameObject> OnObjectReleased = new UnityEvent<GameObject>();
 
     //If you don't have state authority over the object, you get it and returns out of the method
     public void OnGrab()
