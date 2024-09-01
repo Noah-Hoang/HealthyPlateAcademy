@@ -18,9 +18,9 @@ public class RecipeDisplay : MonoBehaviour
     {
         ingredientName.text = pbjRecipe.ingredientHolders[0].ingredient.ingredientName;
         ingredientType.text = pbjRecipe.ingredientHolders[0].quantity.ToString();
-        ingredientUnit.text = pbjRecipe.ingredientHolders[0].unit.ToString();
+        ingredientUnit.text = pbjRecipe.ingredientHolders[0].ingredient.unit.ToString();
         ingredientMeasurement.text = pbjRecipe.ingredientHolders[0].unitMeasurement.ToString();
-        ingredientCalories.text = pbjRecipe.ingredientHolders[0].calories.ToString();
+        ingredientCalories.text = pbjRecipe.ingredientHolders[0].ingredient.calories.ToString();
     }
 
     // Update is called once per frame
