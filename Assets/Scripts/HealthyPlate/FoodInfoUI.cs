@@ -30,22 +30,27 @@ public class FoodInfoUI : MonoBehaviour
         
     }
 
-    public void StartDisplayInfo(GameObject grabbedFood)
+    public void StartDisplayInfo(GameObject grabbedObject)
     {
-        canvas.enabled = true;
-        ingredientNameDisplay.text = "Ingredient:" + grabbedFood.GetComponent<Ingredient>().ingredientSO.name;
-        ingredientTypeDisplay.text = "Type:" + grabbedFood.GetComponent<Ingredient>().ingredientSO.type.ToString();
-        ingredientUnitDisplay.text = "Unit:" + grabbedFood.GetComponent<Ingredient>().ingredientSO.unit.ToString();
-        ingredientCaloriesDisplay.text = "Calories" + grabbedFood.GetComponent<Ingredient>().ingredientSO.calories.ToString();
-
+        if (grabbedObject.transform.root.gameObject.tag == "Ingredient")
+        {
+            canvas.enabled = true;
+            ingredientNameDisplay.text = "Ingredient:" + grabbedObject.GetComponent<Ingredient>().ingredientSO.name;
+            ingredientTypeDisplay.text = "Type:" + grabbedObject.GetComponent<Ingredient>().ingredientSO.type.ToString();
+            ingredientUnitDisplay.text = "Unit:" + grabbedObject.GetComponent<Ingredient>().ingredientSO.unit.ToString();
+            ingredientCaloriesDisplay.text = "Calories" + grabbedObject.GetComponent<Ingredient>().ingredientSO.calories.ToString();
+        }
     }
 
     public void StopDisplayInfo(GameObject grabbedObject)
     {
-        canvas.enabled = false;
-        ingredientNameDisplay.text = "";
-        ingredientTypeDisplay.text = "";
-        ingredientUnitDisplay.text = "";
-        ingredientCaloriesDisplay.text = "";
+        if (grabbedObject.transform.root.gameObject.tag == "Ingredient")
+        {
+            canvas.enabled = false;
+            ingredientNameDisplay.text = "";
+            ingredientTypeDisplay.text = "";
+            ingredientUnitDisplay.text = "";
+            ingredientCaloriesDisplay.text = "";
+        }
     }
 }
