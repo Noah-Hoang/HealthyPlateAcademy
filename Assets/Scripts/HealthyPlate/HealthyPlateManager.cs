@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,7 +24,10 @@ public class HealthyPlateManager : MonoBehaviour
     public float remainingTime;
     public bool recipeOngoing;
     public int money;
-    public List<int> recipeList;
+    public List<RecipeSO> recipeList;
+    public TMP_Text recipeNameDisplay;
+    public TMP_Text recipeIngredientsDisplay;
+    public TMP_Text timerText;
 
     [Header("Events")]
     public UnityEvent onRecipeAssigned;
@@ -61,16 +65,21 @@ public class HealthyPlateManager : MonoBehaviour
 
     [ContextMenu("Pick New Recipe")]
     public void ChooseRecipe()
-    {       
+    {
         if (!recipeOngoing)
         {
+            remainingTime = totalTime;
             recipeOngoing = true;
 
             int index = UnityEngine.Random.Range(0, recipeList.Count);
-            int recipeIndex = recipeList[index];
+            RecipeSO recipeSO = recipeList[index];
             //TODO: Where recipe is put on the board
-            Debug.Log("Recipe Is:" + recipeIndex);
-            
+            recipeNameDisplay.text = recipeSO.recipeName;
+            recipeIngredientsDisplay.text = "";
+            for (int i = 0; i < recipeSO.ingredientHolders.Count; i++)
+            {
+                recipeIngredientsDisplay.text += "\u2022" + recipeSO.ingredientHolders[i].ingredient.ingredientName + ": " + recipeSO.ingredientHolders[i].quantity + "\n";
+            }
             onRecipeAssigned.Invoke();
         }
     }
@@ -80,11 +89,13 @@ public class HealthyPlateManager : MonoBehaviour
         if (remainingTime > 0 && recipeOngoing)
         {
             remainingTime -= Time.deltaTime;
+            int secondsRemaining = Mathf.FloorToInt(remainingTime);  // Convert float to integer seconds
+            timerText.text = secondsRemaining.ToString();
         }
         else if (recipeOngoing)
         {         
             recipeOngoing = false;
-            onRecipeFailed.Invoke();
+            onRecipeFailed.Invoke();          
         }
     }
 
