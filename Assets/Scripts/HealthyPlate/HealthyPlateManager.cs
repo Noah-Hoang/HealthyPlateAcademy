@@ -30,7 +30,7 @@ public class HealthyPlateManager : MonoBehaviour
     public TMP_Text timerText;
 
     [Header("Events")]
-    public UnityEvent onRecipeAssigned;
+    public UnityEvent<RecipeSO> onRecipeAssigned;
     public UnityEvent onRecipeSucceded;
     public UnityEvent onRecipeFailed;
 
@@ -80,7 +80,8 @@ public class HealthyPlateManager : MonoBehaviour
             {
                 recipeIngredientsDisplay.text += "\u2022" + recipeSO.ingredientHolders[i].ingredient.ingredientName + ": " + recipeSO.ingredientHolders[i].quantity + "\n";
             }
-            onRecipeAssigned.Invoke();
+
+            onRecipeAssigned.Invoke(recipeSO);
         }
     }
 

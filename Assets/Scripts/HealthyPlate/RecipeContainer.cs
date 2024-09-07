@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RecpieContainer : MonoBehaviour
+public class RecipeContainer : MonoBehaviour
 {
     [System.Serializable]
     public class IngredientRequirement
@@ -17,8 +17,20 @@ public class RecpieContainer : MonoBehaviour
     public RecipeSO recipe;
     public List<IngredientRequirement> ingredientRequirements;
 
-    public void Start()
+    private void OnEnable()
     {
+        HealthyPlateManager.Instance.onRecipeAssigned.AddListener(SetRecipe);
+    }
+
+    private void OnDisable()
+    {
+        HealthyPlateManager.Instance.onRecipeAssigned.RemoveListener(SetRecipe);
+    }
+
+    [ContextMenu("Set Recipe")]
+    public void SetRecipe(RecipeSO recipeSO)
+    {
+        recipe = recipeSO;  
         //ingredientHolder is a reference to IngredientHolder that is in the RecipeSO
         //recipe being a reference to the RecipeSO script
         //This foreach goes through all the ingredientHolders in RecipeSO and sets them to ingredientHolder
