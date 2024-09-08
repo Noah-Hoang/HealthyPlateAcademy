@@ -1,0 +1,20 @@
+-HOW TO CREATE GRABBABLE FOOD
+Use _BaseGrabbable, drag into scene
+Under visuals on _BaseGrabbable, place model (Make sure model has a collider)
+Drag model collider into XR Grab Interactable variable collider list on the _BaseGrabbable
+rename new food to desired name
+drag new food into Prefab -> Resources -> Grabbables and make sure to save as a variant, not original
+Make scriptable object ingredient of the newly created food
+
+-HOW TO ALTER "low_poly_food" MATERIALS
+Copy low_poly_food material (Every food uses same material)
+Move duplicated material into Art -> Material folder
+Change color of material
+
+-HOW TO ADD NEW RECIPES
+Go to Scripts -> SO -> Recipe
+Right click to create 
+Hover over Cooking option at the top and select recipe
+Drag in required Ingredient SO to IngredientHolder list for desired recipe
+Drag in GameObject for completed recipe (visual representation of the final dish after fully cooked) at the top
+Add new RecipeSO to HealthyPlateManager.cs recipe list variable
