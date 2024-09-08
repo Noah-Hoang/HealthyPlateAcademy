@@ -25,3 +25,38 @@ Go into prefab of desired cuttable food
 Drag cut prefab of the cuttable food into cuttable food prefab
 Move the visuals of the cuttable prefab so that that cut prefab has space to spawn
 Delete cut prefab once you have reached desired distance between cuttable food and spawn place of cut food
+
+TODO:
+
+if food is not held, start timer for despawn
+make spawning and destroying networked
+cut needs to have bool that lets scriptable object know it needs to be destroyed
+add to _BaseGrabbable cut spawn point script that is used when an object is cut to spawn cut pieces
+
+broccoli
+celery
+garlic
+hot dog bun
+ketchup
+mustard
+peanut butter
+jelly
+onion
+batter for pancake
+ribs - sear - raw and cooked
+shrimp - sear - raw and cooked
+Cutlet is burger patty - need to make raw and cooked versions
+hot dog sausage - raw and cooked
+tomato - cut
+sausage - cut
+carrot - cut
+Cabbage - cut - lettuce
+chicken wing - fry or seared
+FULL chicken -. cut -. drumstick
+Cucumber - cut
+Fish - cooked
+mushroom - cut
+grape - passion fruit - fake blueberry - cut
+pancakes with blueberry
+cheese - cut
+potato -cut
