@@ -18,3 +18,10 @@ Hover over Cooking option at the top and select recipe
 Drag in required Ingredient SO to IngredientHolder list for desired recipe
 Drag in GameObject for completed recipe (visual representation of the final dish after fully cooked) at the top
 Add new RecipeSO to HealthyPlateManager.cs recipe list variable
+
+-HOW TO ADD CUTTABLE FOOD
+Make two prefabs: Cut prefab and Cuttable prefab (Cut prefab is the cut version of the Cuttable prefab)
+Go into prefab of desired cuttable food
+Drag cut prefab of the cuttable food into cuttable food prefab
+Move the visuals of the cuttable prefab so that that cut prefab has space to spawn
+Delete cut prefab once you have reached desired distance between cuttable food and spawn place of cut food
