@@ -14,6 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientName: Egg
   type: 12
+  unit: 0
+  calories: 0
   cutPrefab: {fileID: 0}
+  destroyAfterCut: 0
   friedPrefab: {fileID: 0}
+  destroyAfterFried: 0
   searedPrefab: {fileID: 2271287250970278717, guid: 362279ec6b391884bbd76efc1c002710, type: 3}
+  destroyAfterSeared: 1

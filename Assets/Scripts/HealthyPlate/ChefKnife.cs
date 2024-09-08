@@ -13,6 +13,10 @@ public class ChefKnife : MonoBehaviour
                 return;
             }
             Instantiate(collision.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO.cutPrefab,collision.transform.root.position, collision.transform.root.rotation);
+            if (collision.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO.destroyAfterCut)
+            {
+                Destroy(collision.transform.root.gameObject);
+            }
         }
     }
 }

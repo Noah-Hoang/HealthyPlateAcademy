@@ -13,7 +13,10 @@ public class ChefPan : MonoBehaviour
                 return;
             }
             Instantiate(other.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO.searedPrefab,other.transform.root.position, other.transform.root.rotation);
-            Destroy(other.transform.root.gameObject);
+            if (other.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO.destroyAfterSeared)
+            {
+                Destroy(other.transform.root.gameObject);
+            }
         }
     }
 }

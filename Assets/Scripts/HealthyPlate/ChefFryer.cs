@@ -13,7 +13,10 @@ public class ChefFryer : MonoBehaviour
                 return;
             }
             Instantiate(other.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO.friedPrefab, other.transform.root.position, other.transform.root.rotation);
-            Destroy(other.transform.root.gameObject);
+            if (other.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO.destroyAfterFried)
+            {
+                Destroy(other.transform.root.gameObject);
+            }
         }
     }
 }
