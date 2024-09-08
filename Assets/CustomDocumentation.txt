@@ -32,7 +32,22 @@ if food is not held, start timer for despawn
 make spawning and destroying networked
 cut needs to have bool that lets scriptable object know it needs to be destroyed
 add to _BaseGrabbable cut spawn point script that is used when an object is cut to spawn cut pieces
+Make list of all foods and completed recipes in game and get nutritional info
 
+Completed foods:
+Bread Loaf
+Bread Slice
+Cooked Bacon
+Cooked Egg
+Egg 
+Fries
+Grape Jelly
+Peanut Butter
+Potato
+Raw Bacon
+Toast
+
+Non completed:
 broccoli
 celery
 garlic
