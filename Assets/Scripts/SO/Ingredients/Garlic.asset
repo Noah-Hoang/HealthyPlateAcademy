@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38fab54afd8717244a03eb66b1fbfd61, type: 3}
-  m_Name: Broccoli
+  m_Name: Garlic
   m_EditorClassIdentifier: 
-  ingredientName: Broccoli
+  ingredientName: Garlic
   type: 0
   unit: 0
   calories: 0
