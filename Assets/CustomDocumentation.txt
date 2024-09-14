@@ -1,7 +1,7 @@
 -HOW TO CREATE GRABBABLE FOOD
 Use _BaseGrabbable, drag into scene
 Under visuals on _BaseGrabbable, place model (Make sure model has a collider)
-Drag model collider into XR Grab Interactable variable collider list on the _BaseGrabbable
+Drag model collider (if mesh collider, make into convex) into XR Grab Interactable variable collider list on the _BaseGrabbable
 rename new food to desired name
 drag new food into Prefab -> Resources -> Grabbables and make sure to save as a variant, not original
 Make scriptable object ingredient of the newly created food
