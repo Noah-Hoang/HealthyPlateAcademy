@@ -5,6 +5,7 @@ Drag model collider (if mesh collider, make into convex) into XR Grab Interactab
 rename new food to desired name
 drag new food into Prefab -> Resources -> Grabbables and make sure to save as a variant, not original
 Make scriptable object ingredient of the newly created food
+Add scriptable object to variant prefab
 
 -HOW TO ALTER "low_poly_food" MATERIALS
 Copy low_poly_food material (Every food uses same material)
