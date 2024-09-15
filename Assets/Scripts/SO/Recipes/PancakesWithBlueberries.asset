@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745694a5fc4e7534ab6a4518051fd8da, type: 3}
   m_Name: PancakesWithBlueberries
   m_EditorClassIdentifier: 
-  recipeName: 
+  recipeName: Pancakes With Blueberries
   completedRecipe: {fileID: 0}
-  ingredientHolders: []
+  ingredientHolders:
+  - ingredient: {fileID: 11400000, guid: 97ca09e218499c4469b96dbcc9a4a5e4, type: 2}
+    quantity: 0
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: cc7bb3d5f9c70bc4286cb73de931e1c7, type: 2}
+    quantity: 0
+    unitMeasurement: 0

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38fab54afd8717244a03eb66b1fbfd61, type: 3}
   m_Name: SlicedPotato
   m_EditorClassIdentifier: 
-  ingredientName: 
-  type: 0
+  ingredientName: Sliced Potato
+  type: 10
   unit: 0
   calories: 0
   cutPrefab: {fileID: 0}
