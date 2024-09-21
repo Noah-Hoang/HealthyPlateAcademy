@@ -196,6 +196,22 @@ PrefabInstance:
       propertyPath: SortKey
       value: 1061946176
       objectReference: {fileID: 0}
+    - target: {fileID: 8134703806136945199, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
+      propertyPath: NetworkedBehaviours.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134703806136945199, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
+      propertyPath: NetworkedBehaviours.Array.data[0]
+      value: 
+      objectReference: {fileID: 2064479776722550965}
+    - target: {fileID: 8134703806136945199, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
+      propertyPath: NetworkedBehaviours.Array.data[1]
+      value: 
+      objectReference: {fileID: 5489868216745407577}
+    - target: {fileID: 8134703806136945199, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
+      propertyPath: NetworkedBehaviours.Array.data[2]
+      value: 
+      objectReference: {fileID: 7472887022492461451}
     - target: {fileID: 8696729035884437208, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
       propertyPath: m_Name
       value: ChefPan Variant
@@ -221,6 +237,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 648531938030029472, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
   m_PrefabInstance: {fileID: 2878008281393105051}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5489868216745407577 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7773023045798640834, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
+  m_PrefabInstance: {fileID: 2878008281393105051}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6863558071359510083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f38a50c5392c7c940ba08ee807575db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6863558071359510083 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8696729035884437208, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
@@ -236,5 +263,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55d7c660e27f7ba4f8175aa36e3f3218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7472887022492461451 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4631312782008754448, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
+  m_PrefabInstance: {fileID: 2878008281393105051}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6863558071359510083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

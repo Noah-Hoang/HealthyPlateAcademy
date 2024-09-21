@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fusion;
 
-public class ChefFryer : MonoBehaviour
+public class ChefFryer : NetworkBehaviour
 {
     public void OnTriggerEnter(Collider other)
     {
@@ -12,10 +13,10 @@ public class ChefFryer : MonoBehaviour
             {
                 return;
             }
-            Instantiate(other.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO.friedPrefab, other.transform.root.position, other.transform.root.rotation);
+            Runner.Spawn(other.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO.friedPrefab, other.transform.root.position, other.transform.root.rotation);
             if (other.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO.destroyAfterFried)
             {
-                Destroy(other.transform.root.gameObject);
+                Runner.Despawn(other.transform.root.gameObject.GetComponent<NetworkObject>());
             }
         }
     }

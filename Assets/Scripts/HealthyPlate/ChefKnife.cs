@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fusion;
 
-public class ChefKnife : MonoBehaviour
+public class ChefKnife : NetworkBehaviour
 {
     public void OnCollisionEnter(Collision collision)
     {
@@ -12,10 +13,10 @@ public class ChefKnife : MonoBehaviour
             {
                 return;
             }
-            Instantiate(collision.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO.cutPrefab,collision.transform.root.position, collision.transform.root.rotation);
+            Runner.Spawn(collision.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO.cutPrefab, collision.transform.root.position, collision.transform.root.rotation);
             if (collision.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO.destroyAfterCut)
             {
-                Destroy(collision.transform.root.gameObject);
+                Runner.Despawn(collision.transform.root.gameObject.GetComponent<NetworkObject>());
             }
         }
     }
