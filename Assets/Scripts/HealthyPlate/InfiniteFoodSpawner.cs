@@ -14,13 +14,6 @@ public class InfiniteFoodSpawner : NetworkBehaviour, ISceneLoadDone
 
     public void SceneLoadDone(in SceneLoadDoneArgs sceneInfo)
     {
-        StartCoroutine(Wait());
-    }
-
-    public IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(3.0f);
-
         //Spawns in a food at start and sets that food to currentSpawnedFood
         //Adds a listener onto that food for when it is grabbed
         Vector3 pos = transform.position;
@@ -29,7 +22,7 @@ public class InfiniteFoodSpawner : NetworkBehaviour, ISceneLoadDone
         currentSpawnedFood = networkObject.gameObject;
         currentSpawnedFood.GetComponent<XRGrabInteractable>().firstSelectEntered.AddListener(SpawnFood);
     }
-
+    
     public void SpawnFood(SelectEnterEventArgs selectFood)
     {
         //When food is grabbed, unsubscribe to the one that was grabbed
