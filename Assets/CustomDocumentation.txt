@@ -47,8 +47,6 @@ Peanut Butter
 Potato
 Raw Bacon
 Toast
-
-Non completed:
 broccoli
 celery
 garlic
@@ -63,16 +61,16 @@ ribs - sear - raw and cooked
 shrimp - sear - raw and cooked
 Cutlet is burger patty - need to make raw and cooked versions
 hot dog sausage - raw and cooked
-tomato - cut
-sausage - cut
-carrot - cut
+tomato - cut -> Sliced Tomato
+sausage - cut -> Sliced Sausage
+carrot - cut -> Sliced Carrot
 Cabbage - cut - lettuce
 chicken wing - fry or seared
 FULL chicken -. cut -. drumstick
-Cucumber - cut
+Cucumber - cut -> Sliced Cucumber
 Fish - cooked
-mushroom - cut
+mushroom - cut -> Sliced Mushroom
 grape - passion fruit - fake blueberry - cut
 pancakes with blueberry
-cheese - cut
-potato -cut
+cheese - cut -> Sliced Cheese
+potato -cut -> Sliced Potato

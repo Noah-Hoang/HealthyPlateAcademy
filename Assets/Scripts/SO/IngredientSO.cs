@@ -11,6 +11,7 @@ public class IngredientSO : ScriptableObject
     public IngredientTypeEnum type;            // Type of ingredient (e.g., "Dry", "Liquid")
     public IngredientUnitEnum unit;
     public int calories;
+    public int protein;
     
     [Header("Cut")]
     public GameObject cutPrefab;

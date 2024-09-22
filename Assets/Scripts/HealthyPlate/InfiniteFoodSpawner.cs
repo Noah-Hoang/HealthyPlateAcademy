@@ -12,6 +12,8 @@ public class InfiniteFoodSpawner : NetworkBehaviour, ISceneLoadDone
     public GameObject food;
     public GameObject currentSpawnedFood;
 
+
+
     public void SceneLoadDone(in SceneLoadDoneArgs sceneInfo)
     {
         StartCoroutine(Wait());
