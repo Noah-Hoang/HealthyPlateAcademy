@@ -16,10 +16,7 @@ public class InfiniteFoodSpawner : NetworkBehaviour, ISceneLoadDone
     {
         //Spawns in a food at start and sets that food to currentSpawnedFood
         //Adds a listener onto that food for when it is grabbed
-        Vector3 pos = transform.position;
-        Quaternion rot = transform.rotation;
-        NetworkObject networkObject = Runner.Spawn(food, pos, rot);
-        currentSpawnedFood = networkObject.gameObject;
+        currentSpawnedFood = Runner.Spawn(food, transform.position, transform.rotation).gameObject;
         currentSpawnedFood.GetComponent<XRGrabInteractable>().firstSelectEntered.AddListener(SpawnFood);
     }
     
