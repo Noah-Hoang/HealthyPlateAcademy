@@ -25,6 +25,9 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
  
         OnHeldChangedRPC(true);
 
+        // Stops timer
+        StopAllCoroutines();
+
         OnObjectGrabbed.Invoke(gameObject);
     }
 
@@ -43,9 +46,29 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
     {
         OnHeldChangedRPC(false);
 
+        StartCoroutine(WaitForDestroy());
+
         OnObjectReleased.Invoke(gameObject);
     }
-  
+
+    public IEnumerator WaitForDestroy()
+    {
+        yield return new WaitForSeconds(15.0f);
+
+        // Destroy object
+        DestroyRPC();
+    }
+
+    //Determines the value of the onHeld variable
+    [Rpc]
+    public void DestroyRPC()
+    {
+        if (Object.HasStateAuthority)
+        {
+            Runner.Despawn(gameObject.transform.root.GetComponent<NetworkObject>());
+        }
+    }
+
     //Determines the value of the onHeld variable
     [Rpc]
     public void OnHeldChangedRPC(bool onHeldState)

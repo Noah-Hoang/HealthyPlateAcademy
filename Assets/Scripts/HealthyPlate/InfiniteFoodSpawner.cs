@@ -14,7 +14,13 @@ public class InfiniteFoodSpawner : NetworkBehaviour, ISceneLoadDone
 
     public void SceneLoadDone(in SceneLoadDoneArgs sceneInfo)
     {
-        Debug.Log("HELLO");
+        StartCoroutine(Wait());
+    }
+
+    public IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(3.0f);
+
         //Spawns in a food at start and sets that food to currentSpawnedFood
         //Adds a listener onto that food for when it is grabbed
         Vector3 pos = transform.position;
