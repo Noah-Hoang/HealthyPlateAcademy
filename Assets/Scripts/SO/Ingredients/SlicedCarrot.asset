@@ -15,7 +15,8 @@ MonoBehaviour:
   ingredientName: SlicedCarrot
   type: 0
   unit: 0
-  calories: 0
+  calories: 8
+  protein: 1
   cutPrefab: {fileID: 0}
   destroyAfterCut: 0
   friedPrefab: {fileID: 0}

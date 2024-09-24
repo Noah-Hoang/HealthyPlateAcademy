@@ -15,7 +15,8 @@ MonoBehaviour:
   ingredientName: Cooked Ribs
   type: 3
   unit: 0
-  calories: 0
+  calories: 4000
+  protein: 250
   cutPrefab: {fileID: 0}
   destroyAfterCut: 0
   friedPrefab: {fileID: 0}

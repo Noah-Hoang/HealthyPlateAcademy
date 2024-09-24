@@ -15,7 +15,8 @@ MonoBehaviour:
   ingredientName: Mushroom
   type: 0
   unit: 0
-  calories: 0
+  calories: 22
+  protein: 3
   cutPrefab: {fileID: 0}
   destroyAfterCut: 0
   friedPrefab: {fileID: 0}

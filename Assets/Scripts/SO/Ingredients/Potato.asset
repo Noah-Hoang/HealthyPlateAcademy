@@ -15,7 +15,8 @@ MonoBehaviour:
   ingredientName: Potato
   type: 0
   unit: 0
-  calories: 0
+  calories: 77
+  protein: 2
   cutPrefab: {fileID: 0}
   destroyAfterCut: 0
   friedPrefab: {fileID: 5394077478969200595, guid: 58f40b7c2ae5bbe4b84919ee11f6976e, type: 3}

@@ -13,4 +13,13 @@ MonoBehaviour:
   m_Name: GrapeJelly
   m_EditorClassIdentifier: 
   ingredientName: Grape Jelly
-  type: 12
+  type: 6
+  unit: 0
+  calories: 50
+  protein: 0
+  cutPrefab: {fileID: 0}
+  destroyAfterCut: 0
+  friedPrefab: {fileID: 0}
+  destroyAfterFried: 0
+  searedPrefab: {fileID: 0}
+  destroyAfterSeared: 0

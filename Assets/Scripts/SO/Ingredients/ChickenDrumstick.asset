@@ -15,7 +15,8 @@ MonoBehaviour:
   ingredientName: Chicken Drumstick
   type: 3
   unit: 0
-  calories: 0
+  calories: 220
+  protein: 25
   cutPrefab: {fileID: 0}
   destroyAfterCut: 0
   friedPrefab: {fileID: 0}

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Blueberries
   m_EditorClassIdentifier: 
   ingredientName: Blueberries
-  type: 0
+  type: 1
   unit: 0
-  calories: 0
+  calories: 84
+  protein: 1
   cutPrefab: {fileID: 0}
   destroyAfterCut: 0
   friedPrefab: {fileID: 0}

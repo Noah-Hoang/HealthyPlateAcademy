@@ -13,4 +13,13 @@ MonoBehaviour:
   m_Name: PeanutButter
   m_EditorClassIdentifier: 
   ingredientName: Peanut Butter
-  type: 12
+  type: 6
+  unit: 0
+  calories: 90
+  protein: 4
+  cutPrefab: {fileID: 0}
+  destroyAfterCut: 0
+  friedPrefab: {fileID: 0}
+  destroyAfterFried: 0
+  searedPrefab: {fileID: 0}
+  destroyAfterSeared: 0

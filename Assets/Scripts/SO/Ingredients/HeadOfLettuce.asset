@@ -15,7 +15,8 @@ MonoBehaviour:
   ingredientName: Head of Lettuce
   type: 0
   unit: 0
-  calories: 0
+  calories: 53
+  protein: 1
   cutPrefab: {fileID: 1140479161476728850, guid: 425263e87af566c41b65a8606803330e, type: 3}
   destroyAfterCut: 0
   friedPrefab: {fileID: 0}

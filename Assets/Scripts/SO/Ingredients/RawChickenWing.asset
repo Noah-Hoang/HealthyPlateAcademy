@@ -15,7 +15,8 @@ MonoBehaviour:
   ingredientName: Raw Chicken Wing
   type: 3
   unit: 0
-  calories: 0
+  calories: 203
+  protein: 18
   cutPrefab: {fileID: 0}
   destroyAfterCut: 0
   friedPrefab: {fileID: 6915866687821164626, guid: 94f8740cad2426e4a857644f840451cc, type: 3}

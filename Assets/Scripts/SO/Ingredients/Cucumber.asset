@@ -15,7 +15,8 @@ MonoBehaviour:
   ingredientName: Cucumber
   type: 0
   unit: 0
-  calories: 0
+  calories: 16
+  protein: 1
   cutPrefab: {fileID: 473199581391503155, guid: 505d42d8efa6b1445802235d9b6320dd, type: 3}
   destroyAfterCut: 0
   friedPrefab: {fileID: 0}

@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientName: BreadLoaf
   type: 10
+  unit: 0
+  calories: 1855
+  protein: 40
   cutPrefab: {fileID: 5109008303302408580, guid: 0996c4d74391dcb4293c2036905994a7, type: 3}
+  destroyAfterCut: 0
   friedPrefab: {fileID: 0}
+  destroyAfterFried: 0
   searedPrefab: {fileID: 0}
+  destroyAfterSeared: 0

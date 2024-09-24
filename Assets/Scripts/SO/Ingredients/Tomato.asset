@@ -15,7 +15,8 @@ MonoBehaviour:
   ingredientName: Tomato
   type: 0
   unit: 0
-  calories: 0
+  calories: 18
+  protein: 1
   cutPrefab: {fileID: 4220482312572693014, guid: 6076c7621ce62b747b5654008d9b896f, type: 3}
   destroyAfterCut: 0
   friedPrefab: {fileID: 0}

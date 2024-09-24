@@ -15,7 +15,8 @@ MonoBehaviour:
   ingredientName: Full Chicken
   type: 3
   unit: 0
-  calories: 0
+  calories: 1104
+  protein: 140
   cutPrefab: {fileID: 1601320432067944741, guid: 90fb5655373135345996216903431b12, type: 3}
   destroyAfterCut: 1
   friedPrefab: {fileID: 0}

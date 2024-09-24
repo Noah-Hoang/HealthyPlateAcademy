@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38fab54afd8717244a03eb66b1fbfd61, type: 3}
   m_Name: Mustard
   m_EditorClassIdentifier: 
-  ingredientName: 
-  type: 0
+  ingredientName: Mustard
+  type: 6
   unit: 0
-  calories: 0
+  calories: 11
+  protein: 0
   cutPrefab: {fileID: 0}
   destroyAfterCut: 0
   friedPrefab: {fileID: 0}

@@ -15,7 +15,8 @@ MonoBehaviour:
   ingredientName: Sliced Sausage
   type: 3
   unit: 0
-  calories: 0
+  calories: 30
+  protein: 9
   cutPrefab: {fileID: 0}
   destroyAfterCut: 0
   friedPrefab: {fileID: 0}

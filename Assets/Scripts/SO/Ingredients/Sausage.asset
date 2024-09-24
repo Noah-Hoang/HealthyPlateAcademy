@@ -15,7 +15,8 @@ MonoBehaviour:
   ingredientName: Sausage
   type: 3
   unit: 0
-  calories: 0
+  calories: 229
+  protein: 9
   cutPrefab: {fileID: 7432087800136239349, guid: 6a12f7fc1a0f61d4385d562d785af7c1, type: 3}
   destroyAfterCut: 0
   friedPrefab: {fileID: 0}

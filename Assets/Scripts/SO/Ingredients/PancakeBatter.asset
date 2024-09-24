@@ -15,7 +15,8 @@ MonoBehaviour:
   ingredientName: Pancake Batter
   type: 10
   unit: 0
-  calories: 0
+  calories: 150
+  protein: 5
   cutPrefab: {fileID: 0}
   destroyAfterCut: 0
   friedPrefab: {fileID: 0}

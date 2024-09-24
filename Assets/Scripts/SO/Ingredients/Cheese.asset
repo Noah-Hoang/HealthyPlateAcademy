@@ -15,7 +15,8 @@ MonoBehaviour:
   ingredientName: Cheese
   type: 2
   unit: 0
-  calories: 0
+  calories: 115
+  protein: 7
   cutPrefab: {fileID: 0}
   destroyAfterCut: 0
   friedPrefab: {fileID: 0}

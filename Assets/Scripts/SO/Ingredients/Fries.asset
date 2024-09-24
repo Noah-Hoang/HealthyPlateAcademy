@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientName: Fries
   type: 10
+  unit: 0
+  calories: 312
+  protein: 4
   cutPrefab: {fileID: 0}
+  destroyAfterCut: 0
   friedPrefab: {fileID: 0}
+  destroyAfterFried: 0
   searedPrefab: {fileID: 0}
+  destroyAfterSeared: 0

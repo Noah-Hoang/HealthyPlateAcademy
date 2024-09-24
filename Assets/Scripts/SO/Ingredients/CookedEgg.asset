@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: CookedEgg
   m_EditorClassIdentifier: 
   ingredientName: CookedEgg
-  type: 12
+  type: 3
+  unit: 0
+  calories: 90
+  protein: 6
   cutPrefab: {fileID: 0}
+  destroyAfterCut: 0
   friedPrefab: {fileID: 0}
+  destroyAfterFried: 0
   searedPrefab: {fileID: 0}
+  destroyAfterSeared: 0

@@ -15,7 +15,8 @@ MonoBehaviour:
   ingredientName: Carrot
   type: 0
   unit: 0
-  calories: 0
+  calories: 50
+  protein: 1
   cutPrefab: {fileID: 4685086116671852757, guid: e037668e7fad65742bc58c0abf2f54dd, type: 3}
   destroyAfterCut: 0
   friedPrefab: {fileID: 0}
