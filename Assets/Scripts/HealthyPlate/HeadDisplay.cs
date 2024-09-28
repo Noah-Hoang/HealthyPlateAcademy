@@ -33,6 +33,11 @@ public class HeadDisplay : NetworkBehaviour
 
     public void ChangeHead()
     {
+        if (Object.HasStateAuthority)
+        {
+            return;
+        }
+
         if (headDisplay.childCount != 0)
         {
             Destroy(headDisplay.GetChild(0).gameObject);
