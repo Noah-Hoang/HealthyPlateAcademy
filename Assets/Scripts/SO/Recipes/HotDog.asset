@@ -14,4 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeName: HotDog
   completedRecipe: {fileID: 0}
-  ingredientHolders: []
+  ingredientHolders:
+  - ingredient: {fileID: 11400000, guid: b228f73876482394ebbcfde2420279fc, type: 2}
+    quantity: 1
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: 24b5fc87b3d2386408f480821690e0d1, type: 2}
+    quantity: 1
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: e25f3a8403b165d42b6c9d737b19fa1b, type: 2}
+    quantity: 1
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: 02264410b6f829b46af70be5e55044fd, type: 2}
+    quantity: 1
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: 74ac3b893a68a1d4cabf91672bffd5fa, type: 2}
+    quantity: 2
+    unitMeasurement: 0

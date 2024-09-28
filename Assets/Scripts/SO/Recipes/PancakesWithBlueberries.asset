@@ -16,8 +16,8 @@ MonoBehaviour:
   completedRecipe: {fileID: 0}
   ingredientHolders:
   - ingredient: {fileID: 11400000, guid: 97ca09e218499c4469b96dbcc9a4a5e4, type: 2}
-    quantity: 0
+    quantity: 3
     unitMeasurement: 0
   - ingredient: {fileID: 11400000, guid: cc7bb3d5f9c70bc4286cb73de931e1c7, type: 2}
-    quantity: 0
+    quantity: 1
     unitMeasurement: 0

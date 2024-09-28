@@ -14,4 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeName: Grilled Chicken with Fries and Celery
   completedRecipe: {fileID: 0}
-  ingredientHolders: []
+  ingredientHolders:
+  - ingredient: {fileID: 11400000, guid: be00141881136c54ba020601b4f99241, type: 2}
+    quantity: 4
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: 3686d177978a07b48a595ed3db66f92e, type: 2}
+    quantity: 1
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: b076bdf152362ff4ebd3c5318d516344, type: 2}
+    quantity: 1
+    unitMeasurement: 0

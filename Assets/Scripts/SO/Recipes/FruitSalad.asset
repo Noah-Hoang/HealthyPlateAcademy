@@ -12,6 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745694a5fc4e7534ab6a4518051fd8da, type: 3}
   m_Name: FruitSalad
   m_EditorClassIdentifier: 
-  recipeName: 
+  recipeName: FruitSalad
   completedRecipe: {fileID: 0}
-  ingredientHolders: []
+  ingredientHolders:
+  - ingredient: {fileID: 11400000, guid: 97a6cf8ff5d3dcd4195a688de8a7ff0f, type: 2}
+    quantity: 1
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: 3dc41b945a939b34ba817573ee28d32a, type: 2}
+    quantity: 5
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: a38726a4f267c774bb4afb2473abc3c9, type: 2}
+    quantity: 6
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: 2294bc2a8e6091d4c8b545f2e239bcae, type: 2}
+    quantity: 6
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: 8dd0b0b9814c98d40bed40449c6bade1, type: 2}
+    quantity: 8
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: d5f71fc3ec01db041b7d62201aa15e4b, type: 2}
+    quantity: 10
+    unitMeasurement: 0

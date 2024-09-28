@@ -13,5 +13,20 @@ MonoBehaviour:
   m_Name: Burger
   m_EditorClassIdentifier: 
   recipeName: Burger
-  completedRecipe: {fileID: 0}
-  ingredientHolders: []
+  completedRecipe: {fileID: 8709257860088308799, guid: fabcf0b2be0e79a4eb841619f1c691e9, type: 3}
+  ingredientHolders:
+  - ingredient: {fileID: 11400000, guid: 8eb2286b5c9becc4fa95c90a0be65322, type: 2}
+    quantity: 1
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: 007937334bbee3943832570bcfae2d29, type: 2}
+    quantity: 1
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: 51241092d2fcb274c85190a8dbefa873, type: 2}
+    quantity: 2
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: 74ac3b893a68a1d4cabf91672bffd5fa, type: 2}
+    quantity: 1
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: d846fe95113dbaf47a01238ff16b7a5b, type: 2}
+    quantity: 2
+    unitMeasurement: 0

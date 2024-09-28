@@ -15,7 +15,7 @@ MonoBehaviour:
   recipeName: BLT
   completedRecipe: {fileID: 0}
   ingredientHolders:
-  - ingredient: {fileID: 11400000, guid: aae4a1136c4e87042932094bb5c8c4ff, type: 2}
+  - ingredient: {fileID: 11400000, guid: 51241092d2fcb274c85190a8dbefa873, type: 2}
     quantity: 2
     unitMeasurement: 0
   - ingredient: {fileID: 11400000, guid: 74ac3b893a68a1d4cabf91672bffd5fa, type: 2}
