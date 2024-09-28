@@ -9,6 +9,13 @@ public class HeadSelector : MonoBehaviour
     public List<GameObject> heads;
     public Transform headDisplay;
 
+    public void Start()
+    {
+        GameObject tempObject = Instantiate(heads[index], headDisplay);
+        tempObject.transform.localPosition = Vector3.zero;
+        tempObject.transform.localRotation = Quaternion.identity;
+    }
+
     public void OnPressed()
     {
         HeadDisplay.Instance.index = index;
