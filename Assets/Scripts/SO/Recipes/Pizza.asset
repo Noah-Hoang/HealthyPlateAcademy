@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 745694a5fc4e7534ab6a4518051fd8da, type: 3}
+  m_Name: Pizza
+  m_EditorClassIdentifier: 
+  recipeName: Pizza
+  completedRecipe: {fileID: 0}
+  ingredientHolders:
+  - ingredient: {fileID: 11400000, guid: aae4a1136c4e87042932094bb5c8c4ff, type: 2}
+    quantity: 4
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: d846fe95113dbaf47a01238ff16b7a5b, type: 2}
+    quantity: 5
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: cfeb704f88f09ec45b85c231f4bd6a4b, type: 2}
+    quantity: 2
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: 8dd0b0b9814c98d40bed40449c6bade1, type: 2}
+    quantity: 1
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: a38726a4f267c774bb4afb2473abc3c9, type: 2}
+    quantity: 1
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: 007937334bbee3943832570bcfae2d29, type: 2}
+    quantity: 3
+    unitMeasurement: 0
