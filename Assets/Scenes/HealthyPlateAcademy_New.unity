@@ -10612,6 +10612,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   food: {fileID: 7320306173571364135, guid: aff8fc4cbe6a449498edd064ce49d28f, type: 3}
   currentSpawnedFood: {fileID: 0}
+--- !u!1 &838988983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 838988984}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &838988984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838988983}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.13700002, y: 0.055000007, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1594515268}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &856024543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16125,16 +16156,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207074239}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.557}
+  m_LocalPosition: {x: 0, y: 0, z: -0.6922296}
   m_LocalScale: {x: 0.004, y: 0.004, z: 0.004}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 245683287}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1531295013}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 2.82, y: 0.906}
+  m_AnchoredPosition: {x: 1.1237669, y: -2.7512097}
   m_SizeDelta: {x: 597, y: 525}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1208191010
@@ -20562,7 +20593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a01f464c5bf478458da6fe43214f04f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 60
+  totalTime: 180
   remainingTime: 0
   recipeOngoing: 0
   money: 0
@@ -20576,9 +20607,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6a6bcffcf2eb36b4095d90792661f197, type: 2}
   - {fileID: 11400000, guid: bbee78ae71e4ced4cbb955606106e248, type: 2}
   - {fileID: 11400000, guid: 374c989e78575e54c8c17d835f311ef1, type: 2}
-  recipeNameDisplay: {fileID: 0}
-  recipeIngredientsDisplay: {fileID: 0}
-  timerText: {fileID: 0}
+  recipeNameDisplay: {fileID: 349423435}
+  recipeIngredientsDisplay: {fileID: 463494865}
+  timerText: {fileID: 1195800289}
   onRecipeAssigned:
     m_PersistentCalls:
       m_Calls: []
@@ -20600,7 +20631,8 @@ Transform:
   m_LocalPosition: {x: 1.696233, y: 3.6572099, z: 0.13522965}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1207074243}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1532892749
@@ -21343,6 +21375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98dc2b383f02dba4eb67484812f582b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 0}
   recipe: {fileID: 0}
   ingredientRequirements: []
 --- !u!4 &1594515268
@@ -21359,6 +21392,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 857757473}
+  - {fileID: 838988984}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1594515269
@@ -29492,7 +29526,6 @@ SceneRoots:
   - {fileID: 1360410026}
   - {fileID: 5666046971793755654}
   - {fileID: 512022615}
-  - {fileID: 1207074243}
   - {fileID: 1399214647}
   - {fileID: 276922822}
   - {fileID: 1800621644}

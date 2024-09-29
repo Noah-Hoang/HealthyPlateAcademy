@@ -102,13 +102,13 @@ public class HealthyPlateManager : MonoBehaviour
 
     public void RecipeSucceded()
     {
+        recipeOngoing = false;
         money += 20;
-        ChooseRecipe();
     }
 
     public void RecipeFailed()
     {
+        recipeOngoing = false;
         money -= 5;
-        ChooseRecipe();
     }
 }

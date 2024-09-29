@@ -14,6 +14,7 @@ public class RecipeContainer : MonoBehaviour
         public bool hasEnough;
     }
 
+    public Transform spawnPoint;
     public RecipeSO recipe;
     public List<IngredientRequirement> ingredientRequirements;
 
@@ -93,6 +94,12 @@ public class RecipeContainer : MonoBehaviour
                 }
             }
             Debug.Log("Recipe Successful");
+            if (recipe.completedRecipe != null)
+            {
+                GameObject temp = Instantiate(recipe.completedRecipe, spawnPoint);
+                temp.transform.localPosition = Vector3.zero;
+                temp.transform.localRotation = Quaternion.identity;
+            }
             HealthyPlateManager.Instance.onRecipeSucceded.Invoke();
         }
     }
