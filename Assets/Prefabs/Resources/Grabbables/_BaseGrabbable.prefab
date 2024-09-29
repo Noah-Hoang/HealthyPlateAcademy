@@ -171,6 +171,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onHeld: 0
+  destroyOnRelease: 1
+  destroyTime: 15
   interactable: {fileID: 7329340237320526533}
 --- !u!54 &6270308742628320436
 Rigidbody:

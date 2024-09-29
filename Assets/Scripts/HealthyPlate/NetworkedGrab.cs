@@ -4,11 +4,14 @@ using UnityEngine;
 using Fusion;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.Events;
+using UnityEditor.Hardware;
 
 public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
 {
     [Networked, OnChangedRender(nameof(ChangeInteractable))]
     public bool onHeld { get; set; }
+    public bool destroyOnRelease;
+    public float destroyTime;
     public XRGrabInteractable interactable;
 
     public static UnityEvent<GameObject> OnObjectGrabbed = new UnityEvent<GameObject>();
@@ -46,14 +49,17 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
     {
         OnHeldChangedRPC(false);
 
-        StartCoroutine(WaitForDestroy());
+        if (destroyOnRelease)
+        {
+            StartCoroutine(WaitForDestroy());
+        }
 
         OnObjectReleased.Invoke(gameObject);
     }
 
     public IEnumerator WaitForDestroy()
     {
-        yield return new WaitForSeconds(15.0f);
+        yield return new WaitForSeconds(destroyTime);
 
         // Destroy object
         DestroyRPC();

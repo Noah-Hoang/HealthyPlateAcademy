@@ -192,6 +192,10 @@ PrefabInstance:
       propertyPath: m_Colliders.Array.data[1]
       value: 
       objectReference: {fileID: 8567387941430457923}
+    - target: {fileID: 7773023045798640834, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
+      propertyPath: destroyOnRelease
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8134703806136945199, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
       propertyPath: SortKey
       value: 1061946176
