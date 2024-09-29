@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FullBreakfast
   m_EditorClassIdentifier: 
   recipeName: Full Breakfast
-  completedRecipe: {fileID: 0}
+  completedRecipe: {fileID: 8997648467806617634, guid: 38605bc86ff661a40be40c783b807cd7, type: 3}
   ingredientHolders:
   - ingredient: {fileID: 11400000, guid: 51241092d2fcb274c85190a8dbefa873, type: 2}
     quantity: 2

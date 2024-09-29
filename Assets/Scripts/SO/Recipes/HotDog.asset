@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HotDog
   m_EditorClassIdentifier: 
   recipeName: HotDog
-  completedRecipe: {fileID: 0}
+  completedRecipe: {fileID: 8785684979306746395, guid: db78b0b65e911904b86fc781e08afad6, type: 3}
   ingredientHolders:
   - ingredient: {fileID: 11400000, guid: b228f73876482394ebbcfde2420279fc, type: 2}
     quantity: 1

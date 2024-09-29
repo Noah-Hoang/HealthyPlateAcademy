@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FriedChickenWithFries
   m_EditorClassIdentifier: 
   recipeName: FriedChickenWithFries
-  completedRecipe: {fileID: 0}
+  completedRecipe: {fileID: 6901653867238831242, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
   ingredientHolders:
   - ingredient: {fileID: 11400000, guid: efd808ca7fa209142ba27eccdafdc6b6, type: 2}
     quantity: 4

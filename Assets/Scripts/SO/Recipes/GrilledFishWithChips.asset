@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GrilledFishWithChips
   m_EditorClassIdentifier: 
   recipeName: Grilled Fish with Chips
-  completedRecipe: {fileID: 0}
+  completedRecipe: {fileID: 6924061450911236875, guid: 644fb40c8f71cc747970dd1e295f8225, type: 3}
   ingredientHolders:
   - ingredient: {fileID: 11400000, guid: 4b976a0710f95e94dbdd08acff9e0a5a, type: 2}
     quantity: 1

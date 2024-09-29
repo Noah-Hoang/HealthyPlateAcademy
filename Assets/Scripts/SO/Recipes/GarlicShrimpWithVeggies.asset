@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GarlicShrimpWithVeggies
   m_EditorClassIdentifier: 
   recipeName: Garlic Shrimp With Veggies
-  completedRecipe: {fileID: 0}
+  completedRecipe: {fileID: 398991166767559265, guid: 4095b57053c699849844679f44aec4cd, type: 3}
   ingredientHolders:
   - ingredient: {fileID: 11400000, guid: 16e57beefd8a9594682737f18a88873a, type: 2}
     quantity: 6
@@ -23,9 +23,6 @@ MonoBehaviour:
     unitMeasurement: 0
   - ingredient: {fileID: 11400000, guid: e6aa73a0135128c468186a4dfb337704, type: 2}
     quantity: 2
-    unitMeasurement: 0
-  - ingredient: {fileID: 11400000, guid: 2ed2e15e66358464a88ab4d62fb193ad, type: 2}
-    quantity: 6
     unitMeasurement: 0
   - ingredient: {fileID: 11400000, guid: d5f71fc3ec01db041b7d62201aa15e4b, type: 2}
     quantity: 6

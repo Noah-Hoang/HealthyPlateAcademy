@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pizza
   m_EditorClassIdentifier: 
   recipeName: Pizza
-  completedRecipe: {fileID: 0}
+  completedRecipe: {fileID: 3370036935198777159, guid: d666e7bd01a453747aa4c0995c061437, type: 3}
   ingredientHolders:
   - ingredient: {fileID: 11400000, guid: aae4a1136c4e87042932094bb5c8c4ff, type: 2}
     quantity: 4

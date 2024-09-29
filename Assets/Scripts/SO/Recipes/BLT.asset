@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BLT
   m_EditorClassIdentifier: 
   recipeName: BLT
-  completedRecipe: {fileID: 0}
+  completedRecipe: {fileID: 7291522279887185529, guid: 6a3c908bce97acc4c91ec1fae54a1867, type: 3}
   ingredientHolders:
   - ingredient: {fileID: 11400000, guid: 51241092d2fcb274c85190a8dbefa873, type: 2}
     quantity: 2

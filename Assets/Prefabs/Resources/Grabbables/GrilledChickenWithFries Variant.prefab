@@ -1,0 +1,455 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &45688291957445354
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 279145426806116312, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.9347048
+      objectReference: {fileID: 0}
+    - target: {fileID: 279145426806116312, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5605631
+      objectReference: {fileID: 0}
+    - target: {fileID: 279145426806116312, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.028255
+      objectReference: {fileID: 0}
+    - target: {fileID: 279145426806116312, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 279145426806116312, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 279145426806116312, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 279145426806116312, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 279145426806116312, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 279145426806116312, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 279145426806116312, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 527275536356024659, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: SortKey
+      value: 2228833846
+      objectReference: {fileID: 0}
+    - target: {fileID: 1473594597917161431, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: SortKey
+      value: 3220761395
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402863492622237177, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: m_Name
+      value: GrilledChickenWingsWithFries
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809960152335167639, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: m_Colliders.Array.data[0]
+      value: 
+      objectReference: {fileID: 2816932065916088254}
+    - target: {fileID: 6310426364428198013, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: SortKey
+      value: 2094111479
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310426364428198013, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: NestedObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 3574559060652590140}
+    - target: {fileID: 6310426364428198013, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: NestedObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 846397531372629568}
+    - target: {fileID: 6310426364428198013, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: NestedObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 4631685445005045255}
+    - target: {fileID: 6310426364428198013, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: NestedObjects.Array.data[3]
+      value: 
+      objectReference: {fileID: 115446868886402309}
+    - target: {fileID: 6901653867238831242, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: m_Name
+      value: GrilledChickenWithFries Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8065450069112728427, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 5233555183900432108, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+    - {fileID: 6591873499876953430, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+    - {fileID: 5542292119618171029, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+    - {fileID: 6373061902646932499, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5960876634464472741, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 7338607447708183449}
+    - targetCorrespondingSourceObject: {fileID: 5960876634464472741, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 6914036992809304549}
+    - targetCorrespondingSourceObject: {fileID: 5960876634464472741, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1444414467045310882}
+    - targetCorrespondingSourceObject: {fileID: 5960876634464472741, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 6185338127848250016}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2402863492622237177, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2816932065916088254}
+  m_SourcePrefab: {fileID: 100100000, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+--- !u!1 &2448549585271140115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2402863492622237177, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+  m_PrefabInstance: {fileID: 45688291957445354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &2816932065916088254
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2448549585271140115}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!4 &5916349979914067023 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5960876634464472741, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+  m_PrefabInstance: {fileID: 45688291957445354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4000551896036397421
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5916349979914067023}
+    m_Modifications:
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.16899991
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.18692222
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9823748
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -158.454
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8629984988896214890, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: SortKey
+      value: 2167024650
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193930859439500189, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_Name
+      value: GrilledChickenWing Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+--- !u!4 &1444414467045310882 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+  m_PrefabInstance: {fileID: 4000551896036397421}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4631685445005045255 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8629984988896214890, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+  m_PrefabInstance: {fileID: 4000551896036397421}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &5069011496559098710
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5916349979914067023}
+    m_Modifications:
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.123000026
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.163
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.2701087
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9628298
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8629984988896214890, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: SortKey
+      value: 2651379131
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193930859439500189, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_Name
+      value: GrilledChickenWing Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+--- !u!114 &3574559060652590140 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8629984988896214890, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+  m_PrefabInstance: {fileID: 5069011496559098710}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &7338607447708183449 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+  m_PrefabInstance: {fileID: 5069011496559098710}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8528124237934430831
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5916349979914067023}
+    m_Modifications:
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.065
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1960001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0018541559
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9999983
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -179.788
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8629984988896214890, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: SortKey
+      value: 2966978589
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193930859439500189, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_Name
+      value: GrilledChickenWing Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+--- !u!114 &115446868886402309 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8629984988896214890, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+  m_PrefabInstance: {fileID: 8528124237934430831}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &6185338127848250016 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+  m_PrefabInstance: {fileID: 8528124237934430831}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8970290357521027370
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5916349979914067023}
+    m_Modifications:
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.20700002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.14834797
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0031599652
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.98889387
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.008483902
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8629984988896214890, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: SortKey
+      value: 2536431744
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193930859439500189, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+      propertyPath: m_Name
+      value: GrilledChickenWing Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+--- !u!114 &846397531372629568 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8629984988896214890, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+  m_PrefabInstance: {fileID: 8970290357521027370}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &6914036992809304549 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2562345392442708175, guid: 4c90370d336fc884e85dba0336fcc1e4, type: 3}
+  m_PrefabInstance: {fileID: 8970290357521027370}
+  m_PrefabAsset: {fileID: 0}

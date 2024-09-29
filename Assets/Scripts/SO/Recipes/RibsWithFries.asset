@@ -13,17 +13,11 @@ MonoBehaviour:
   m_Name: RibsWithFries
   m_EditorClassIdentifier: 
   recipeName: Ribs With Fries
-  completedRecipe: {fileID: 0}
+  completedRecipe: {fileID: 4083517600146038922, guid: 6cf050a4b278be24ca9021aad6f5b6e4, type: 3}
   ingredientHolders:
   - ingredient: {fileID: 11400000, guid: 94a44f0b9096d9d4abb5d713e42c5f8c, type: 2}
     quantity: 1
     unitMeasurement: 0
   - ingredient: {fileID: 11400000, guid: 3686d177978a07b48a595ed3db66f92e, type: 2}
-    quantity: 1
-    unitMeasurement: 0
-  - ingredient: {fileID: 11400000, guid: 3dc41b945a939b34ba817573ee28d32a, type: 2}
-    quantity: 1
-    unitMeasurement: 0
-  - ingredient: {fileID: 11400000, guid: b076bdf152362ff4ebd3c5318d516344, type: 2}
     quantity: 1
     unitMeasurement: 0

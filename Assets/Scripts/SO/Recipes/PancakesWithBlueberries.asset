@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PancakesWithBlueberries
   m_EditorClassIdentifier: 
   recipeName: Pancakes With Blueberries
-  completedRecipe: {fileID: 0}
+  completedRecipe: {fileID: 1333652640081570792, guid: 751a9199637e8ea4db6c02a14ceb8dfd, type: 3}
   ingredientHolders:
   - ingredient: {fileID: 11400000, guid: 97ca09e218499c4469b96dbcc9a4a5e4, type: 2}
     quantity: 3
