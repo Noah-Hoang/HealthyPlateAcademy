@@ -14,8 +14,10 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
     public float destroyTime;
     public XRGrabInteractable interactable;
 
-    public static UnityEvent<GameObject> OnObjectGrabbed = new UnityEvent<GameObject>();
-    public static UnityEvent<GameObject> OnObjectReleased = new UnityEvent<GameObject>();
+    public UnityEvent<GameObject> OnObjectGrabbed = new UnityEvent<GameObject>();
+    public UnityEvent<GameObject> OnObjectReleased = new UnityEvent<GameObject>();
+    public static UnityEvent<GameObject> OnObjectGrabbedStatic = new UnityEvent<GameObject>();
+    public static UnityEvent<GameObject> OnObjectReleasedStatic = new UnityEvent<GameObject>();
 
     //If you don't have state authority over the object, you get it and returns out of the method
     public void OnGrab()
@@ -32,6 +34,7 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
         StopAllCoroutines();
 
         OnObjectGrabbed.Invoke(gameObject);
+        OnObjectGrabbedStatic.Invoke(gameObject);
     }
 
     //Is called when state authority is changed and calls the two methods inside
@@ -42,6 +45,7 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
         OnHeldChangedRPC(true);
 
         OnObjectGrabbed.Invoke(gameObject);
+        OnObjectGrabbedStatic.Invoke(gameObject);
     }
 
     //Is called when object is released and sets the onHeld variable to false
@@ -55,6 +59,7 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
         }
 
         OnObjectReleased.Invoke(gameObject);
+        OnObjectReleasedStatic.Invoke(gameObject);
     }
 
     public IEnumerator WaitForDestroy()

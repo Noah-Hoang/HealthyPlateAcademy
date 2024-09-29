@@ -14,14 +14,14 @@ public class FoodInfoUI : MonoBehaviour
 
     public void OnEnable()
     {
-        NetworkedGrab.OnObjectGrabbed.AddListener(StartDisplayInfo);
-        NetworkedGrab.OnObjectReleased.AddListener(StopDisplayInfo);
+        NetworkedGrab.OnObjectGrabbedStatic.AddListener(StartDisplayInfo);
+        NetworkedGrab.OnObjectReleasedStatic.AddListener(StopDisplayInfo);
     }
 
     public void OnDisable()
     {
-        NetworkedGrab.OnObjectGrabbed.RemoveListener(StartDisplayInfo);
-        NetworkedGrab.OnObjectReleased.RemoveListener(StopDisplayInfo);
+        NetworkedGrab.OnObjectGrabbedStatic.RemoveListener(StartDisplayInfo);
+        NetworkedGrab.OnObjectReleasedStatic.RemoveListener(StopDisplayInfo);
     }
 
     // Update is called once per frame
