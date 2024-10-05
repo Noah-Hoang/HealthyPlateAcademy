@@ -12,7 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745694a5fc4e7534ab6a4518051fd8da, type: 3}
   m_Name: PB&J
   m_EditorClassIdentifier: 
-  recipeName: Peanut Butter and Jelly Sandwich
+  ingredientName: PB & J
+  type: 0
+  unit: 0
+  calories: 0
+  protein: 0
+  cutPrefab: {fileID: 0}
+  destroyAfterCut: 0
+  friedPrefab: {fileID: 0}
+  destroyAfterFried: 0
+  searedPrefab: {fileID: 0}
+  destroyAfterSeared: 0
   completedRecipe: {fileID: 2892800811304122327, guid: 7b7319cfe0eef0d4497bd345ca42db28, type: 3}
   ingredientHolders:
   - ingredient: {fileID: 11400000, guid: ce557737ebcbfe94397e6bb5aa18e281, type: 2}

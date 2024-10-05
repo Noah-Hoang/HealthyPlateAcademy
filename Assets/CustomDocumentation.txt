@@ -78,8 +78,7 @@ potato -cut -> Sliced Potato
 
 
 
-
-Show UI for both hands holding different foods
+Spawn recipes over network instead of instantiate
 Show UI for completed recipe
 Give some sort of tutorial or something that gives directions
 Show indicator for recipe completed

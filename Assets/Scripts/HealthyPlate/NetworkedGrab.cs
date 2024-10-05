@@ -23,7 +23,7 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
     //If you don't have state authority over the object, you get it and returns out of the method
     public void OnGrab(SelectEnterEventArgs enter)
     {
-        if (enter.interactor.gameObject.transform.parent.name == "Left Controller")
+        if (enter.interactorObject.transform.parent.name == "Left Controller")
         {
             isLeftHandHeld = true;
         }

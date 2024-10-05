@@ -1096,6 +1096,10 @@ PrefabInstance:
       propertyPath: SortKey
       value: 3220761395
       objectReference: {fileID: 0}
+    - target: {fileID: 2037181678014203885, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
+      propertyPath: ingredientSO
+      value: 
+      objectReference: {fileID: 11400000, guid: e095f218b4da2a2478671ed67060c07d, type: 2}
     - target: {fileID: 2402863492622237177, guid: c2fb77072924b6146b932f5a57bea8df, type: 3}
       propertyPath: m_Name
       value: GrilledChickenWingsWithFries

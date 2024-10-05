@@ -74,7 +74,7 @@ public class HealthyPlateManager : MonoBehaviour
             int index = UnityEngine.Random.Range(0, recipeList.Count);
             RecipeSO recipeSO = recipeList[index];
             //TODO: Where recipe is put on the board
-            recipeNameDisplay.text = recipeSO.recipeName;
+            recipeNameDisplay.text = recipeSO.ingredientName;
             recipeIngredientsDisplay.text = "";
             for (int i = 0; i < recipeSO.ingredientHolders.Count; i++)
             {

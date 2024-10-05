@@ -12,7 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745694a5fc4e7534ab6a4518051fd8da, type: 3}
   m_Name: Burger
   m_EditorClassIdentifier: 
-  recipeName: Burger
+  ingredientName: Burger
+  type: 0
+  unit: 0
+  calories: 0
+  protein: 0
+  cutPrefab: {fileID: 0}
+  destroyAfterCut: 0
+  friedPrefab: {fileID: 0}
+  destroyAfterFried: 0
+  searedPrefab: {fileID: 0}
+  destroyAfterSeared: 0
   completedRecipe: {fileID: 8709257860088308799, guid: fabcf0b2be0e79a4eb841619f1c691e9, type: 3}
   ingredientHolders:
   - ingredient: {fileID: 11400000, guid: 8eb2286b5c9becc4fa95c90a0be65322, type: 2}

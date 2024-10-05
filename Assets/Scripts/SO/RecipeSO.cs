@@ -10,9 +10,9 @@ public struct IngredientHolder
 }
 
 [CreateAssetMenu(fileName = "New Recipe", menuName = "Cooking/Recipe")]
-public class RecipeSO : ScriptableObject
+public class RecipeSO : IngredientSO
 {
-    public string recipeName;
+    [Header("Recipe")]
     public GameObject completedRecipe;
     public List<IngredientHolder> ingredientHolders;
 }

@@ -12,7 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745694a5fc4e7534ab6a4518051fd8da, type: 3}
   m_Name: GrilledFishWithChips
   m_EditorClassIdentifier: 
-  recipeName: Grilled Fish with Chips
+  ingredientName: Grilled Fish With Chips
+  type: 0
+  unit: 0
+  calories: 0
+  protein: 0
+  cutPrefab: {fileID: 0}
+  destroyAfterCut: 0
+  friedPrefab: {fileID: 0}
+  destroyAfterFried: 0
+  searedPrefab: {fileID: 0}
+  destroyAfterSeared: 0
   completedRecipe: {fileID: 6924061450911236875, guid: 644fb40c8f71cc747970dd1e295f8225, type: 3}
   ingredientHolders:
   - ingredient: {fileID: 11400000, guid: 4b976a0710f95e94dbdd08acff9e0a5a, type: 2}
