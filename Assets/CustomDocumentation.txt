@@ -79,5 +79,12 @@ potato -cut -> Sliced Potato
 
 
 
-Finish Recipes (Game Objects)
-Test out game
+Fix recipe spawn
+Show UI for both hands holding different foods
+Show UI for completed recipe
+Give some sort of tutorial or something that gives directions
+Show indicator for recipe completed
+Network recipe board
+Add audio for everything
+fix fryer
+only kinematic original ingredients, not cooked or cut
