@@ -10,31 +10,41 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
 {
     [Networked, OnChangedRender(nameof(ChangeInteractable))]
     public bool onHeld { get; set; }
+    public bool isLeftHandHeld;
     public bool destroyOnRelease;
     public float destroyTime;
     public XRGrabInteractable interactable;
 
-    public UnityEvent<GameObject> OnObjectGrabbed = new UnityEvent<GameObject>();
-    public UnityEvent<GameObject> OnObjectReleased = new UnityEvent<GameObject>();
-    public static UnityEvent<GameObject> OnObjectGrabbedStatic = new UnityEvent<GameObject>();
-    public static UnityEvent<GameObject> OnObjectReleasedStatic = new UnityEvent<GameObject>();
+    public UnityEvent<GameObject, bool> OnObjectGrabbed = new UnityEvent<GameObject, bool>();
+    public UnityEvent<GameObject, bool> OnObjectReleased = new UnityEvent<GameObject, bool>();
+    public static UnityEvent<GameObject, bool> OnObjectGrabbedStatic = new UnityEvent<GameObject, bool>();
+    public static UnityEvent<GameObject, bool> OnObjectReleasedStatic = new UnityEvent<GameObject, bool>();
 
     //If you don't have state authority over the object, you get it and returns out of the method
-    public void OnGrab()
+    public void OnGrab(SelectEnterEventArgs enter)
     {
+        if (enter.interactor.gameObject.transform.parent.name == "Left Controller")
+        {
+            isLeftHandHeld = true;
+        }
+        else
+        {
+            isLeftHandHeld = false;
+        }
+
         if (!Object.HasStateAuthority)
         {
             Object.RequestStateAuthority();
             return;
         }
- 
+
         OnHeldChangedRPC(true);
 
         // Stops timer
         StopAllCoroutines();
 
-        OnObjectGrabbed.Invoke(gameObject);
-        OnObjectGrabbedStatic.Invoke(gameObject);
+        OnObjectGrabbed.Invoke(gameObject, isLeftHandHeld);
+        OnObjectGrabbedStatic.Invoke(gameObject, isLeftHandHeld);
     }
 
     //Is called when state authority is changed and calls the two methods inside
@@ -44,8 +54,8 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
 
         OnHeldChangedRPC(true);
 
-        OnObjectGrabbed.Invoke(gameObject);
-        OnObjectGrabbedStatic.Invoke(gameObject);
+        OnObjectGrabbed.Invoke(gameObject, isLeftHandHeld);
+        OnObjectGrabbedStatic.Invoke(gameObject, isLeftHandHeld);
     }
 
     //Is called when object is released and sets the onHeld variable to false
@@ -58,8 +68,8 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
             StartCoroutine(WaitForDestroy());
         }
 
-        OnObjectReleased.Invoke(gameObject);
-        OnObjectReleasedStatic.Invoke(gameObject);
+        OnObjectReleased.Invoke(gameObject, isLeftHandHeld);
+        OnObjectReleasedStatic.Invoke(gameObject, isLeftHandHeld);
     }
 
     public IEnumerator WaitForDestroy()

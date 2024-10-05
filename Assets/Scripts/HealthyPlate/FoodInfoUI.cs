@@ -5,12 +5,14 @@ using TMPro;
 
 public class FoodInfoUI : MonoBehaviour
 {
+    //isLeft is a reference to which hand the canvas is on
+    //isLeftHandHeld is a reference to which hand grabbed the object
+    public bool isLeft;
+    public Canvas canvas;
     public TMP_Text ingredientNameDisplay;
     public TMP_Text ingredientTypeDisplay;
     public TMP_Text ingredientUnitDisplay;
-    public TMP_Text ingredientCaloriesDisplay;
-    public Canvas canvas;
-    // Start is called before the first frame update
+    public TMP_Text ingredientCaloriesDisplay;    
 
     public void OnEnable()
     {
@@ -24,33 +26,55 @@ public class FoodInfoUI : MonoBehaviour
         NetworkedGrab.OnObjectReleasedStatic.RemoveListener(StopDisplayInfo);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartDisplayInfo(GameObject grabbedObject, bool isLeftHandHeld)
     {
-        
-    }
-
-    public void StartDisplayInfo(GameObject grabbedObject)
-    {
-        if (grabbedObject.transform.root.gameObject.tag == "Ingredient")
+        if (isLeftHandHeld && isLeft)
         {
-            canvas.enabled = true;
-            ingredientNameDisplay.text = "Ingredient:" + grabbedObject.GetComponent<Ingredient>().ingredientSO.name;
-            ingredientTypeDisplay.text = "Type:" + grabbedObject.GetComponent<Ingredient>().ingredientSO.type.ToString();
-            ingredientUnitDisplay.text = "Unit:" + grabbedObject.GetComponent<Ingredient>().ingredientSO.unit.ToString();
-            ingredientCaloriesDisplay.text = "Calories" + grabbedObject.GetComponent<Ingredient>().ingredientSO.calories.ToString();
+            if (grabbedObject.transform.root.gameObject.tag == "Ingredient")
+            {
+                canvas.enabled = true;
+                ingredientNameDisplay.text = "Ingredient: " + grabbedObject.GetComponent<Ingredient>().ingredientSO.ingredientName;
+                ingredientTypeDisplay.text = "Type: " + grabbedObject.GetComponent<Ingredient>().ingredientSO.type.ToString();
+                ingredientUnitDisplay.text = "Unit: " + grabbedObject.GetComponent<Ingredient>().ingredientSO.unit.ToString();
+                ingredientCaloriesDisplay.text = "Calories: " + grabbedObject.GetComponent<Ingredient>().ingredientSO.calories.ToString();
+            }
+        }
+        else if (!isLeftHandHeld && !isLeft)
+        {
+            if (grabbedObject.transform.root.gameObject.tag == "Ingredient")
+            {
+                canvas.enabled = true;
+                ingredientNameDisplay.text = "Ingredient: " + grabbedObject.GetComponent<Ingredient>().ingredientSO.ingredientName;
+                ingredientTypeDisplay.text = "Type: " + grabbedObject.GetComponent<Ingredient>().ingredientSO.type.ToString();
+                ingredientUnitDisplay.text = "Unit: " + grabbedObject.GetComponent<Ingredient>().ingredientSO.unit.ToString();
+                ingredientCaloriesDisplay.text = "Calories: " + grabbedObject.GetComponent<Ingredient>().ingredientSO.calories.ToString();
+            }
         }
     }
 
-    public void StopDisplayInfo(GameObject grabbedObject)
+    public void StopDisplayInfo(GameObject grabbedObject, bool isLeftHandHeld)
     {
-        if (grabbedObject.transform.root.gameObject.tag == "Ingredient")
+        if (isLeftHandHeld && isLeft)
         {
-            canvas.enabled = false;
-            ingredientNameDisplay.text = "";
-            ingredientTypeDisplay.text = "";
-            ingredientUnitDisplay.text = "";
-            ingredientCaloriesDisplay.text = "";
+            if (grabbedObject.transform.root.gameObject.tag == "Ingredient")
+            {
+                canvas.enabled = false;
+                ingredientNameDisplay.text = "";
+                ingredientTypeDisplay.text = "";
+                ingredientUnitDisplay.text = "";
+                ingredientCaloriesDisplay.text = "";
+            }
+        }
+        else if (!isLeftHandHeld && !isLeft)
+        {
+            if (grabbedObject.transform.root.gameObject.tag == "Ingredient")
+            {
+                canvas.enabled = false;
+                ingredientNameDisplay.text = "";
+                ingredientTypeDisplay.text = "";
+                ingredientUnitDisplay.text = "";
+                ingredientCaloriesDisplay.text = "";
+            }
         }
     }
 }

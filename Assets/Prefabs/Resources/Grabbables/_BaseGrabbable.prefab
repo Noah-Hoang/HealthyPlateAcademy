@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onHeld: 0
+  isLeftHandHeld: 0
   destroyOnRelease: 1
   destroyTime: 60
   interactable: {fileID: 7329340237320526533}
@@ -268,7 +269,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7773023045798640834}
         m_TargetAssemblyTypeName: NetworkedGrab, Assembly-CSharp
         m_MethodName: OnGrab
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

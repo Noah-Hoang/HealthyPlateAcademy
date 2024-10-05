@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38fab54afd8717244a03eb66b1fbfd61, type: 3}
   m_Name: BreadSlice
   m_EditorClassIdentifier: 
-  ingredientName: BreadSlice
+  ingredientName: Bread Slice
   type: 10
   unit: 14
   calories: 70

@@ -79,7 +79,6 @@ potato -cut -> Sliced Potato
 
 
 
-Fix recipe spawn
 Show UI for both hands holding different foods
 Show UI for completed recipe
 Give some sort of tutorial or something that gives directions
