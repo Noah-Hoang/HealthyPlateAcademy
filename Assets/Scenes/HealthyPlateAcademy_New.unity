@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18318772, g: 0.22884375, b: 0.3065002, a: 1}
+  m_IndirectSpecularColor: {r: 0.18318756, g: 0.22884332, b: 0.30649954, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6778,7 +6778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7a51fcdffac0784b852dfe7e16ecc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 3597085941724991504, guid: 0cb386f22741cd944bfb582c7fb330bf, type: 3}
+  food: {fileID: 4748586791897717254, guid: 0cb386f22741cd944bfb582c7fb330bf, type: 3}
   currentSpawnedFood: {fileID: 0}
 --- !u!4 &528982956
 Transform:
@@ -21285,6 +21285,7 @@ GameObject:
   - component: {fileID: 1594515265}
   - component: {fileID: 1594515264}
   - component: {fileID: 1594515269}
+  - component: {fileID: 1594515270}
   m_Layer: 0
   m_Name: RecipeContainer
   m_TagString: Untagged
@@ -21422,6 +21423,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1594515270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594515263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 2191464431
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 1594515267}
 --- !u!1001 &1595231757
 PrefabInstance:
   m_ObjectHideFlags: 0

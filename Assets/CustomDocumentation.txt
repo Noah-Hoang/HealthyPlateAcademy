@@ -6,6 +6,7 @@ rename new food to desired name
 drag new food into Prefab -> Resources -> Grabbables and make sure to save as a variant, not original
 Make scriptable object ingredient of the newly created food
 Add scriptable object to variant prefab
+If the ingredient added is a cooked, cut, or seared version, or a recipe, then turn off kinematic
 
 -HOW TO ALTER "low_poly_food" MATERIALS
 Copy low_poly_food material (Every food uses same material)
@@ -77,12 +78,40 @@ potato -cut -> Sliced Potato
 
 
 
-
-Spawn recipes over network instead of instantiate
-Show UI for completed recipe
+figure out to keep utensils available
+add cooking timer
 Give some sort of tutorial or something that gives directions
 Show indicator for recipe completed
 Network recipe board
 Add audio for everything
 fix fryer
 only kinematic original ingredients, not cooked or cut
+
+
+
+Effects:
+Cooking:
+	FireEffect14 - fire
+	FireEffect16 - general cooking
+	FlameEmissionEffect - smoke
+	MedicalEffect3 - make less
+	PoisonEffect1
+	MagicEffect4 - make less
+	MagicEffect14
+	MagicEffect16
+	MagicEffect18
+
+Eats Food:
+	PoisonEffect5
+	MagicEffect3
+	MagicEffect6
+	MagicEffect10 - Only first child ++ MagicEffect13 - only middle part
+Completed Recipe:
+	MedicalEffect1 - remove cross
+	MagicEffect20
+Dinner Bell:
+	PortalEffect3
+	PortalEffect5
+	MagicEffect7
+Fridge:
+	IceEffect5

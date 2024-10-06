@@ -25,7 +25,7 @@ MonoBehaviour:
   destroyAfterSeared: 0
   completedRecipe: {fileID: 2892800811304122327, guid: 7b7319cfe0eef0d4497bd345ca42db28, type: 3}
   ingredientHolders:
-  - ingredient: {fileID: 11400000, guid: ce557737ebcbfe94397e6bb5aa18e281, type: 2}
+  - ingredient: {fileID: 11400000, guid: aae4a1136c4e87042932094bb5c8c4ff, type: 2}
     quantity: 2
     unitMeasurement: 2
   - ingredient: {fileID: 11400000, guid: c1aa2736c9798a14abbf3cdd652fb712, type: 2}

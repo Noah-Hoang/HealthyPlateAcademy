@@ -9324,6 +9324,10 @@ PrefabInstance:
       propertyPath: ingredientSO
       value: 
       objectReference: {fileID: 11400000, guid: f9d21d601812b3e448ffcc306e58c4b5, type: 2}
+    - target: {fileID: 6270308742628320436, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7329340237320526533, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
       propertyPath: m_Colliders.Array.data[0]
       value: 

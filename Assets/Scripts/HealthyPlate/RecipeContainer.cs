@@ -1,8 +1,9 @@
+using Fusion;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RecipeContainer : MonoBehaviour
+public class RecipeContainer : NetworkBehaviour
 {
     [System.Serializable]
     public class IngredientRequirement
@@ -65,6 +66,7 @@ public class RecipeContainer : MonoBehaviour
         //other.transform.root gets the parent game object
         if (other.transform.root.gameObject.tag == "Ingredient")
         {
+            bool isRecipeRequirement = false;
             //Goes through all of the IngredientRequiremt in ingredientRequirements
             for (int i = 0; i < ingredientRequirements.Count; i++)
             {
@@ -72,6 +74,7 @@ public class RecipeContainer : MonoBehaviour
                 //Uses index to check with the list
                 if (ingredientRequirements[i].ingredientSO == other.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO)
                 {
+                    isRecipeRequirement = true;
                     ingredientRequirements[i].currentQuantity += 1;
                     //checks to see if the quantity requirement is met for the ingredient
                     if (ingredientRequirements[i].currentQuantity == ingredientRequirements[i].requiredQuantity)
@@ -80,7 +83,12 @@ public class RecipeContainer : MonoBehaviour
                     }
                     
                     Destroy(other.transform.root.gameObject);
-                }
+                }              
+            }
+
+            if (isRecipeRequirement == false) 
+            {
+                return;
             }
 
             //Returns out so that the onRecipeSucceded event isn't called unless every ingredient has the required amount
@@ -96,9 +104,7 @@ public class RecipeContainer : MonoBehaviour
             Debug.Log("Recipe Successful");
             if (recipe.completedRecipe != null)
             {
-                GameObject temp = Instantiate(recipe.completedRecipe, spawnPoint);
-                temp.transform.localPosition = Vector3.zero;
-                temp.transform.localRotation = Quaternion.identity;
+                Runner.Spawn(recipe.completedRecipe, spawnPoint.position, spawnPoint.rotation);
             }
             HealthyPlateManager.Instance.onRecipeSucceded.Invoke();
         }

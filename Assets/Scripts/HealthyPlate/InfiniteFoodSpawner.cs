@@ -12,8 +12,6 @@ public class InfiniteFoodSpawner : NetworkBehaviour, ISceneLoadDone
     public GameObject food;
     public GameObject currentSpawnedFood;
 
-
-
     public void SceneLoadDone(in SceneLoadDoneArgs sceneInfo)
     {
         //Spawns in a food at start and sets that food to currentSpawnedFood
