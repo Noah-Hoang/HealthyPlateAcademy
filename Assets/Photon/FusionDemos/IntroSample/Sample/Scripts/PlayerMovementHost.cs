@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace FusionDemo {
   /// <summary>
-  /// A simple networked player movement class for host/server mode.
+  /// OnObjectHeld simple networked player movement class for host/server mode.
   /// </summary>
   [RequireComponent(typeof(NetworkCharacterController))]
   public class PlayerMovementHost : NetworkBehaviour {

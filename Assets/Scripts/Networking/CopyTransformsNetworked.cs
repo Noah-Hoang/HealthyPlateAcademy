@@ -11,7 +11,7 @@ public class CopyTransformsNetworked : NetworkBehaviour
     public override void FixedUpdateNetwork()
     {
         base.FixedUpdateNetwork();
-
+        //transform is the NetworkedHand and targetTransform is the corresponding controller
         transform.position = targetTransform.position;
         transform.rotation = targetTransform.rotation;
     }

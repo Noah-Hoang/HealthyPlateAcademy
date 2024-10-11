@@ -12,7 +12,7 @@ public class FoodInfoUI : MonoBehaviour
     public TMP_Text ingredientNameDisplay;
     public TMP_Text ingredientTypeDisplay;
     public TMP_Text ingredientUnitDisplay;
-    public TMP_Text ingredientCaloriesDisplay;    
+    public TMP_Text ingredientCaloriesDisplay;
 
     public void OnEnable()
     {
@@ -28,6 +28,7 @@ public class FoodInfoUI : MonoBehaviour
 
     public void StartDisplayInfo(GameObject grabbedObject, bool isLeftHandHeld)
     {
+        //Checks to see which hand and canvas is being used
         if (isLeftHandHeld && isLeft)
         {
             if (grabbedObject.transform.root.gameObject.tag == "Ingredient")

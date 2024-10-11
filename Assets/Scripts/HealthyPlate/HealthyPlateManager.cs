@@ -7,9 +7,9 @@ using UnityEngine.Events;
 
 //Make singleton
 //Create events (OnRecipeAssigned, OnRecipeSucceded, OnRecipeFailed)
-//Create method that puts recipe on the board (Debug Log for now)
-//Tracks when recipe is completed
-//Timer for recipe creation and scales with number of players
+//Create method that puts currentRecipe on the board (Debug Log for now)
+//Tracks when currentRecipe is completed
+//Timer for currentRecipe creation and scales with number of players
 //Money used to buy different outfits
 //Use money to customize appliances
 //RecipeContainer needs to call the OnRecipeSucceded event
@@ -40,7 +40,6 @@ public class HealthyPlateManager : MonoBehaviour
         {
             Destroy(this.gameObject);
             return;
-
         }
         Instance = this;
     }
@@ -73,7 +72,7 @@ public class HealthyPlateManager : MonoBehaviour
 
             int index = UnityEngine.Random.Range(0, recipeList.Count);
             RecipeSO recipeSO = recipeList[index];
-            //TODO: Where recipe is put on the board
+            //TODO: Where currentRecipe is put on the board
             recipeNameDisplay.text = recipeSO.ingredientName;
             recipeIngredientsDisplay.text = "";
             for (int i = 0; i < recipeSO.ingredientHolders.Count; i++)

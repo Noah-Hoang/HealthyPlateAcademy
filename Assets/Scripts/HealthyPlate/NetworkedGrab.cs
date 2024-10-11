@@ -23,6 +23,7 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
     //If you don't have state authority over the object, you get it and returns out of the method
     public void OnGrab(SelectEnterEventArgs enter)
     {
+        //interactorObject is what is interacting with the interactable (in this case hand with food)
         if (enter.interactorObject.transform.parent.name == "Left Controller")
         {
             isLeftHandHeld = true;
@@ -38,13 +39,7 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
             return;
         }
 
-        OnHeldChangedRPC(true);
-
-        // Stops timer
-        StopAllCoroutines();
-
-        OnObjectGrabbed.Invoke(gameObject, isLeftHandHeld);
-        OnObjectGrabbedStatic.Invoke(gameObject, isLeftHandHeld);
+        OnObjectHeld();
     }
 
     //Is called when state authority is changed and calls the two methods inside
@@ -52,7 +47,15 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
     {
         Debug.Log("State Authority Changed to " + Runner.LocalPlayer.PlayerId);
 
+        OnObjectHeld();
+    }
+
+    public void OnObjectHeld()
+    {
         OnHeldChangedRPC(true);
+
+        // Stops timer
+        StopAllCoroutines();
 
         OnObjectGrabbed.Invoke(gameObject, isLeftHandHeld);
         OnObjectGrabbedStatic.Invoke(gameObject, isLeftHandHeld);
@@ -72,6 +75,8 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
         OnObjectReleasedStatic.Invoke(gameObject, isLeftHandHeld);
     }
 
+    //IEnumerator is a Coroutine
+    //Coroutine is not a timer but this one is
     public IEnumerator WaitForDestroy()
     {
         yield return new WaitForSeconds(destroyTime);

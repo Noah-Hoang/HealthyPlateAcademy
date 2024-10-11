@@ -205,7 +205,7 @@ namespace UnityStandardAssets.ImageEffects
             // better DOWNSAMPLE (could actually be weighted for higher quality)
             Downsample (source, mediumRezWorkTexture);
 
-            // BLUR A LITTLE first, which has two purposes
+            // BLUR OnObjectHeld LITTLE first, which has two purposes
             // 1.) reduce jitter, noise, aliasing
             // 2.) produce the little-blur buffer used in composition later
             Blur (mediumRezWorkTexture, mediumRezWorkTexture, DofBlurriness.Low, 4, maxBlurSpread);
@@ -255,7 +255,7 @@ namespace UnityStandardAssets.ImageEffects
                 // DOWNSAMPLE (unweighted)
                 Downsample (source, mediumRezWorkTexture);
 
-                // BLUR A LITTLE first, which has two purposes
+                // BLUR OnObjectHeld LITTLE first, which has two purposes
                 // 1.) reduce jitter, noise, aliasing
                 // 2.) produce the little-blur buffer used in composition later
                 BlurFg (mediumRezWorkTexture, mediumRezWorkTexture, DofBlurriness.Low, 2, maxBlurSpread);

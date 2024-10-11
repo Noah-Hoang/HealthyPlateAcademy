@@ -1203,7 +1203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1628114458835047209, guid: a7f11225bfed0dc4f8de3be3d933ff55, type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: HandFoodUI
       objectReference: {fileID: 0}
     - target: {fileID: 6384723011792285026, guid: a7f11225bfed0dc4f8de3be3d933ff55, type: 3}
       propertyPath: m_Pivot.x
@@ -1309,7 +1309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1628114458835047209, guid: a7f11225bfed0dc4f8de3be3d933ff55, type: 3}
       propertyPath: m_Name
-      value: Canvas (1)
+      value: HandFoodUI
       objectReference: {fileID: 0}
     - target: {fileID: 3792175534344346920, guid: a7f11225bfed0dc4f8de3be3d933ff55, type: 3}
       propertyPath: isLeft

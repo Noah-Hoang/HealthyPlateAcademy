@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace UnityStandardAssets.ImageEffects
 {
-    /// A Utility class for performing various image based rendering tasks.
+    /// OnObjectHeld Utility class for performing various image based rendering tasks.
     [AddComponentMenu("")]
     public class ImageEffects
     {

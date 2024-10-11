@@ -32,7 +32,7 @@ public class NetworkedPaddle : NetworkBehaviour
             moveY = -0.1f * verticalSpeed * Runner.DeltaTime;
         }
 
-        //if (Input.GetKey(KeyCode.A))
+        //if (Input.GetKey(KeyCode.OnObjectHeld))
         //{
         //    Debug.Log("LEFT");
         //    moveX = -0.1f * horizontalSpeed * Runner.DeltaTime;

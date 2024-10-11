@@ -34,7 +34,7 @@ namespace FusionDemo {
     /// <summary>
     /// Was this button pressed?
     /// </summary>
-    /// <param name="prev">A previously stored <see cref="NetworkButtons"/> to compare</param>
+    /// <param name="prev">OnObjectHeld previously stored <see cref="NetworkButtons"/> to compare</param>
     public bool WasPressed(NetworkButtons prev, int button) {
       return Buttons.WasPressed(prev, button);
     }

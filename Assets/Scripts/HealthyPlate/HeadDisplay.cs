@@ -7,6 +7,7 @@ public class HeadDisplay : NetworkBehaviour
 {
     public static HeadDisplay Instance { get; private set; }
 
+    //Whenever the variable changes, call the method inside
     [Networked, OnChangedRender(nameof(ChangeHead))]
     public int index { get; set; }
 
@@ -17,6 +18,7 @@ public class HeadDisplay : NetworkBehaviour
     {
         base.Spawned();
 
+        //For your character, make this instance of this script into a singleton
         if (Object.HasStateAuthority)
         {
             if (Instance != null)
@@ -33,11 +35,12 @@ public class HeadDisplay : NetworkBehaviour
 
     public void ChangeHead()
     {
+        //Checks to see if it is your character head
         if (Object.HasStateAuthority)
         {
             return;
         }
-
+        //If there is already a head when the button is clicked, destroy it
         if (headDisplay.childCount != 0)
         {
             Destroy(headDisplay.GetChild(0).gameObject);

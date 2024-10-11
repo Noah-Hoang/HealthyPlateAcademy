@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace FusionDemo {
   /// <summary>
-  /// A simple networked player movement class for shared mode.
+  /// OnObjectHeld simple networked player movement class for shared mode.
   /// </summary>
   [RequireComponent(typeof(NetworkCharacterController))]
   public class PlayerMovementShared : NetworkBehaviour {
