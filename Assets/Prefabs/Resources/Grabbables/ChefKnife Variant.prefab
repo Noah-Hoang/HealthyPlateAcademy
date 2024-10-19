@@ -156,13 +156,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6270308742628320436, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7329340237320526533, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
       propertyPath: m_Colliders.Array.data[0]
       value: 
       objectReference: {fileID: 5038561592018286187}
     - target: {fileID: 7773023045798640834, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
       propertyPath: destroyOnRelease
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8134703806136945199, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
       propertyPath: SortKey

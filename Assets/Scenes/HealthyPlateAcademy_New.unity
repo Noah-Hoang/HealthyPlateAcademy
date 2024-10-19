@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18318756, g: 0.22884332, b: 0.30649954, a: 1}
+  m_IndirectSpecularColor: {r: 0.18318772, g: 0.22884375, b: 0.3065002, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1997,6 +1997,38 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: -2129748306506044638, guid: 6c0d99da41e058246baaed4751ed80be, type: 3}
   m_PrefabInstance: {fileID: 153528655}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &174263826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 174263827}
+  m_Layer: 0
+  m_Name: Utensils
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &174263827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174263826}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 954220926}
+  m_Father: {fileID: 276922822}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &177552336
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3817,6 +3849,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 174263827}
   - {fileID: 199451775}
   - {fileID: 1299309919}
   - {fileID: 1917055102}
@@ -12553,6 +12586,89 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4713870380900786, guid: 7358dc15663370c4f84ec1b72f9e7ebf, type: 3}
   m_PrefabInstance: {fileID: 948222139}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &954220925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 954220926}
+  - component: {fileID: 954220929}
+  - component: {fileID: 954220928}
+  - component: {fileID: 954220927}
+  m_Layer: 0
+  m_Name: KnifeSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &954220926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954220925}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 1.316, y: -0.517, z: -0.023}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 174263827}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &954220927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954220925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 0
+--- !u!114 &954220928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954220925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 2405791258
+  ObjectInterest: 1
+  Flags: 131073
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 954220929}
+  - {fileID: 954220927}
+--- !u!114 &954220929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954220925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7a51fcdffac0784b852dfe7e16ecc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 666059111486571862, guid: 885fbcd3fd361d44080f06bd88893fd6, type: 3}
+  currentSpawnedFood: {fileID: 0}
 --- !u!1001 &954667364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21377,7 +21493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 838988984}
-  recipe: {fileID: 0}
+  currentRecipe: {fileID: 0}
   ingredientRequirements: []
 --- !u!4 &1594515268
 Transform:
@@ -29061,6 +29177,10 @@ PrefabInstance:
     - target: {fileID: 666059111486571862, guid: 885fbcd3fd361d44080f06bd88893fd6, type: 3}
       propertyPath: m_Name
       value: ChefKnife
+      objectReference: {fileID: 0}
+    - target: {fileID: 666059111486571862, guid: 885fbcd3fd361d44080f06bd88893fd6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6135716693015363076, guid: 885fbcd3fd361d44080f06bd88893fd6, type: 3}
       propertyPath: m_LocalPosition.x

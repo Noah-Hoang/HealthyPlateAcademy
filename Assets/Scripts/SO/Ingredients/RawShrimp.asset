@@ -21,5 +21,7 @@ MonoBehaviour:
   destroyAfterCut: 0
   friedPrefab: {fileID: 0}
   destroyAfterFried: 0
+  timeUntilFried: 0
   searedPrefab: {fileID: 1164857450348166204, guid: eda99ff624e6e074bac458048b4ddbf8, type: 3}
   destroyAfterSeared: 1
+  timeUntilSeared: 5

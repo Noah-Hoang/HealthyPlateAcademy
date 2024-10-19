@@ -19,7 +19,9 @@ public class IngredientSO : ScriptableObject
     [Header("fried")]
     public GameObject friedPrefab;
     public bool destroyAfterFried;
+    public float timeUntilFried;
     [Header("Seared")]
     public GameObject searedPrefab;
     public bool destroyAfterSeared;
+    public float timeUntilSeared;
 }

@@ -5,6 +5,9 @@ using Fusion;
 
 public class ChefFryer : NetworkBehaviour
 {
+    // Dictionary to store coroutines for each ingredient
+    private Dictionary<Ingredient, Coroutine> ingredientCoroutines = new Dictionary<Ingredient, Coroutine>();
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.transform.root.gameObject.tag == "Ingredient")
@@ -13,11 +16,53 @@ public class ChefFryer : NetworkBehaviour
             {
                 return;
             }
-            Runner.Spawn(other.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO.friedPrefab, other.transform.root.position, other.transform.root.rotation);
-            if (other.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO.destroyAfterFried)
+
+            // Get the ingredient object
+            Ingredient ingredient = other.transform.GetComponentInParent<Ingredient>();
+
+            // Start the coroutine for this specific ingredient if it's not already being fried
+            if (!ingredientCoroutines.ContainsKey(ingredient))
             {
-                Runner.Despawn(other.transform.root.gameObject.GetComponent<NetworkObject>());
+                Coroutine fryingCoroutine = StartCoroutine(FryTime(other));
+                ingredientCoroutines.Add(ingredient, fryingCoroutine);
             }
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.transform.root.gameObject.tag == "Ingredient")
+        {
+            // Get the ingredient object
+            Ingredient ingredient = other.transform.GetComponentInParent<Ingredient>();
+
+            // If the food leaves the pan, stop its specific coroutine
+            if (ingredientCoroutines.ContainsKey(ingredient))
+            {
+                StopCoroutine(ingredientCoroutines[ingredient]);
+                ingredientCoroutines.Remove(ingredient); // Remove the coroutine from the dictionary
+            }
+        }
+    }
+
+    public IEnumerator FryTime(Collider other)
+    {
+        Ingredient ingredient = other.transform.GetComponentInParent<Ingredient>();
+
+        yield return new WaitForSeconds(ingredient.GetComponent<Ingredient>().ingredientSO.timeUntilFried);
+
+        // Only proceed if the ingredient is still in the dictionary (i.e., it hasn't left the pan)
+        if (ingredientCoroutines.ContainsKey(ingredient))
+        {
+            Runner.Spawn(ingredient.GetComponent<Ingredient>().ingredientSO.friedPrefab, ingredient.transform.position, ingredient.transform.rotation);
+
+            if (ingredient.GetComponent<Ingredient>().ingredientSO.destroyAfterFried)
+            {
+                Runner.Despawn(ingredient.GetComponent<NetworkObject>());
+            }
+
+            // Remove the ingredient from the dictionary once the frying is complete
+            ingredientCoroutines.Remove(ingredient);
         }
     }
 }
