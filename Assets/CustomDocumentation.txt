@@ -93,6 +93,7 @@ only kinematic original ingredients, not cooked or cut
 #4:link the space button being pressed to playing a particle effect
 #5: when you press the space button it turns on and turns off whne pressed again
 #6: Create event that is called when you press space and link event to particle effect playing
+			PRESS SPACE BUTTON, invokes event, the event turns on or off the particle
 
 
 Effects:
