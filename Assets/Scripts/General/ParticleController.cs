@@ -8,8 +8,7 @@ public class ParticleController : MonoBehaviour
 {
 
     public XRIDefaultInputActions inputActions;
-    public ParticleSystem particles;
-    public bool particlePlaying;
+    public bool playParticleEffect;
     public bool allowSpaceDebug;
 
     public UnityEvent onParticleStateChanged;
@@ -52,13 +51,13 @@ public class ParticleController : MonoBehaviour
     public void ParticlePlayer()
     {
         //If and else if are separate; runs through only one of them
-        if (particlePlaying)
+        if (playParticleEffect)
         {
-            particlePlaying = false;
+            playParticleEffect = false;
         }
-        else if (!particlePlaying)
+        else if (!playParticleEffect)
         {
-            particlePlaying = true;
+            playParticleEffect = true;
         }
 
         // transform.childCount is an int, not a list of the children
@@ -72,11 +71,11 @@ public class ParticleController : MonoBehaviour
                 return;
             }
 
-            if (particlePlaying)
+            if (playParticleEffect)
             {
                 particle.Play();
             }
-            else if (!particlePlaying)
+            else if (!playParticleEffect)
             {
                 particle.Stop();
             }

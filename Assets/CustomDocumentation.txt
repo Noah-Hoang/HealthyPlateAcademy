@@ -122,3 +122,6 @@ Dinner Bell:
 	MagicEffect7
 Fridge:
 	IceEffect5
+Grabbing Food:
+	DarkEffect1
+	FireEffect10

@@ -18,6 +18,7 @@ public class RecipeContainer : NetworkBehaviour
     public Transform spawnPoint;
     public RecipeSO currentRecipe;
     public List<IngredientRequirement> ingredientRequirements;
+    public GameObject particleEffect;
 
     private void OnEnable()
     {
@@ -85,8 +86,9 @@ public class RecipeContainer : NetworkBehaviour
                     {
                         ingredientRequirements[i].hasEnough = true;
                     }
-                    
-                    Destroy(other.transform.root.gameObject);
+
+                    Instantiate(particleEffect, other.transform.root.position, other.transform.root.rotation);
+                    Destroy(other.transform.root.gameObject);                  
                 }              
             }
 
