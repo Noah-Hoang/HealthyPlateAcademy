@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-using Fusion;
-using System;
-using Unity.VisualScripting;
 
 
 //Make singleton
@@ -18,19 +15,14 @@ using Unity.VisualScripting;
 //RecipeContainer needs to call the OnRecipeSucceded event
 //Needs list of recipes and randomly chooses. Doesn't choose the same one in succession
 //OPTIONAL: Audio
-public class HealthyPlateManager : NetworkBehaviour
+public class HealthyPlateManager : MonoBehaviour
 {
     public static HealthyPlateManager Instance { get; private set; }
 
-    [Networked]
-    public int selectedRecipeIndex { get; set; }
-
-    [Networked, OnChangedRender(nameof(RecipeStarted))]
-    public bool recipeOngoing { get; set; }
-
     [Header("General")]
     public float totalTime;
-    public float remainingTime; 
+    public float remainingTime;
+    public bool recipeOngoing;
     public int money;
     public List<RecipeSO> recipeList;
     public TMP_Text recipeNameDisplay;
@@ -70,46 +62,26 @@ public class HealthyPlateManager : NetworkBehaviour
         RecipeTimer();
     }
 
-    public override void Spawned()
-    {
-        base.Spawned();
-
-        if (recipeOngoing)
-        {
-            RecipeStarted();
-        }
-    }
-
     [ContextMenu("Pick New Recipe")]
     public void ChooseRecipe()
     {
         if (!recipeOngoing)
         {
+            remainingTime = totalTime;
+            recipeOngoing = true;
+
             int index = UnityEngine.Random.Range(0, recipeList.Count);
-            ChooseRecipeRPC(index);
+            RecipeSO recipeSO = recipeList[index];
+            //TODO: Where currentRecipe is put on the board
+            recipeNameDisplay.text = recipeSO.ingredientName;
+            recipeIngredientsDisplay.text = "";
+            for (int i = 0; i < recipeSO.ingredientHolders.Count; i++)
+            {
+                recipeIngredientsDisplay.text += "\u2022" + recipeSO.ingredientHolders[i].ingredient.ingredientName + ": " + recipeSO.ingredientHolders[i].quantity + "\n";
+            }
+
+            onRecipeAssigned.Invoke(recipeSO);
         }
-    }
-
-    [Rpc]
-    public void ChooseRecipeRPC(int index)
-    {
-        selectedRecipeIndex = index;
-        recipeOngoing = true;
-    }
-
-    public void RecipeStarted()
-    {
-        remainingTime = totalTime;     
-        RecipeSO recipeSO = recipeList[selectedRecipeIndex];
-        //TODO: Where currentRecipe is put on the board
-        recipeNameDisplay.text = recipeSO.ingredientName;
-        recipeIngredientsDisplay.text = "";
-        for (int i = 0; i < recipeSO.ingredientHolders.Count; i++)
-        {
-            recipeIngredientsDisplay.text += "\u2022" + recipeSO.ingredientHolders[i].ingredient.ingredientName + ": " + recipeSO.ingredientHolders[i].quantity + "\n";
-        }
-
-        onRecipeAssigned.Invoke(recipeSO);
     }
 
     public void RecipeTimer()
