@@ -18,7 +18,8 @@ public class RecipeContainer : NetworkBehaviour
     public Transform spawnPoint;
     public RecipeSO currentRecipe;
     public List<IngredientRequirement> ingredientRequirements;
-    public GameObject particleEffect;
+    public GameObject ingredientInsertedEffect;
+    public GameObject completedRecipeEffect;
 
     private void OnEnable()
     {
@@ -87,7 +88,7 @@ public class RecipeContainer : NetworkBehaviour
                         ingredientRequirements[i].hasEnough = true;
                     }
 
-                    Instantiate(particleEffect, other.transform.root.position, other.transform.root.rotation);
+                    Instantiate(ingredientInsertedEffect, other.transform.root.position, other.transform.root.rotation);
                     Destroy(other.transform.root.gameObject);                  
                 }              
             }
@@ -110,6 +111,7 @@ public class RecipeContainer : NetworkBehaviour
             Debug.Log("Recipe Successful");
             if (currentRecipe.completedRecipe != null)
             {
+                Instantiate(completedRecipeEffect, spawnPoint.position, spawnPoint.rotation);
                 Runner.Spawn(currentRecipe.completedRecipe, spawnPoint.position, spawnPoint.rotation);
             }
             HealthyPlateManager.Instance.onRecipeSucceded.Invoke();

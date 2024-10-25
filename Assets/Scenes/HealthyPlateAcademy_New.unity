@@ -21495,6 +21495,8 @@ MonoBehaviour:
   spawnPoint: {fileID: 838988984}
   currentRecipe: {fileID: 0}
   ingredientRequirements: []
+  ingredientInsertedEffect: {fileID: 502530762333375320, guid: 3bb7a9bdbbed7c740a60a22368d21f18, type: 3}
+  completedRecipeEffect: {fileID: 1754258018282169129, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
 --- !u!4 &1594515268
 Transform:
   m_ObjectHideFlags: 0

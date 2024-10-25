@@ -125,3 +125,8 @@ Fridge:
 Grabbing Food:
 	DarkEffect1
 	FireEffect10
+
+	TODO:
+	Change Fryer Collider so food lands higher
+	Add tracker to recipe board to see recipe progress
+	Create test recipe to test certain new things without going through a whole long recipe
