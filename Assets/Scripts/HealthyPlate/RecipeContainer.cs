@@ -89,7 +89,7 @@ public class RecipeContainer : NetworkBehaviour
             {
                 if (ingredientRequirements[i].hasEnough)
                 {
-                    return;
+                    continue;
                 }
 
                 //Checks if what was thrown in is an ingredient from ingredientRequirements
