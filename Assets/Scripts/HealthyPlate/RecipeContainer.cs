@@ -119,18 +119,23 @@ public class RecipeContainer : NetworkBehaviour
                 }              
             }
 
-            if (isRecipeRequirement == false) 
+            Debug.Log("HELLO1");
+            if (isRecipeRequirement == false)
             {
+                Debug.Log("HELLO2");
                 return;
             }
 
+            Debug.Log("HELLO3");
             //Returns out so that the onRecipeSucceded event isn't called unless every ingredient has the required amount
             for (int j = 0; j < ingredientRequirements.Count; j++)
             {
+                Debug.Log("HELLO4" + ingredientRequirements[j].ingredientSO.ingredientName);
                 //Checks if even one of the requirements isn't enough and if so, returns out
                 //Once all ingredients have enough of the quantity, currentRecipe is successful
                 if (!ingredientRequirements[j].hasEnough)
                 {
+                    Debug.Log("HELLO5" + ingredientRequirements[j].ingredientSO.ingredientName);
                     return;
                 }
             }
