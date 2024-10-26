@@ -78,8 +78,6 @@ public class HealthyPlateManager : MonoBehaviour
 
             int index = UnityEngine.Random.Range(0, recipeList.Count);
             RecipeSO recipeSO = recipeList[index];
-            //TODO: Where currentRecipe is put on the board
-           
 
             onRecipeAssigned.Invoke(recipeSO);
         }

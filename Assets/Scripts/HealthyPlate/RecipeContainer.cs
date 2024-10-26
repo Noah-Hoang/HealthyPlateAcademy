@@ -37,9 +37,11 @@ public class RecipeContainer : NetworkBehaviour
     [ContextMenu("Set Recipe")]
     public void SetRecipe(RecipeSO recipeSO)
     {
-        //allows for global access to recipeSO
+        //Allows for global access to recipeSO
         currentRecipe = recipeSO;  
+        //Wipes ingredientRequirements
         ingredientRequirements.Clear();
+
         //ingredientHolder is a reference to IngredientHolder that is in the RecipeSO
         //currentRecipe being a reference to the RecipeSO script
         //This foreach goes through all the ingredientHolders in RecipeSO and sets them to ingredientHolder
@@ -62,9 +64,9 @@ public class RecipeContainer : NetworkBehaviour
 
         recipeNameDisplay.text = recipeSO.ingredientName;
         recipeIngredientsDisplay.text = "";
-        for (int j = 0; j < currentRecipe.ingredientHolders.Count; j++)
+        for (int j = 0; j < ingredientRequirements.Count; j++)
         {
-            recipeIngredientsDisplay.text += "\u2022" + currentRecipe.ingredientHolders[j].ingredient.ingredientName + ": " + ingredientRequirements[j].currentQuantity + "/" + currentRecipe.ingredientHolders[j].quantity + "\n";
+            recipeIngredientsDisplay.text += "\u2022" + ingredientRequirements[j].ingredientSO.ingredientName + ": " + ingredientRequirements[j].currentQuantity + "/" + currentRecipe.ingredientHolders[j].quantity + "\n";
         }
     }
 
@@ -79,7 +81,9 @@ public class RecipeContainer : NetworkBehaviour
         //other.transform.root gets the parent game object
         if (other.transform.root.gameObject.tag == "Ingredient")
         {
+            Debug.Log("Ingredient detected");
             bool isRecipeRequirement = false;
+
             //Goes through all of the IngredientRequiremt in ingredientRequirements
             for (int i = 0; i < ingredientRequirements.Count; i++)
             {
@@ -92,19 +96,24 @@ public class RecipeContainer : NetworkBehaviour
                 //Uses index to check with the list
                 if (ingredientRequirements[i].ingredientSO == other.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO)
                 {
+                    Debug.Log("Ingredient needed in recipe");
                     isRecipeRequirement = true;
                     ingredientRequirements[i].currentQuantity += 1;
+
+                    //Changing ingredient display
                     recipeIngredientsDisplay.text = "";
-                    for (int j = 0; j < currentRecipe.ingredientHolders.Count; j++)
+                    for (int j = 0; j < ingredientRequirements.Count; j++)
                     {
-                        recipeIngredientsDisplay.text += "\u2022" + currentRecipe.ingredientHolders[j].ingredient.ingredientName + ": " + ingredientRequirements[j].currentQuantity + "/" + currentRecipe.ingredientHolders[j].quantity + "\n";
+                        recipeIngredientsDisplay.text += "\u2022" + ingredientRequirements[j].ingredientSO.ingredientName + ": " + ingredientRequirements[j].currentQuantity + "/" + currentRecipe.ingredientHolders[j].quantity + "\n";
                     }
+
                     //checks to see if the quantity requirement is met for the ingredient
                     if (ingredientRequirements[i].currentQuantity == ingredientRequirements[i].requiredQuantity)
                     {
                         ingredientRequirements[i].hasEnough = true;
                     }
 
+                    Debug.Log("Adding ingredient to recipe");
                     Instantiate(ingredientInsertedEffect, other.transform.root.position, other.transform.root.rotation);
                     Destroy(other.transform.root.gameObject);                  
                 }              
@@ -125,6 +134,7 @@ public class RecipeContainer : NetworkBehaviour
                     return;
                 }
             }
+
             Debug.Log("Recipe Successful");
             if (currentRecipe.completedRecipe != null)
             {
