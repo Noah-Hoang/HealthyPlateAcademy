@@ -4503,7 +4503,7 @@ GameObject:
   - component: {fileID: 349423436}
   - component: {fileID: 349423435}
   m_Layer: 5
-  m_Name: ReicpeText
+  m_Name: RecipeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20713,6 +20713,7 @@ MonoBehaviour:
   remainingTime: 0
   recipeOngoing: 0
   money: 0
+  testRecipe: {fileID: 11400000, guid: 5959186ba0d10cd428742111f7b44a85, type: 2}
   recipeList:
   - {fileID: 11400000, guid: 593e589cdf227b74c883ad24978a5e89, type: 2}
   - {fileID: 11400000, guid: 1ff92a13f5825094695364e4ddc3087a, type: 2}
@@ -20723,8 +20724,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6a6bcffcf2eb36b4095d90792661f197, type: 2}
   - {fileID: 11400000, guid: bbee78ae71e4ced4cbb955606106e248, type: 2}
   - {fileID: 11400000, guid: 374c989e78575e54c8c17d835f311ef1, type: 2}
-  recipeNameDisplay: {fileID: 349423435}
-  recipeIngredientsDisplay: {fileID: 463494865}
   timerText: {fileID: 1195800289}
   onRecipeAssigned:
     m_PersistentCalls:
@@ -21497,6 +21496,8 @@ MonoBehaviour:
   ingredientRequirements: []
   ingredientInsertedEffect: {fileID: 502530762333375320, guid: 3bb7a9bdbbed7c740a60a22368d21f18, type: 3}
   completedRecipeEffect: {fileID: 1754258018282169129, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+  recipeNameDisplay: {fileID: 349423435}
+  recipeIngredientsDisplay: {fileID: 463494865}
 --- !u!4 &1594515268
 Transform:
   m_ObjectHideFlags: 0

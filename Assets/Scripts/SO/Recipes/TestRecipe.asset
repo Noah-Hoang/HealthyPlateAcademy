@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745694a5fc4e7534ab6a4518051fd8da, type: 3}
   m_Name: TestRecipe
   m_EditorClassIdentifier: 
-  ingredientName: 
+  ingredientName: Test Recipe
   type: 0
   unit: 0
   calories: 0
@@ -25,5 +25,11 @@ MonoBehaviour:
   searedPrefab: {fileID: 0}
   destroyAfterSeared: 0
   timeUntilSeared: 0
-  completedRecipe: {fileID: 0}
-  ingredientHolders: []
+  completedRecipe: {fileID: 6863558071359510083, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+  ingredientHolders:
+  - ingredient: {fileID: 11400000, guid: a6afd92414918434eaa5611cc1a2a474, type: 2}
+    quantity: 1
+    unitMeasurement: 0
+  - ingredient: {fileID: 11400000, guid: c6c93df63c817be43ad00d422b27d99d, type: 2}
+    quantity: 1
+    unitMeasurement: 0
