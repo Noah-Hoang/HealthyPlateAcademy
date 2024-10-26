@@ -24,6 +24,7 @@ public class HealthyPlateManager : MonoBehaviour
     public float remainingTime;
     public bool recipeOngoing;
     public int money;
+    public RecipeSO testRecipe;
     public List<RecipeSO> recipeList;
     public TMP_Text timerText;
 
@@ -60,7 +61,14 @@ public class HealthyPlateManager : MonoBehaviour
         RecipeTimer();
     }
 
-    [ContextMenu("Pick New Recipe")]
+    [ContextMenu("Test Recipe")]
+    public void TestRecipe()
+    {
+        remainingTime = totalTime;
+        recipeOngoing = true;
+        onRecipeAssigned.Invoke(testRecipe);
+    }
+
     public void ChooseRecipe()
     {
         if (!recipeOngoing)
