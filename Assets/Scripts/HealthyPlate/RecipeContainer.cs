@@ -1,6 +1,7 @@
 using Fusion;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class RecipeContainer : NetworkBehaviour
@@ -20,6 +21,8 @@ public class RecipeContainer : NetworkBehaviour
     public List<IngredientRequirement> ingredientRequirements;
     public GameObject ingredientInsertedEffect;
     public GameObject completedRecipeEffect;
+    public TMP_Text recipeNameDisplay;
+    public TMP_Text recipeIngredientsDisplay;
 
     private void OnEnable()
     {
@@ -34,7 +37,9 @@ public class RecipeContainer : NetworkBehaviour
     [ContextMenu("Set Recipe")]
     public void SetRecipe(RecipeSO recipeSO)
     {
+        //allows for global access to recipeSO
         currentRecipe = recipeSO;  
+        ingredientRequirements.Clear();
         //ingredientHolder is a reference to IngredientHolder that is in the RecipeSO
         //currentRecipe being a reference to the RecipeSO script
         //This foreach goes through all the ingredientHolders in RecipeSO and sets them to ingredientHolder
@@ -54,14 +59,21 @@ public class RecipeContainer : NetworkBehaviour
             //Adds all the new additons from above to the ingredientRequirements list
             ingredientRequirements.Add(newRequirement);
         }
+
+        recipeNameDisplay.text = recipeSO.ingredientName;
+        recipeIngredientsDisplay.text = "";
+        for (int j = 0; j < currentRecipe.ingredientHolders.Count; j++)
+        {
+            recipeIngredientsDisplay.text += "\u2022" + currentRecipe.ingredientHolders[j].ingredient.ingredientName + ": " + ingredientRequirements[j].currentQuantity + "/" + currentRecipe.ingredientHolders[j].quantity + "\n";
+        }
     }
+
     //Add OnTriggerEnter
     //Check if the tag is ingredient
     //Get ingredient component to check if it is part of currentRecipe
     //If it is part of currentRecipe, destroy the game object and to the ingredient requirement for the specific ingredient and then if requirements are met, set hasEnough equal to true
     //Every time an ingredient is added, check to see if hasEnough is true for all ingredients
     //Once all ingredients are in, use HealthyPlayManager singleton to track when currentRecipe is completed
-
     public void OnTriggerEnter(Collider other)
     {
         //other.transform.root gets the parent game object
@@ -82,6 +94,11 @@ public class RecipeContainer : NetworkBehaviour
                 {
                     isRecipeRequirement = true;
                     ingredientRequirements[i].currentQuantity += 1;
+                    recipeIngredientsDisplay.text = "";
+                    for (int j = 0; j < currentRecipe.ingredientHolders.Count; j++)
+                    {
+                        recipeIngredientsDisplay.text += "\u2022" + currentRecipe.ingredientHolders[j].ingredient.ingredientName + ": " + ingredientRequirements[j].currentQuantity + "/" + currentRecipe.ingredientHolders[j].quantity + "\n";
+                    }
                     //checks to see if the quantity requirement is met for the ingredient
                     if (ingredientRequirements[i].currentQuantity == ingredientRequirements[i].requiredQuantity)
                     {

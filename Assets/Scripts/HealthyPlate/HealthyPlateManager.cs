@@ -25,8 +25,6 @@ public class HealthyPlateManager : MonoBehaviour
     public bool recipeOngoing;
     public int money;
     public List<RecipeSO> recipeList;
-    public TMP_Text recipeNameDisplay;
-    public TMP_Text recipeIngredientsDisplay;
     public TMP_Text timerText;
 
     [Header("Events")]
@@ -73,12 +71,7 @@ public class HealthyPlateManager : MonoBehaviour
             int index = UnityEngine.Random.Range(0, recipeList.Count);
             RecipeSO recipeSO = recipeList[index];
             //TODO: Where currentRecipe is put on the board
-            recipeNameDisplay.text = recipeSO.ingredientName;
-            recipeIngredientsDisplay.text = "";
-            for (int i = 0; i < recipeSO.ingredientHolders.Count; i++)
-            {
-                recipeIngredientsDisplay.text += "\u2022" + recipeSO.ingredientHolders[i].ingredient.ingredientName + ": " + recipeSO.ingredientHolders[i].quantity + "\n";
-            }
+           
 
             onRecipeAssigned.Invoke(recipeSO);
         }
