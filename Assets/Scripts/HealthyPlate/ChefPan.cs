@@ -8,6 +8,8 @@ public class ChefPan : NetworkBehaviour
     // Dictionary to store coroutines for each ingredient
     private Dictionary<Ingredient, Coroutine> ingredientCoroutines = new Dictionary<Ingredient, Coroutine>();
 
+    public ParticleSystem cookingEffect;
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.transform.root.gameObject.tag == "Ingredient")
@@ -20,11 +22,13 @@ public class ChefPan : NetworkBehaviour
             // Get the ingredient object
             Ingredient ingredient = other.transform.GetComponentInParent<Ingredient>();
 
-            // Start the coroutine for this specific ingredient if it's not already being seared
+            // Checks to see if ingredient put in pan has been added to the dictionary yet.
+            //If it has not, starts the SearTime Coroutine and adds ingredient and coroutine to dictionary
             if (!ingredientCoroutines.ContainsKey(ingredient))
             {
+                cookingEffect.Play();
                 Coroutine searingCoroutine = StartCoroutine(SearTime(other));
-                ingredientCoroutines.Add(ingredient, searingCoroutine);
+                ingredientCoroutines.Add(ingredient, searingCoroutine);                
             }
         }
     }
@@ -63,6 +67,13 @@ public class ChefPan : NetworkBehaviour
 
             // Remove the ingredient from the dictionary once the searing is complete
             ingredientCoroutines.Remove(ingredient);
+
+            if (ingredientCoroutines.Count == 0) 
+            { 
+                //Stop effect
+                cookingEffect.Stop();
+            }
+
         }
     }
 }

@@ -50,36 +50,27 @@ public class ParticleController : MonoBehaviour
 
     public void ParticlePlayer()
     {
-        //If and else if are separate; runs through only one of them
-        if (playParticleEffect)
-        {
-            playParticleEffect = false;
-        }
-        else if (!playParticleEffect)
-        {
-            playParticleEffect = true;
-        }
+        // Ensures that each button press starts the particle effect from the beginning
+        playParticleEffect = true;
 
-        // transform.childCount is an int, not a list of the children
         for (int i = 0; i < transform.childCount; i++)
         {
-            //Gets the particle system from the children
+            // Gets the particle system from the children
             ParticleSystem particle = transform.GetChild(i).GetComponent<ParticleSystem>();
-            //Checks to see if the child has a partcile system on them
+
+            // Checks if the child has a particle system attached
             if (particle == null)
             {
-                return;
+                continue;
             }
 
             if (playParticleEffect)
             {
-                particle.Play();
-            }
-            else if (!playParticleEffect)
-            {
-                particle.Stop();
+                particle.Stop();  // Stop it first to ensure it restarts from the beginning
+                particle.Play();  // Play the particle effect
             }
         }
     }
+
 }
 

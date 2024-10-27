@@ -8,6 +8,8 @@ public class ChefFryer : NetworkBehaviour
     // Dictionary to store coroutines for each ingredient
     private Dictionary<Ingredient, Coroutine> ingredientCoroutines = new Dictionary<Ingredient, Coroutine>();
 
+    public ParticleSystem cookingEffect;
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.transform.root.gameObject.tag == "Ingredient")
@@ -23,6 +25,7 @@ public class ChefFryer : NetworkBehaviour
             // Start the coroutine for this specific ingredient if it's not already being fried
             if (!ingredientCoroutines.ContainsKey(ingredient))
             {
+                cookingEffect.Play();
                 Coroutine fryingCoroutine = StartCoroutine(FryTime(other));
                 ingredientCoroutines.Add(ingredient, fryingCoroutine);
             }
@@ -63,6 +66,11 @@ public class ChefFryer : NetworkBehaviour
 
             // Remove the ingredient from the dictionary once the frying is complete
             ingredientCoroutines.Remove(ingredient);
+
+            if (ingredientCoroutines.Count == 0)
+            {
+                cookingEffect.Stop();
+            }
         }
     }
 }
