@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RecipeContainer : NetworkBehaviour
 {
@@ -20,9 +21,10 @@ public class RecipeContainer : NetworkBehaviour
     public RecipeSO currentRecipe;
     public List<IngredientRequirement> ingredientRequirements;
     public GameObject ingredientInsertedEffect;
-    public GameObject completedRecipeEffect;
     public TMP_Text recipeNameDisplay;
     public TMP_Text recipeIngredientsDisplay;
+
+    public UnityEvent onRecipeCompleted;
 
     private void OnEnable()
     {
@@ -140,7 +142,7 @@ public class RecipeContainer : NetworkBehaviour
             Debug.Log("Recipe Successful");
             if (currentRecipe.completedRecipe != null)
             {
-                Runner.Spawn(completedRecipeEffect, spawnPoint.position, spawnPoint.rotation);
+                onRecipeCompleted.Invoke();             
                 Runner.Spawn(currentRecipe.completedRecipe, spawnPoint.position, spawnPoint.rotation);
             }
             HealthyPlateManager.Instance.onRecipeSucceded.Invoke();

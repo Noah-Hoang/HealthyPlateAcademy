@@ -10492,6 +10492,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2092581414}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &802107107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1754258018282169129, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+  m_PrefabInstance: {fileID: 1022474110}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &802107108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802107107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e644a2207c40fb4498baa228624fe51b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playParticleEffect: 0
+  allowSpaceDebug: 0
+  onParticleEffectStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onParticleEffectEnded:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &802107110 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7907337253232361038, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+  m_PrefabInstance: {fileID: 1022474110}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &807371939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11063,7 +11093,8 @@ Transform:
   m_LocalPosition: {x: -0.13700002, y: 0.055000007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 802107110}
   m_Father: {fileID: 1594515268}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &856024543
@@ -13708,6 +13739,90 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: -2129748306506044638, guid: 6c0d99da41e058246baaed4751ed80be, type: 3}
   m_PrefabInstance: {fileID: 1018210080}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1022474110
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 838988984}
+    m_Modifications:
+    - target: {fileID: 1754258018282169129, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+      propertyPath: m_Name
+      value: CompletedRecipeEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6509914256173275028, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6509914256173275028, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577708447645337649, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577708447645337649, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034591628483459498, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034591628483459498, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907337253232361038, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907337253232361038, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907337253232361038, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907337253232361038, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907337253232361038, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907337253232361038, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907337253232361038, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907337253232361038, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907337253232361038, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907337253232361038, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1754258018282169129, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 802107108}
+  m_SourcePrefab: {fileID: 100100000, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
 --- !u!1001 &1037790752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22140,8 +22255,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.3804435, y: 0.080755234, z: 0.6243216}
-  m_Center: {x: -0.17280535, y: 0.041440308, z: -0.038097844}
+  m_Size: {x: 0.3804435, y: 0.2699133, z: 0.6243216}
+  m_Center: {x: -0.17280535, y: 0.13601933, z: -0.03809786}
 --- !u!23 &1594515265
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22208,9 +22323,23 @@ MonoBehaviour:
   currentRecipe: {fileID: 0}
   ingredientRequirements: []
   ingredientInsertedEffect: {fileID: 502530762333375320, guid: 3bb7a9bdbbed7c740a60a22368d21f18, type: 3}
-  completedRecipeEffect: {fileID: 1754258018282169129, guid: a1ee4c45d19ccbe41a3b4d4b3e57c178, type: 3}
   recipeNameDisplay: {fileID: 349423435}
   recipeIngredientsDisplay: {fileID: 463494865}
+  onRecipeCompleted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 802107108}
+        m_TargetAssemblyTypeName: ParticleController, Assembly-CSharp
+        m_MethodName: StartParticleEffectRPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1594515268
 Transform:
   m_ObjectHideFlags: 0
@@ -22273,6 +22402,7 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 1594515267}
+  - {fileID: 802107108}
 --- !u!1001 &1595231757
 PrefabInstance:
   m_ObjectHideFlags: 0
