@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
+using UnityEngine.Events;
 
 public class ChefFryer : NetworkBehaviour
 {
     // Dictionary to store coroutines for each ingredient
     private Dictionary<Ingredient, Coroutine> ingredientCoroutines = new Dictionary<Ingredient, Coroutine>();
 
-    public ParticleSystem cookingEffect;
+    public UnityEvent onCookingFoodStarted;
+    public UnityEvent onCookingFoodComplete;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -19,13 +21,18 @@ public class ChefFryer : NetworkBehaviour
                 return;
             }
 
+            //Checks to see if the Dictionary is empty and if it is, when food is added to pan, it will be the first one and call the event
+            if (ingredientCoroutines.Count == 0)
+            {
+                onCookingFoodStarted.Invoke();
+            }
+
             // Get the ingredient object
             Ingredient ingredient = other.transform.GetComponentInParent<Ingredient>();
 
             // Start the coroutine for this specific ingredient if it's not already being fried
             if (!ingredientCoroutines.ContainsKey(ingredient))
             {
-                cookingEffect.Play();
                 Coroutine fryingCoroutine = StartCoroutine(FryTime(other));
                 ingredientCoroutines.Add(ingredient, fryingCoroutine);
             }
@@ -69,7 +76,7 @@ public class ChefFryer : NetworkBehaviour
 
             if (ingredientCoroutines.Count == 0)
             {
-                cookingEffect.Stop();
+                onCookingFoodComplete.Invoke();
             }
         }
     }

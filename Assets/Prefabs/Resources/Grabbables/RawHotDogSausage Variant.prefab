@@ -60,6 +60,14 @@ PrefabInstance:
       propertyPath: SortKey
       value: 3626967321
       objectReference: {fileID: 0}
+    - target: {fileID: 8134703806136945199, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
+      propertyPath: NetworkedBehaviours.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134703806136945199, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
+      propertyPath: NetworkedBehaviours.Array.data[2]
+      value: 
+      objectReference: {fileID: 8485281907914953384}
     - target: {fileID: 8696729035884437208, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
       propertyPath: m_Name
       value: RawHotDogSausage Variant
@@ -77,6 +85,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 648531938030029472, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
   m_PrefabInstance: {fileID: 4180189579386265820}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8485281907914953384 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5747370163184497268, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
+  m_PrefabInstance: {fileID: 4180189579386265820}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e644a2207c40fb4498baa228624fe51b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4724296126633516350
 PrefabInstance:
   m_ObjectHideFlags: 0

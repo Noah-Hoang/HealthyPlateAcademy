@@ -114,8 +114,8 @@ public class RecipeContainer : NetworkBehaviour
                     }
 
                     Debug.Log("Adding ingredient to recipe");
-                    Instantiate(ingredientInsertedEffect, other.transform.root.position, other.transform.root.rotation);
-                    Destroy(other.transform.root.gameObject);                  
+                    Runner.Spawn(ingredientInsertedEffect, other.transform.root.position, other.transform.root.rotation);
+                    Runner.Despawn(other.transform.root.GetComponent<NetworkObject>());                  
                 }              
             }
 
@@ -140,7 +140,7 @@ public class RecipeContainer : NetworkBehaviour
             Debug.Log("Recipe Successful");
             if (currentRecipe.completedRecipe != null)
             {
-                Instantiate(completedRecipeEffect, spawnPoint.position, spawnPoint.rotation);
+                Runner.Spawn(completedRecipeEffect, spawnPoint.position, spawnPoint.rotation);
                 Runner.Spawn(currentRecipe.completedRecipe, spawnPoint.position, spawnPoint.rotation);
             }
             HealthyPlateManager.Instance.onRecipeSucceded.Invoke();

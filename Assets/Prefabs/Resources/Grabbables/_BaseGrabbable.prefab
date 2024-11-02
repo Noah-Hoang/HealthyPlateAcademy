@@ -281,7 +281,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 5747370163184497268}
         m_TargetAssemblyTypeName: ParticleController, Assembly-CSharp
-        m_MethodName: ChangeParticleState
+        m_MethodName: StartParticleEffectRPC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -320,7 +320,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 5747370163184497268}
         m_TargetAssemblyTypeName: ParticleController, Assembly-CSharp
-        m_MethodName: ChangeParticleState
+        m_MethodName: StopParticleEffectRPC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -453,6 +453,7 @@ MonoBehaviour:
   NetworkedBehaviours:
   - {fileID: 7773023045798640834}
   - {fileID: 4631312782008754448}
+  - {fileID: 5747370163184497268}
 --- !u!114 &4631312782008754448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,7 +665,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playParticleEffect: 0
   allowSpaceDebug: 0
-  onParticleStateChanged:
+  onParticleEffectStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onParticleEffectEnded:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &3457040054754954512 stripped

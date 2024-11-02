@@ -328,13 +328,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 16793835065966747, guid: eb14fd7f92402644daea0e9e2524ad8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 703345534909910558}
   m_SourcePrefab: {fileID: 100100000, guid: eb14fd7f92402644daea0e9e2524ad8b, type: 3}
---- !u!198 &5651521722651784536 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7989091357649227103, guid: eb14fd7f92402644daea0e9e2524ad8b, type: 3}
+--- !u!1 &2345074357728278684 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 16793835065966747, guid: eb14fd7f92402644daea0e9e2524ad8b, type: 3}
   m_PrefabInstance: {fileID: 2355603964738893831}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &703345534909910558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2345074357728278684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e644a2207c40fb4498baa228624fe51b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playParticleEffect: 0
+  allowSpaceDebug: 0
+  onParticleEffectStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onParticleEffectEnded:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &8037473163162640978 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5708908543051569749, guid: eb14fd7f92402644daea0e9e2524ad8b, type: 3}
@@ -402,7 +425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8134703806136945199, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
       propertyPath: NetworkedBehaviours.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8134703806136945199, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
       propertyPath: NetworkedBehaviours.Array.data[0]
@@ -416,6 +439,14 @@ PrefabInstance:
       propertyPath: NetworkedBehaviours.Array.data[2]
       value: 
       objectReference: {fileID: 50388997961360964}
+    - target: {fileID: 8134703806136945199, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
+      propertyPath: NetworkedBehaviours.Array.data[3]
+      value: 
+      objectReference: {fileID: 1095637357929100576}
+    - target: {fileID: 8134703806136945199, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
+      propertyPath: NetworkedBehaviours.Array.data[4]
+      value: 
+      objectReference: {fileID: 703345534909910558}
     - target: {fileID: 8696729035884437208, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
       propertyPath: m_Name
       value: ChefFryer Variant
@@ -450,6 +481,17 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1095637357929100576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5747370163184497268, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
+  m_PrefabInstance: {fileID: 4681138771361040212}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e644a2207c40fb4498baa228624fe51b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3110278356915469206 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7773023045798640834, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
@@ -478,7 +520,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b1d5427bea6e44f979011a6588305c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cookingEffect: {fileID: 5651521722651784536}
+  onCookingFoodStarted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 703345534909910558}
+        m_TargetAssemblyTypeName: ParticleController, Assembly-CSharp
+        m_MethodName: StartParticleEffectRPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onCookingFoodComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 703345534909910558}
+        m_TargetAssemblyTypeName: ParticleController, Assembly-CSharp
+        m_MethodName: StopParticleEffectRPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &5329643702259158516 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 648531938030029472, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18318756, g: 0.22884332, b: 0.30649954, a: 1}
+  m_IndirectSpecularColor: {r: 0.18318772, g: 0.22884375, b: 0.3065002, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -971,6 +971,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4220934187365254, guid: 641eba452c0ebfc4c940d6bd9639f423, type: 3}
   m_PrefabInstance: {fileID: 47689317}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &57369079 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3016977278657662865, guid: 887e0719c57fec5498b9669e7adfae3e, type: 3}
+  m_PrefabInstance: {fileID: 1399214647}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &57369086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57369079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 891319196
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 246048102}
 --- !u!1 &61547562
 GameObject:
   m_ObjectHideFlags: 0
@@ -3383,7 +3406,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playParticleEffect: 0
   allowSpaceDebug: 0
-  onParticleStateChanged:
+  onParticleEffectStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onParticleEffectEnded:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &246320986
@@ -7553,6 +7579,66 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: -2129748306506044638, guid: 6c0d99da41e058246baaed4751ed80be, type: 3}
   m_PrefabInstance: {fileID: 547630901}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &562339376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 562339379}
+  - component: {fileID: 562339378}
+  - component: {fileID: 562339377}
+  m_Layer: 0
+  m_Name: VisualScripting SceneVariables
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &562339377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562339376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765181c9ef4b24d32a4f7cbd2ef370dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &562339378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562339376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
+--- !u!4 &562339379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562339376}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &571925818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19343,7 +19429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7078611123182368978, guid: 887e0719c57fec5498b9669e7adfae3e, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ChangeParticleState
+      value: StartParticleEffectRPC
       objectReference: {fileID: 0}
     - target: {fileID: 7078611123182368978, guid: 887e0719c57fec5498b9669e7adfae3e, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -19407,7 +19493,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2961566476263241528, guid: 887e0719c57fec5498b9669e7adfae3e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 246048101}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3016977278657662865, guid: 887e0719c57fec5498b9669e7adfae3e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 57369086}
   m_SourcePrefab: {fileID: 100100000, guid: 887e0719c57fec5498b9669e7adfae3e, type: 3}
 --- !u!1001 &1400231472
 PrefabInstance:
@@ -30523,3 +30612,4 @@ SceneRoots:
   - {fileID: 4134505310334538147}
   - {fileID: 2135615306}
   - {fileID: 2092581414}
+  - {fileID: 562339379}
