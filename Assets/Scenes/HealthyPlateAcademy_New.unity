@@ -6731,6 +6731,74 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2064479776722550965, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+      propertyPath: onCookingFoodStarted.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064479776722550965, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+      propertyPath: onCookingFoodComplete.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064479776722550965, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+      propertyPath: onCookingFoodStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064479776722550965, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+      propertyPath: onCookingFoodComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064479776722550965, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+      propertyPath: onCookingFoodStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1531041354}
+    - target: {fileID: 2064479776722550965, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+      propertyPath: onCookingFoodStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2126586409}
+    - target: {fileID: 2064479776722550965, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+      propertyPath: onCookingFoodComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2126586409}
+    - target: {fileID: 2064479776722550965, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+      propertyPath: onCookingFoodStarted.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064479776722550965, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+      propertyPath: onCookingFoodComplete.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064479776722550965, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+      propertyPath: onCookingFoodStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartParticleEffectRPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064479776722550965, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+      propertyPath: onCookingFoodStarted.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: StartSoundEffectRPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064479776722550965, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+      propertyPath: onCookingFoodComplete.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: StopSoundEffectRPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064479776722550965, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+      propertyPath: onCookingFoodStarted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ParticleController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064479776722550965, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+      propertyPath: onCookingFoodStarted.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064479776722550965, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+      propertyPath: onCookingFoodComplete.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064479776722550965, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+      propertyPath: onCookingFoodStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064479776722550965, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+      propertyPath: onCookingFoodComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6274916482604204724, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
       propertyPath: SortKey
       value: 3626349571
@@ -6738,6 +6806,10 @@ PrefabInstance:
     - target: {fileID: 6863558071359510083, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
       propertyPath: m_Name
       value: ChefPan (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666265156094486223, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+      propertyPath: MaxDistance
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19506,6 +19578,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 558528105928257041, guid: 887e0719c57fec5498b9669e7adfae3e, type: 3}
+      propertyPath: m_Volume
+      value: 0.701
+      objectReference: {fileID: 0}
+    - target: {fileID: 558528105928257041, guid: 887e0719c57fec5498b9669e7adfae3e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 388acd47e6d4d3044a53edd94a50c2fb, type: 3}
     - target: {fileID: 3016977278657662865, guid: 887e0719c57fec5498b9669e7adfae3e, type: 3}
       propertyPath: m_Name
       value: Push Button
@@ -21230,6 +21310,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   food: {fileID: 4943536420893183150, guid: 589bb6a94f42ac04a9014cd4f2a388a8, type: 3}
   currentSpawnedFood: {fileID: 0}
+--- !u!114 &1531041354 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2689649928234139148, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+  m_PrefabInstance: {fileID: 512022615}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e644a2207c40fb4498baa228624fe51b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1531295011
 GameObject:
   m_ObjectHideFlags: 0
@@ -29488,6 +29579,17 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: -2129748306506044638, guid: 6c0d99da41e058246baaed4751ed80be, type: 3}
   m_PrefabInstance: {fileID: 2125367254}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2126586409 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1548244242806575262, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+  m_PrefabInstance: {fileID: 5666046971793755654}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce002a724957e4428baf2b8d9bb62fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2129311772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30496,6 +30598,10 @@ PrefabInstance:
     - target: {fileID: 6863558071359510083, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
       propertyPath: m_Name
       value: ChefPan
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666265156094486223, guid: a8b073c002f6f6849aab486bc245bfb1, type: 3}
+      propertyPath: MaxDistance
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

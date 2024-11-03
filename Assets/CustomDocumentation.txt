@@ -132,3 +132,17 @@ Grabbing Food:
 	Create test recipe to test certain new things without going through a whole long recipe
 	Test Completed Food Particle effect	
 
+
+	Audio List:
+	Searing Sound
+	Frying Sound
+	Freezer Sound?
+	Ingredient absorbed sound
+	Completed recipe sound
+	cutting sound
+	walking sound
+	grabbing sound
+	new bell sound?
+
+
+
