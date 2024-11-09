@@ -53,6 +53,11 @@ public class ChefPan : NetworkBehaviour
                 StopCoroutine(ingredientCoroutines[ingredient]);
                 ingredientCoroutines.Remove(ingredient); // Remove the coroutine from the dictionary
             }
+
+            if (ingredientCoroutines.Count == 0)
+            {
+                onCookingFoodComplete.Invoke();
+            }
         }
     }
 

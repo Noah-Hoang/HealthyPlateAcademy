@@ -36,6 +36,7 @@ public class AudioController : MonoBehaviour
 
     public void StartSoundEffectCallback()
     {
+        Debug.Log("HELLO1");
         for (int i = 0; i < transform.childCount; i++)
         {
             // Gets the soundEffect system from the children
@@ -65,6 +66,7 @@ public class AudioController : MonoBehaviour
 
     public void StopSoundEffectCallback()
     {
+        Debug.Log("HELLO2");
         for (int i = 0; i < transform.childCount; i++)
         {
             // Gets the soundEffect system from the children

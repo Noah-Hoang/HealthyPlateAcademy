@@ -12,6 +12,7 @@ public class IngredientSO : ScriptableObject
     public IngredientUnitEnum unit;
     public int calories;
     public int protein;
+    public Sprite referenceImage;
     
     [Header("Cut")]
     public GameObject cutPrefab;

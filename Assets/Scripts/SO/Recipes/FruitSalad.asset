@@ -17,12 +17,15 @@ MonoBehaviour:
   unit: 0
   calories: 0
   protein: 0
+  referenceImage: {fileID: 21300000, guid: a983de9fd6598694eb0ac595e8ab8cf5, type: 3}
   cutPrefab: {fileID: 0}
   destroyAfterCut: 0
   friedPrefab: {fileID: 0}
   destroyAfterFried: 0
+  timeUntilFried: 0
   searedPrefab: {fileID: 0}
   destroyAfterSeared: 0
+  timeUntilSeared: 0
   completedRecipe: {fileID: 466600283925005731, guid: 1c8981dd35f181a4087c0854fa077dfc, type: 3}
   ingredientHolders:
   - ingredient: {fileID: 11400000, guid: 97a6cf8ff5d3dcd4195a688de8a7ff0f, type: 2}

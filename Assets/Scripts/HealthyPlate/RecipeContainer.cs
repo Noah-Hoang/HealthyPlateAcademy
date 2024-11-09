@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class RecipeContainer : NetworkBehaviour
 {
@@ -23,6 +24,7 @@ public class RecipeContainer : NetworkBehaviour
     public GameObject ingredientInsertedEffect;
     public TMP_Text recipeNameDisplay;
     public TMP_Text recipeIngredientsDisplay;
+    public Image referenceImage;
 
     public UnityEvent onRecipeCompleted;
 
@@ -66,6 +68,7 @@ public class RecipeContainer : NetworkBehaviour
 
         recipeNameDisplay.text = recipeSO.ingredientName;
         recipeIngredientsDisplay.text = "";
+        referenceImage.sprite = recipeSO.referenceImage;
         for (int j = 0; j < ingredientRequirements.Count; j++)
         {
             recipeIngredientsDisplay.text += "\u2022" + ingredientRequirements[j].ingredientSO.ingredientName + ": " + ingredientRequirements[j].currentQuantity + "/" + currentRecipe.ingredientHolders[j].quantity + "\n";
