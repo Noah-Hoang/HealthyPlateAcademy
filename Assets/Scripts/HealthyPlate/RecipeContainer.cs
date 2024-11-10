@@ -31,11 +31,15 @@ public class RecipeContainer : NetworkBehaviour
     private void OnEnable()
     {
         HealthyPlateManager.Instance.onRecipeAssigned.AddListener(SetRecipe);
+        HealthyPlateManager.Instance.onRecipeSucceded.AddListener(ClearBoard);
+        HealthyPlateManager.Instance.onRecipeFailed.AddListener(ClearBoard);
     }
 
     private void OnDisable()
     {
         HealthyPlateManager.Instance.onRecipeAssigned.RemoveListener(SetRecipe);
+        HealthyPlateManager.Instance.onRecipeSucceded.RemoveListener(ClearBoard);
+        HealthyPlateManager.Instance.onRecipeFailed.RemoveListener(ClearBoard);
     }
 
     [ContextMenu("Set Recipe")]
@@ -150,5 +154,12 @@ public class RecipeContainer : NetworkBehaviour
             }
             HealthyPlateManager.Instance.onRecipeSucceded.Invoke();
         }
+    }
+
+    public void ClearBoard()
+    {
+        recipeNameDisplay.text = "";
+        recipeIngredientsDisplay.text = "";
+        referenceImage.sprite = null;
     }
 }

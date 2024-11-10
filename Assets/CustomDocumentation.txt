@@ -145,4 +145,9 @@ Grabbing Food:
 	new bell sound?
 
 
+	TODO:
+	Put pictures for ingredietns SO's
+	Netowrk the progress of the recipe
+	
+
 

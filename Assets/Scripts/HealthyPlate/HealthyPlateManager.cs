@@ -1,27 +1,24 @@
+using Fusion;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-
-//Make singleton
-//Create events (OnRecipeAssigned, OnRecipeSucceded, OnRecipeFailed)
-//Create method that puts currentRecipe on the board (Debug Log for now)
-//Tracks when currentRecipe is completed
-//Timer for currentRecipe creation and scales with number of players
-//Money used to buy different outfits
-//Use money to customize appliances
-//RecipeContainer needs to call the OnRecipeSucceded event
-//Needs list of recipes and randomly chooses. Doesn't choose the same one in succession
-//OPTIONAL: Audio
-public class HealthyPlateManager : MonoBehaviour
+public class HealthyPlateManager : NetworkBehaviour
 {
     public static HealthyPlateManager Instance { get; private set; }
 
+    [Networked]
+    public int currentRecipeIndex { get; set; }
+
     [Header("General")]
     public float totalTime;
-    public float remainingTime;
+
+    // Networked Tick Timer for synchronization
+    [Networked]
+    private TickTimer recipeTickTimer { get; set; } 
+
     public bool recipeOngoing;
     public int money;
     public RecipeSO testRecipe;
@@ -55,57 +52,104 @@ public class HealthyPlateManager : MonoBehaviour
         onRecipeFailed.RemoveListener(RecipeFailed);
     }
 
-    // Update is called once per frame
-    void Update()
+    //Called when a player spawns in
+
+    public override void Spawned()
     {
-        RecipeTimer();
+        base.Spawned();
+
+        //Checks to see if theres a recipe ongoing and if there is, calls StartRecipeRPC for any late joiners
+        if (currentRecipeIndex > -100)
+        {
+            StartRecipeRPC();
+        }
+    }
+
+    public override void FixedUpdateNetwork()
+    {
+        base.FixedUpdateNetwork();
+
+        // Only the state authority (host) manages the timer logic
+        //Host sends out timer for everybody
+        if (Object.HasStateAuthority) 
+        {
+            UpdateRecipeTimer();
+        }
+        DisplayRemainingTime();
     }
 
     [ContextMenu("Test Recipe")]
     public void TestRecipe()
     {
-        remainingTime = totalTime;
-        recipeOngoing = true;
-        onRecipeAssigned.Invoke(testRecipe);
+        currentRecipeIndex = -1;
+        StartRecipeRPC();
     }
 
     public void ChooseRecipe()
     {
         if (!recipeOngoing)
         {
-            remainingTime = totalTime;
-            recipeOngoing = true;
+            // Start the tick timer
+            recipeTickTimer = TickTimer.CreateFromSeconds(Runner, totalTime); 
+            currentRecipeIndex = UnityEngine.Random.Range(0, recipeList.Count);
+            StartRecipeRPC();
+        }
+    }  
 
-            int index = UnityEngine.Random.Range(0, recipeList.Count);
-            RecipeSO recipeSO = recipeList[index];
+    [Rpc]
+    private void StartRecipeRPC()
+    {
+        RecipeSO selectedRecipe = null;
 
-            onRecipeAssigned.Invoke(recipeSO);
+        //Checks to see if the Test Recipe was chosen
+        if (currentRecipeIndex == -1)
+        {
+            selectedRecipe = testRecipe;
+        }
+        else
+        {
+            selectedRecipe = recipeList[currentRecipeIndex];
+        }
+        recipeOngoing = true;
+        onRecipeAssigned.Invoke(selectedRecipe);
+    }
+
+    private void UpdateRecipeTimer()
+    {
+        if (recipeTickTimer.Expired(Runner) && recipeOngoing)
+        {
+            recipeOngoing = false;
+            onRecipeFailed.Invoke();
         }
     }
 
-    public void RecipeTimer()
+    private void DisplayRemainingTime()
     {
-        if (remainingTime > 0 && recipeOngoing)
+        if (recipeOngoing)
         {
-            remainingTime -= Time.deltaTime;
-            int secondsRemaining = Mathf.FloorToInt(remainingTime);  // Convert float to integer seconds
-            timerText.text = secondsRemaining.ToString();
+            // Calculate seconds remaining based on the tick timer
+            float secondsRemaining = recipeTickTimer.RemainingTime(Runner).GetValueOrDefault(0);
+            int seconds = Mathf.FloorToInt(secondsRemaining);
+            timerText.text = seconds.ToString();
         }
-        else if (recipeOngoing)
-        {         
-            recipeOngoing = false;
-            onRecipeFailed.Invoke();          
+        else
+        {
+            timerText.text = "0";
         }
     }
 
     public void RecipeSucceded()
     {
+        //currentRecipeIndex set to -100 is the base for when there is no recipe ongoing
+        currentRecipeIndex = -100;
         recipeOngoing = false;
         money += 20;
     }
 
     public void RecipeFailed()
     {
+        //currentRecipeIndex set to -100 is the base for when there is no recipe ongoing
+        currentRecipeIndex = -100;
         recipeOngoing = false;
         money -= 5;
     }
