@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class FoodInfoUI : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class FoodInfoUI : MonoBehaviour
     public TMP_Text ingredientTypeDisplay;
     public TMP_Text ingredientUnitDisplay;
     public TMP_Text ingredientCaloriesDisplay;
+    public Image ingredientImage;
 
     public void OnEnable()
     {
@@ -38,6 +40,7 @@ public class FoodInfoUI : MonoBehaviour
                 ingredientTypeDisplay.text = "Type: " + grabbedObject.GetComponent<Ingredient>().ingredientSO.type.ToString();
                 ingredientUnitDisplay.text = "Unit: " + grabbedObject.GetComponent<Ingredient>().ingredientSO.unit.ToString();
                 ingredientCaloriesDisplay.text = "Calories: " + grabbedObject.GetComponent<Ingredient>().ingredientSO.calories.ToString();
+                ingredientImage.sprite = grabbedObject.GetComponent<Ingredient>().ingredientSO.referenceImage;
             }
         }
         else if (!isLeftHandHeld && !isLeft)
@@ -49,6 +52,7 @@ public class FoodInfoUI : MonoBehaviour
                 ingredientTypeDisplay.text = "Type: " + grabbedObject.GetComponent<Ingredient>().ingredientSO.type.ToString();
                 ingredientUnitDisplay.text = "Unit: " + grabbedObject.GetComponent<Ingredient>().ingredientSO.unit.ToString();
                 ingredientCaloriesDisplay.text = "Calories: " + grabbedObject.GetComponent<Ingredient>().ingredientSO.calories.ToString();
+                ingredientImage.sprite = grabbedObject.GetComponent<Ingredient>().ingredientSO.referenceImage;
             }
         }
     }
@@ -64,6 +68,7 @@ public class FoodInfoUI : MonoBehaviour
                 ingredientTypeDisplay.text = "";
                 ingredientUnitDisplay.text = "";
                 ingredientCaloriesDisplay.text = "";
+                ingredientImage.sprite = null;
             }
         }
         else if (!isLeftHandHeld && !isLeft)
@@ -75,6 +80,7 @@ public class FoodInfoUI : MonoBehaviour
                 ingredientTypeDisplay.text = "";
                 ingredientUnitDisplay.text = "";
                 ingredientCaloriesDisplay.text = "";
+                ingredientImage.sprite = null; 
             }
         }
     }
