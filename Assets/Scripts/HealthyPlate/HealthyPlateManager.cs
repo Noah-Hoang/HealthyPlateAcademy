@@ -99,6 +99,11 @@ public class HealthyPlateManager : NetworkBehaviour
     [Rpc]
     private void StartRecipeRPC()
     {
+        if (recipeOngoing) 
+        {
+            return;
+        }
+
         RecipeSO selectedRecipe = null;
 
         //Checks to see if the Test Recipe was chosen

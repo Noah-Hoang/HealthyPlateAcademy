@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class RecipeContainer : NetworkBehaviour
+public class RecipeContainer : NetworkBehaviour, IPlayerJoined
 {
     [System.Serializable]
     public class IngredientRequirement
@@ -90,6 +90,10 @@ public class RecipeContainer : NetworkBehaviour
         //other.transform.root gets the parent game object
         if (other.transform.root.gameObject.tag == "Ingredient")
         {
+            if (!Object.HasStateAuthority)
+            {
+                return;
+            }
             Debug.Log("Ingredient detected");
             bool isRecipeRequirement = false;
 
@@ -107,7 +111,7 @@ public class RecipeContainer : NetworkBehaviour
                 {
                     Debug.Log("Ingredient needed in recipe");
                     isRecipeRequirement = true;
-                    ingredientRequirements[i].currentQuantity += 1;
+                    ingredientRequirements[i].currentQuantity += 1;                    
 
                     //Changing ingredient display
                     recipeIngredientsDisplay.text = "";
@@ -125,7 +129,12 @@ public class RecipeContainer : NetworkBehaviour
                     Debug.Log("Adding ingredient to recipe");
                     Runner.Spawn(ingredientInsertedEffect, other.transform.root.position, other.transform.root.rotation);
                     Runner.Despawn(other.transform.root.GetComponent<NetworkObject>());                  
-                }              
+                }
+
+                if (Object.HasStateAuthority)
+                {
+                    RecipeProgressRPC(recipeIngredientsDisplay.text);
+                }
             }
 
             if (isRecipeRequirement == false)
@@ -156,10 +165,24 @@ public class RecipeContainer : NetworkBehaviour
         }
     }
 
+    public void PlayerJoined(PlayerRef player)
+    {
+        if (Object.HasStateAuthority)
+        {
+            RecipeProgressRPC(recipeIngredientsDisplay.text);
+        }       
+    }
+
+    [Rpc]
+    public void RecipeProgressRPC(string progressText)
+    {
+        recipeIngredientsDisplay.text = progressText;
+    }
+
     public void ClearBoard()
     {
         recipeNameDisplay.text = "";
         recipeIngredientsDisplay.text = "";
         referenceImage.sprite = null;
-    }
+    }    
 }

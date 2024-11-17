@@ -148,6 +148,8 @@ Grabbing Food:
 	TODO:
 	Put pictures for ingredietns SO's
 	Netowrk the progress of the recipe
+	New player oins, host sends rpc taht updates them on recipe progress\
+	make it so that the host sends over tohe recipe progress whenever its changed
 	
 
 
