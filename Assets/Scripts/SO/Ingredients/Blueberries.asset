@@ -17,9 +17,12 @@ MonoBehaviour:
   unit: 0
   calories: 84
   protein: 1
+  referenceImage: {fileID: 21300000, guid: d81e8684c6bcf774e8c1378165974621, type: 3}
   cutPrefab: {fileID: 0}
   destroyAfterCut: 0
   friedPrefab: {fileID: 0}
   destroyAfterFried: 0
+  timeUntilFried: 0
   searedPrefab: {fileID: 0}
   destroyAfterSeared: 0
+  timeUntilSeared: 0
