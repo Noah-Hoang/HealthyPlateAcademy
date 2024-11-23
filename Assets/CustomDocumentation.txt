@@ -76,17 +76,6 @@ pancakes with blueberry
 cheese - cut -> Sliced Cheese
 potato -cut -> Sliced Potato
 
-
-
-figure out to keep utensils available
-add cooking timer
-Give some sort of tutorial or something that gives directions
-Show indicator for recipe completed
-Network recipe board
-Add audio for everything
-fix fryer
-only kinematic original ingredients, not cooked or cut
-
 #1: create a new empty scene
 #2: figure out how to debug log hello when the space button is pressed
 #3:  Debug log the name of the children of the game object when space is pressed
@@ -146,10 +135,27 @@ Grabbing Food:
 
 
 	TODO:
-	Put pictures for ingredietns SO's
-	Netowrk the progress of the recipe
-	New player oins, host sends rpc taht updates them on recipe progress\
-	make it so that the host sends over tohe recipe progress whenever its changed
+	make fryer and pan only work in their locations
+	add tutorial
+
+
+	New scene for tutorial:
+	1 seared food
+	1 fried food
+	1 cut food
+	one of each cooking tool
+	tutroial script listening for each thing being done
+	Tutorial:
+	1. Spawn in
+	2. At the top of the screen, UI with introduction and general overview of the game
+	3. Walks player to fridge so show the infinite food
+	4. Then brings player to cutting board and tells them to cut a bread loaf
+	5. Shows that food will despawn after being left alone for too long
+	6. Then brings player to fryer and shows that only certain foods can be fried and only at the frying location
+	7. Does the same thing with the pan
+	8. Brings player to the dinner bell and upon pressing it, gives the player TestRecipe to try
+	9. Upon completing the recipe, player is awarded a free head, some money, and is brought back to the main menu
+
 	
 
 
