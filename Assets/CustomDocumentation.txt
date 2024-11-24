@@ -137,6 +137,13 @@ Grabbing Food:
 	TODO:
 	make fryer and pan only work in their locations
 	add tutorial
+	add tutorial audio
+	add splash screen (use coroutine wait time to switch to intro scene)
+	add intro scene with 2 buttons and buttons are Play Standard Game and Play Instructor Mode 
+	Add Photon Voice
+	Add different pans and knives
+	Add charred food
+	Add branding to kitchen
 
 
 	New scene for tutorial:
