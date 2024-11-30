@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class HealthyPlateManager : NetworkBehaviour
 {
     public static HealthyPlateManager Instance { get; private set; }
+    public static bool isInstructorMode;
 
     [Networked]
     public int currentRecipeIndex { get; set; }

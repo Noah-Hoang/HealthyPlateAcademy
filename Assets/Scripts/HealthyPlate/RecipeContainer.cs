@@ -70,12 +70,16 @@ public class RecipeContainer : NetworkBehaviour, IPlayerJoined
             ingredientRequirements.Add(newRequirement);
         }
 
-        recipeNameDisplay.text = recipeSO.ingredientName;
-        recipeIngredientsDisplay.text = "";
-        referenceImage.sprite = recipeSO.referenceImage;
-        for (int j = 0; j < ingredientRequirements.Count; j++)
+        //Checks to see if not in Instructor Mode OR, if in Instructor Mode AND is the instructor
+        if (!HealthyPlateManager.isInstructorMode || (HealthyPlateManager.isInstructorMode && Runner.IsSharedModeMasterClient))
         {
-            recipeIngredientsDisplay.text += "\u2022" + ingredientRequirements[j].ingredientSO.ingredientName + ": " + ingredientRequirements[j].currentQuantity + "/" + currentRecipe.ingredientHolders[j].quantity + "\n";
+            recipeNameDisplay.text = recipeSO.ingredientName;
+            recipeIngredientsDisplay.text = "";
+            referenceImage.sprite = recipeSO.referenceImage;
+            for (int j = 0; j < ingredientRequirements.Count; j++)
+            {
+                recipeIngredientsDisplay.text += "\u2022" + ingredientRequirements[j].ingredientSO.ingredientName + ": " + ingredientRequirements[j].currentQuantity + "/" + currentRecipe.ingredientHolders[j].quantity + "\n";
+            }
         }
     }
 
