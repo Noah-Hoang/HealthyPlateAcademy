@@ -11,6 +11,7 @@ public class ChefPan : NetworkBehaviour
 
     public UnityEvent onCookingFoodStarted;
     public UnityEvent onCookingFoodComplete;
+    public UnityEvent onOvercookedFood;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -64,27 +65,47 @@ public class ChefPan : NetworkBehaviour
     public IEnumerator SearTime(Collider other)
     {
         Ingredient ingredient = other.transform.GetComponentInParent<Ingredient>();
+        Ingredient cookedFood = null;
 
         yield return new WaitForSeconds(ingredient.GetComponent<Ingredient>().ingredientSO.timeUntilSeared);
 
         // Only proceed if the ingredient is still in the dictionary (i.e., it hasn't left the pan)
         if (ingredientCoroutines.ContainsKey(ingredient))
         {
-            Runner.Spawn(ingredient.GetComponent<Ingredient>().ingredientSO.searedPrefab, ingredient.transform.position, ingredient.transform.rotation);
+            cookedFood = Runner.Spawn(ingredient.GetComponent<Ingredient>().ingredientSO.searedPrefab, ingredient.transform.position, ingredient.transform.rotation).GetComponent<Ingredient>();
 
-            if (ingredient.GetComponent<Ingredient>().ingredientSO.destroyAfterSeared)
+            // Checks to see if ingredient put in pan has been added to the dictionary yet.
+            //If it has not, starts the SearTime Coroutine and adds ingredient and coroutine to dictionary
+            if (!ingredientCoroutines.ContainsKey(cookedFood))
             {
-                Runner.Despawn(ingredient.GetComponent<NetworkObject>());
+                Coroutine overcookedCoroutine = StartCoroutine(Overcooked(cookedFood));
+                ingredientCoroutines.Add(cookedFood, overcookedCoroutine);
             }
 
             // Remove the ingredient from the dictionary once the searing is complete
             ingredientCoroutines.Remove(ingredient);
 
+            if (ingredient.GetComponent<Ingredient>().ingredientSO.destroyAfterSeared)
+            {
+                Runner.Despawn(ingredient.GetComponent<NetworkObject>());
+            }            
+
             if (ingredientCoroutines.Count == 0) 
             {
                 onCookingFoodComplete.Invoke();
-            }
+            }            
+        }       
+    }
 
+    public IEnumerator Overcooked(Ingredient cookedFood)
+    {
+        yield return new WaitForSeconds(5.0f);
+
+        if ((cookedFood != null) && ingredientCoroutines.ContainsKey(cookedFood))
+        {
+            cookedFood.CharIngredient();
+
+            onOvercookedFood.Invoke();
         }
     }
 }

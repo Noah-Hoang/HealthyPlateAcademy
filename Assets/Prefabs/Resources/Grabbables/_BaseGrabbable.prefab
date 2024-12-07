@@ -339,6 +339,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientSO: {fileID: 0}
+  isCharred: 0
+  charredMaterial: {fileID: 2100000, guid: 124bc0e12a1a7c34f9e30a4324140164, type: 2}
 --- !u!114 &7773023045798640834
 MonoBehaviour:
   m_ObjectHideFlags: 0
