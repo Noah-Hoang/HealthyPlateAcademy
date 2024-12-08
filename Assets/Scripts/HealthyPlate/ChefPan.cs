@@ -9,43 +9,85 @@ public class ChefPan : NetworkBehaviour
     // Dictionary to store coroutines for each ingredient
     private Dictionary<Ingredient, Coroutine> ingredientCoroutines = new Dictionary<Ingredient, Coroutine>();
 
+    public bool isOnSearingLocation;
+
     public UnityEvent onCookingFoodStarted;
     public UnityEvent onCookingFoodComplete;
     public UnityEvent onOvercookedFood;
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.transform.root.gameObject.tag == "Ingredient")
+        if (other.transform.root.CompareTag("SearLocation") && !isOnSearingLocation)
         {
-            if (other.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO.searedPrefab == null)
+            Debug.Log("HELLO");
+            isOnSearingLocation = true;
+
+            // Going through all ingredients in the dictionary and replacing their values with the new coroutine
+            foreach (var ingredient in ingredientCoroutines.Keys)
+            {               
+                Coroutine searingCoroutine = StartCoroutine(SearTime(ingredient.GetComponent<Collider>()));
+                ingredientCoroutines[ingredient] = searingCoroutine;                
+            }
+
+            if (ingredientCoroutines.Count > 0)
+            {
+                onCookingFoodStarted.Invoke();
+            }
+        }
+
+        if (other.transform.root.CompareTag("Ingredient"))
+        {
+            Debug.Log("HELLO2");
+            Ingredient ingredient = other.transform.root.GetComponent<Ingredient>();
+
+            // Return early if the ingredient has no searedPrefab
+            if (ingredient == null || ingredient.ingredientSO.searedPrefab == null)
             {
                 return;
             }
 
-            //Checks to see if the Dictionary is empty and if it is, when food is added to pan, it will be the first one and call the event
-            if (ingredientCoroutines.Count == 0)
-            {
-                onCookingFoodStarted.Invoke();
-            }
-
-            // Get the ingredient object
-            Ingredient ingredient = other.transform.GetComponentInParent<Ingredient>();
-
-            // Checks to see if ingredient put in pan has been added to the dictionary yet.
-            //If it has not, starts the SearTime Coroutine and adds ingredient and coroutine to dictionary
+            // Add the ingredient to the dictionary if not already present
             if (!ingredientCoroutines.ContainsKey(ingredient))
             {
-                Coroutine searingCoroutine = StartCoroutine(SearTime(other));
-                ingredientCoroutines.Add(ingredient, searingCoroutine);                
+                // Add ingredient with a null coroutine for now
+                ingredientCoroutines.Add(ingredient, null);
+
+                // Only start cooking if on the searing location
+                if (isOnSearingLocation)
+                {
+                    Coroutine searingCoroutine = StartCoroutine(SearTime(other));
+                    ingredientCoroutines[ingredient] = searingCoroutine;
+                }
+            }
+
+            // Check if the dictionary is empty and invoke the event if this is the first ingredient
+            if (ingredientCoroutines.Count == 1 && isOnSearingLocation) 
+            {
+                onCookingFoodStarted.Invoke();
             }
         }
     }
 
     public void OnTriggerExit(Collider other)
     {
+        if (other.transform.root.gameObject.tag == "SearLocation" && isOnSearingLocation)
+        {
+            Debug.Log("HELLO3");
+
+            isOnSearingLocation = false;
+
+            // Convert the dictionary values to a list to stop all coroutines
+            List<Coroutine> valuesList = new List<Coroutine>(ingredientCoroutines.Values);
+            for (int i = 0; i < valuesList.Count; i++)
+            {
+                StopCoroutine(valuesList[i]);
+            }
+            onCookingFoodComplete.Invoke();
+        }
+
         if (other.transform.root.gameObject.tag == "Ingredient")
         {
-            // Get the ingredient object
+            // Getting the ingredient class on the object
             Ingredient ingredient = other.transform.GetComponentInParent<Ingredient>();
 
             // If the food leaves the pan, stop its specific coroutine

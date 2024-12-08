@@ -7,6 +7,7 @@ TagManager:
   - LeftBound
   - RightBound
   - Ingredient
+  - SearLocation
   layers:
   - Default
   - TransparentFX
