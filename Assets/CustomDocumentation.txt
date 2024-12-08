@@ -163,6 +163,10 @@ Grabbing Food:
 	8. Brings player to the dinner bell and upon pressing it, gives the player TestRecipe to try
 	9. Upon completing the recipe, player is awarded a free head, some money, and is brought back to the main menu
 
+
+	TODO: 
+	If pan or fryer hits interactable location, changes bool to true and that determines if the cooking starts
+
 	
 
 

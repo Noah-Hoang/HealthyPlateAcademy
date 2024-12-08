@@ -11,6 +11,7 @@ public class ChefFryer : NetworkBehaviour
 
     public UnityEvent onCookingFoodStarted;
     public UnityEvent onCookingFoodComplete;
+    public UnityEvent onOvercookedFood;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -52,32 +53,58 @@ public class ChefFryer : NetworkBehaviour
                 StopCoroutine(ingredientCoroutines[ingredient]);
                 ingredientCoroutines.Remove(ingredient); // Remove the coroutine from the dictionary
             }
+
+            if (ingredientCoroutines.Count == 0)
+            {
+                onCookingFoodComplete.Invoke();
+            }
         }
     }
 
     public IEnumerator FryTime(Collider other)
     {
         Ingredient ingredient = other.transform.GetComponentInParent<Ingredient>();
+        Ingredient cookedFood = null;
 
         yield return new WaitForSeconds(ingredient.GetComponent<Ingredient>().ingredientSO.timeUntilFried);
 
         // Only proceed if the ingredient is still in the dictionary (i.e., it hasn't left the pan)
         if (ingredientCoroutines.ContainsKey(ingredient))
         {
-            Runner.Spawn(ingredient.GetComponent<Ingredient>().ingredientSO.friedPrefab, ingredient.transform.position, ingredient.transform.rotation);
+            cookedFood = Runner.Spawn(ingredient.GetComponent<Ingredient>().ingredientSO.friedPrefab, ingredient.transform.position, ingredient.transform.rotation).GetComponent<Ingredient>();
+
+            // Checks to see if ingredient put in pan has been added to the dictionary yet.
+            //If it has not, starts the SearTime Coroutine and adds ingredient and coroutine to dictionary
+            if (!ingredientCoroutines.ContainsKey(cookedFood))
+            {
+                Coroutine overcookedCoroutine = StartCoroutine(Overcooked(cookedFood));
+                ingredientCoroutines.Add(cookedFood, overcookedCoroutine);
+            }
+
+            // Remove the ingredient from the dictionary once the searing is complete
+            ingredientCoroutines.Remove(ingredient);
 
             if (ingredient.GetComponent<Ingredient>().ingredientSO.destroyAfterFried)
             {
                 Runner.Despawn(ingredient.GetComponent<NetworkObject>());
             }
 
-            // Remove the ingredient from the dictionary once the frying is complete
-            ingredientCoroutines.Remove(ingredient);
-
             if (ingredientCoroutines.Count == 0)
             {
                 onCookingFoodComplete.Invoke();
             }
+        }
+    }
+
+    public IEnumerator Overcooked(Ingredient cookedFood)
+    {
+        yield return new WaitForSeconds(5.0f);
+
+        if ((cookedFood != null) && ingredientCoroutines.ContainsKey(cookedFood))
+        {
+            cookedFood.CharIngredient();
+
+            onOvercookedFood.Invoke();
         }
     }
 }
