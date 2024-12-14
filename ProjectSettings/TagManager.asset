@@ -8,6 +8,7 @@ TagManager:
   - RightBound
   - Ingredient
   - SearLocation
+  - FryLocation
   layers:
   - Default
   - TransparentFX

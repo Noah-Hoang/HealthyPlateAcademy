@@ -93,7 +93,11 @@ public class ChefPan : NetworkBehaviour
             // If the food leaves the pan, stop its specific coroutine
             if (ingredientCoroutines.ContainsKey(ingredient))
             {
-                StopCoroutine(ingredientCoroutines[ingredient]);
+                // Checks to see if there is a coroutine to stop before attempting to stop it
+                if (ingredientCoroutines[ingredient] != null)
+                {
+                    StopCoroutine(ingredientCoroutines[ingredient]);
+                }
                 ingredientCoroutines.Remove(ingredient); // Remove the coroutine from the dictionary
             }
 
