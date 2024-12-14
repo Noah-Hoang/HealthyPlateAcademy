@@ -8,51 +8,21 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Tutorial : NetworkBehaviour
 {
     public bool grabStepCompleted;
-    public NetworkedGrab networkedGrab;
     public bool knifeStepCompleted;
-    public ChefKnife chefKnife;
     public bool panStepCompleted;
-    public ChefPan chefPan;
     public bool fryerStepCompleted;
-    public ChefFryer chefFryer;
     public int cutCount;
     public int searedCount;
     public int fryCount;
     public XRSimpleInteractable bell;
 
-
-
-    public void OnEnable()
+    public void StartTutorial()
     {
-        networkedGrab.OnObjectGrabbed.AddListener(ObjectGrabbedStep);
-        chefKnife.onFoodCut.AddListener(KnifeCutStep);
-        chefPan.onCookingFoodComplete.AddListener(SearingStep);
-        chefFryer.onCookingFoodComplete.AddListener(FryStep);
-        bell.selectEntered.AddListener(Bell);
-    }
-
-    public void OnDisable()
-    {
-        networkedGrab.OnObjectGrabbed.RemoveListener(ObjectGrabbedStep);
-        chefKnife.onFoodCut.RemoveListener(KnifeCutStep);
-        chefPan.onCookingFoodComplete.RemoveListener(SearingStep);
-        chefFryer.onCookingFoodComplete.RemoveListener(FryStep);
-        bell.selectEntered.RemoveListener(Bell);
-    }
-
-    public override void Spawned()
-    {
-        base.Spawned();
         Debug.Log("Welcome to Game");
-        Debug.Log("Press button to continue");
         //Press button
-        TutorialIntro();
-    }
-
-    public void TutorialIntro()
-    {
         //Use UI to give overview of game and talk about what to do
         Debug.Log("Start with grabbing a food");
+        NetworkedGrab.OnObjectGrabbedStatic.AddListener(ObjectGrabbedStep);
     }
 
     public void ObjectGrabbedStep(GameObject gameObject,bool grabbed )
@@ -64,6 +34,8 @@ public class Tutorial : NetworkBehaviour
             // Wait 3 seconds with confetti
             Debug.Log("Grab a knife and try cutting a food");
             //Highlight around all cuttable foods and knife
+            NetworkedGrab.OnObjectGrabbedStatic.RemoveListener(ObjectGrabbedStep);
+            ChefKnife.onFoodCutStatic.AddListener(KnifeCutStep);
         }
     }
 
@@ -78,7 +50,8 @@ public class Tutorial : NetworkBehaviour
                 //Wait 3 seconds with confetti
                 Debug.Log("Grab food and put it on the pan to sear it");
                 //Highlight pan and searable foods
-                return;
+                ChefKnife.onFoodCutStatic.RemoveListener(KnifeCutStep);
+                ChefPan.onCookingFoodCompleteStatic.AddListener(SearingStep);
             }
             else
             {
@@ -99,7 +72,8 @@ public class Tutorial : NetworkBehaviour
                 //Wait 3 seconds with confetti
                 Debug.Log("Now try to fry some foods");
                 //Highlight fryer and fryable foods
-                return;
+                ChefPan.onCookingFoodCompleteStatic.RemoveListener(SearingStep);
+                ChefFryer.onCookingFoodCompleteStatic.AddListener(FryStep);
             }
             else
             {
@@ -120,7 +94,8 @@ public class Tutorial : NetworkBehaviour
                 //Wait 3 seconds with confetti
                 Debug.Log("Now hit the bell to start a recipe");
                 //Highlight bell
-                return;
+                ChefFryer.onCookingFoodCompleteStatic.RemoveListener(FryStep);
+                bell.selectEntered.AddListener(Bell);
             }
             else
             {
@@ -132,6 +107,7 @@ public class Tutorial : NetworkBehaviour
 
     public void Bell(SelectEnterEventArgs args)
     {
+        bell.selectEntered.RemoveListener(Bell);
         //Start test recipe
     }
 

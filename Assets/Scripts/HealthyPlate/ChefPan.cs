@@ -14,6 +14,9 @@ public class ChefPan : NetworkBehaviour
     public UnityEvent onCookingFoodStarted;
     public UnityEvent onCookingFoodComplete;
     public UnityEvent onOvercookedFood;
+    public static UnityEvent onCookingFoodStartedStatic;
+    public static UnityEvent onCookingFoodCompleteStatic;
+    public static UnityEvent onOvercookedFoodStatic;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -32,6 +35,7 @@ public class ChefPan : NetworkBehaviour
             if (ingredientCoroutines.Count > 0)
             {
                 onCookingFoodStarted.Invoke();
+                onCookingFoodStartedStatic.Invoke();
             }
         }
 
@@ -64,6 +68,7 @@ public class ChefPan : NetworkBehaviour
             if (ingredientCoroutines.Count == 1 && isOnSearingLocation) 
             {
                 onCookingFoodStarted.Invoke();
+                onCookingFoodStartedStatic.Invoke();
             }
         }
     }
@@ -83,6 +88,7 @@ public class ChefPan : NetworkBehaviour
                 StopCoroutine(valuesList[i]);
             }
             onCookingFoodComplete.Invoke();
+            onCookingFoodCompleteStatic.Invoke();
         }
 
         if (other.transform.root.gameObject.tag == "Ingredient")
@@ -104,6 +110,7 @@ public class ChefPan : NetworkBehaviour
             if (ingredientCoroutines.Count == 0)
             {
                 onCookingFoodComplete.Invoke();
+                onCookingFoodCompleteStatic.Invoke();
             }
         }
     }
@@ -139,6 +146,7 @@ public class ChefPan : NetworkBehaviour
             if (ingredientCoroutines.Count == 0) 
             {
                 onCookingFoodComplete.Invoke();
+                onCookingFoodCompleteStatic.Invoke();
             }            
         }       
     }
@@ -152,6 +160,7 @@ public class ChefPan : NetworkBehaviour
             cookedFood.CharIngredient();
 
             onOvercookedFood.Invoke();
+            onOvercookedFoodStatic.Invoke();
         }
     }
 }

@@ -166,6 +166,8 @@ Grabbing Food:
 
 	TODO: 
 	If pan or fryer hits interactable location, changes bool to true and that determines if the cooking starts
+	Fix turkey
+	If tutorial button hit twice, doesn't run tutorial twice
 
 	
 
