@@ -448,6 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7c660e27f7ba4f8175aa36e3f3218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOnSearingLocation: 0
   onCookingFoodStarted:
     m_PersistentCalls:
       m_Calls:
@@ -502,6 +503,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onOvercookedFood:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7472887022492461451 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4631312782008754448, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
@@ -746,7 +750,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6403939001428495207}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6f1b242e2b1c8ae41ae610aa06adae41, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

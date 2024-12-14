@@ -276,7 +276,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7071814214323971651}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6f1b242e2b1c8ae41ae610aa06adae41, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -318,7 +318,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7071814214323971651}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6f1b242e2b1c8ae41ae610aa06adae41, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -339,7 +339,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7071814214323971651}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6f1b242e2b1c8ae41ae610aa06adae41, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -360,7 +360,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7071814214323971651}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6f1b242e2b1c8ae41ae610aa06adae41, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -381,7 +381,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7071814214323971651}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6f1b242e2b1c8ae41ae610aa06adae41, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -402,7 +402,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7071814214323971651}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6f1b242e2b1c8ae41ae610aa06adae41, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -710,6 +710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b1d5427bea6e44f979011a6588305c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOnFryingLocation: 0
   onCookingFoodStarted:
     m_PersistentCalls:
       m_Calls:
@@ -764,6 +765,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onOvercookedFood:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &5329643702259158516 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 648531938030029472, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
