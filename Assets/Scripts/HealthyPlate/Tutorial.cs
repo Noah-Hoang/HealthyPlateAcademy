@@ -52,6 +52,7 @@ public class Tutorial : NetworkBehaviour
             //Highlight pan and searable foods
             ChefKnife.onFoodCutStatic.RemoveListener(KnifeCutStep);
             ChefPan.onCookwareEnabledStatic.AddListener(PreSearingStep);
+            ChefPan.onCookwareDisabledStatic.AddListener(RemovedFromStove);
         }
         else
         {
@@ -68,9 +69,14 @@ public class Tutorial : NetworkBehaviour
 
     }
 
+    public void RemovedFromStove()
+    {
+        Debug.Log("Make sure the pan stays on the stove to keep the food cooking");
+    }
+
     public void SearingStep()
     {
-        if (searedCount >= 4)
+        if (searedCount >= 2)
         {
             Debug.Log("Searing Done");
             panStepCompleted = true;
@@ -78,12 +84,14 @@ public class Tutorial : NetworkBehaviour
             Debug.Log("Now place the fryer in the frying station");
             //Highlight fryer and fryable foods
             ChefPan.onCookingFoodCompleteStatic.RemoveListener(SearingStep);
+            ChefPan.onCookwareDisabledStatic.RemoveListener(RemovedFromStove);
             ChefFryer.onCookwareEnabledStatic.AddListener(PreFryingStep);
+            ChefFryer.onCookwareDisabledStatic.AddListener(RemovedFromFryer);
         }
         else
         {
             searedCount++;
-            Debug.Log("Great Job!" + searedCount + "/5");
+            Debug.Log("Great Job!" + searedCount + "/3");
         }
     }
 
@@ -94,9 +102,14 @@ public class Tutorial : NetworkBehaviour
         ChefFryer.onCookingFoodCompleteStatic.AddListener(FryStep);
     }
 
+    public void RemovedFromFryer()
+    {
+        Debug.Log("Make sure to keep the fryer in the oil so the food fries");
+    }
+
     public void FryStep()
     {
-        if (fryCount >= 4)
+        if (fryCount >= 2)
         {
             Debug.Log("Frying Done");
             fryerStepCompleted = true;
@@ -104,12 +117,13 @@ public class Tutorial : NetworkBehaviour
             Debug.Log("Now hit the bell to start a recipe");
             //Highlight bell
             ChefFryer.onCookingFoodCompleteStatic.RemoveListener(FryStep);
+            ChefFryer.onCookwareDisabledStatic.RemoveListener(RemovedFromFryer);
             bell.selectEntered.AddListener(Bell);
         }
         else
         {
             fryCount++;
-            Debug.Log("Great Job!" + fryCount + "/5");
+            Debug.Log("Great Job!" + fryCount + "/3");
         }
     }
 
