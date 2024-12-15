@@ -11,12 +11,12 @@ public class ChefFryer : NetworkBehaviour
 
     public bool isOnFryingLocation;
 
-    public UnityEvent onCookingFoodStarted;
-    public UnityEvent onCookingFoodComplete;
-    public UnityEvent onOvercookedFood;
-    public static UnityEvent onCookingFoodStartedStatic;
-    public static UnityEvent onCookingFoodCompleteStatic;
-    public static UnityEvent onOvercookedFoodStatic;
+    public UnityEvent onCookingFoodStarted = new UnityEvent();
+    public UnityEvent onCookingFoodComplete = new UnityEvent();
+    public UnityEvent onOvercookedFood = new UnityEvent();
+    public static UnityEvent onCookingFoodStartedStatic = new UnityEvent();
+    public static UnityEvent onCookingFoodCompleteStatic = new UnityEvent();
+    public static UnityEvent onOvercookedFoodStatic = new UnityEvent();
 
     public void OnTriggerEnter(Collider other)
     {

@@ -6,8 +6,8 @@ using UnityEngine.Events;
 
 public class ChefKnife : NetworkBehaviour
 {
-    public UnityEvent onFoodCut;
-    public static UnityEvent onFoodCutStatic;
+    public UnityEvent onFoodCut = new UnityEvent();
+    public static UnityEvent onFoodCutStatic = new UnityEvent();
 
     public void OnCollisionEnter(Collision collision)
     {
@@ -17,13 +17,14 @@ public class ChefKnife : NetworkBehaviour
             {
                 return;
             }
+
             Runner.Spawn(collision.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO.cutPrefab, collision.transform.root.position, collision.transform.root.rotation);
             if (collision.transform.root.gameObject.GetComponent<Ingredient>().ingredientSO.destroyAfterCut)
             {
                 Runner.Despawn(collision.transform.root.gameObject.GetComponent<NetworkObject>());
-                onFoodCut.Invoke();
-                onFoodCutStatic.Invoke();
             }
+            onFoodCut.Invoke();
+            onFoodCutStatic.Invoke();
         }        
     }
 }
