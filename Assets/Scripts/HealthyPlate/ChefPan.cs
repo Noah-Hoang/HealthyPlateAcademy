@@ -14,9 +14,13 @@ public class ChefPan : NetworkBehaviour
     public UnityEvent onCookingFoodStarted = new UnityEvent();
     public UnityEvent onCookingFoodComplete = new UnityEvent();
     public UnityEvent onOvercookedFood = new UnityEvent();
+    public UnityEvent onCookwareEnabled = new UnityEvent();
+    public UnityEvent onCookwareDisabled = new UnityEvent();
     public static UnityEvent onCookingFoodStartedStatic = new UnityEvent();
     public static UnityEvent onCookingFoodCompleteStatic = new UnityEvent();
     public static UnityEvent onOvercookedFoodStatic = new UnityEvent();
+    public static UnityEvent onCookwareEnabledStatic = new UnityEvent();
+    public static UnityEvent onCookwareDisabledStatic = new UnityEvent();
 
     public void OnTriggerEnter(Collider other)
     {
@@ -24,6 +28,9 @@ public class ChefPan : NetworkBehaviour
         {
             Debug.Log("HELLO");
             isOnSearingLocation = true;
+
+            onCookwareEnabled.Invoke();
+            onCookwareEnabledStatic.Invoke();
 
             // Going through all ingredients in the dictionary and replacing their values with the new coroutine
             foreach (var ingredient in ingredientCoroutines.Keys)
@@ -80,6 +87,9 @@ public class ChefPan : NetworkBehaviour
             Debug.Log("HELLO3");
 
             isOnSearingLocation = false;
+
+            onCookwareDisabled.Invoke();
+            onCookwareDisabledStatic.Invoke();
 
             // Convert the dictionary values to a list to stop all coroutines
             List<Coroutine> valuesList = new List<Coroutine>(ingredientCoroutines.Values);

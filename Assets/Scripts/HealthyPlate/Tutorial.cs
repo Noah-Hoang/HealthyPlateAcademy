@@ -48,16 +48,24 @@ public class Tutorial : NetworkBehaviour
             Debug.Log("Cutting Done");
             knifeStepCompleted = true;
             //Wait 3 seconds with confetti
-            Debug.Log("Grab food and put it on the pan to sear it");
+            Debug.Log("Grab a pan and put it on the stove");
             //Highlight pan and searable foods
             ChefKnife.onFoodCutStatic.RemoveListener(KnifeCutStep);
-            ChefPan.onCookingFoodCompleteStatic.AddListener(SearingStep);
+            ChefPan.onCookwareEnabledStatic.AddListener(PreSearingStep);
         }
         else
         {
             cutCount++;
             Debug.Log("Great Job!" + cutCount + "/5");
         }
+    }
+
+    public void PreSearingStep()
+    {
+        Debug.Log("Try searing a food on the pan now");
+        ChefPan.onCookwareEnabledStatic.RemoveListener(PreSearingStep);
+        ChefPan.onCookingFoodCompleteStatic.AddListener(SearingStep);
+
     }
 
     public void SearingStep()
@@ -67,16 +75,23 @@ public class Tutorial : NetworkBehaviour
             Debug.Log("Searing Done");
             panStepCompleted = true;
             //Wait 3 seconds with confetti
-            Debug.Log("Now try to fry some foods");
+            Debug.Log("Now place the fryer in the frying station");
             //Highlight fryer and fryable foods
             ChefPan.onCookingFoodCompleteStatic.RemoveListener(SearingStep);
-            ChefFryer.onCookingFoodCompleteStatic.AddListener(FryStep);
+            ChefFryer.onCookwareEnabledStatic.AddListener(PreFryingStep);
         }
         else
         {
             searedCount++;
             Debug.Log("Great Job!" + searedCount + "/5");
         }
+    }
+
+    public void PreFryingStep()
+    {
+        Debug.Log("Try frying a food in the fryer now");
+        ChefFryer.onCookwareEnabledStatic.RemoveListener(PreFryingStep);
+        ChefFryer.onCookingFoodCompleteStatic.AddListener(FryStep);
     }
 
     public void FryStep()
