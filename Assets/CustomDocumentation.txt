@@ -168,6 +168,12 @@ Grabbing Food:
 	If pan or fryer hits interactable location, changes bool to true and that determines if the cooking starts
 	Fix turkey
 	If tutorial button hit twice, doesn't run tutorial twice
+	Make new events for when a singular food is cooked and when a singular food starts cooking (Current event tells you when the cookware starts to cook and when it is done cooking)
+
+	Audios:
+	Intro to game and tutorial
+	Audio for all steps (Every method needs its own audio, make it mp3)
+	Tutorial completion audio
 
 	
 
