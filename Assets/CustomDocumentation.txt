@@ -28,13 +28,6 @@ Drag cut prefab of the cuttable food into cuttable food prefab
 Move the visuals of the cuttable prefab so that that cut prefab has space to spawn
 Delete cut prefab once you have reached desired distance between cuttable food and spawn place of cut food
 
-TODO:
-
-if food is not held, start timer for despawn
-make spawning and destroying networked
-cut needs to have bool that lets scriptable object know it needs to be destroyed
-add to _BaseGrabbable cut spawn point script that is used when an object is cut to spawn cut pieces
-Make list of all foods and completed recipes in game and get nutritional info
 
 Completed foods:
 Bread Loaf
@@ -76,15 +69,6 @@ pancakes with blueberry
 cheese - cut -> Sliced Cheese
 potato -cut -> Sliced Potato
 
-#1: create a new empty scene
-#2: figure out how to debug log hello when the space button is pressed
-#3:  Debug log the name of the children of the game object when space is pressed
-#4:link the space button being pressed to playing a particle effect
-#5: when you press the space button it turns on and turns off whne pressed again
-#6: Create event that is called when you press space and link event to particle effect playing
-			PRESS SPACE BUTTON, invokes event, the event turns on or off the particle
-
-
 Effects:
 Cooking:
 	FireEffect14 - fire
@@ -114,66 +98,11 @@ Fridge:
 Grabbing Food:
 	DarkEffect1
 	FireEffect10
-
-	TODO:
-	Change Fryer Collider so food lands higher
-	Add tracker to recipe board to see recipe progress
-	Create test recipe to test certain new things without going through a whole long recipe
-	Test Completed Food Particle effect	
-
-
-	Audio List:
-	Searing Sound
-	Frying Sound
-	Freezer Sound?
-	Ingredient absorbed sound
-	Completed recipe sound
-	cutting sound
-	walking sound
-	grabbing sound
-	new bell sound?
-
-
-	TODO:
-	make fryer and pan only work in their locations
-	add tutorial
-	add tutorial audio
-	add splash screen (use coroutine wait time to switch to intro scene)
-	add intro scene with 2 buttons and buttons are Play Standard Game and Play Instructor Mode 
-	Add Photon Voice
-	Add different pans and knives
-	Add charred food
-	Add branding to kitchen
-
-
-	New scene for tutorial:
-	1 seared food
-	1 fried food
-	1 cut food
-	one of each cooking tool
-	tutroial script listening for each thing being done
-	Tutorial:
-	1. Spawn in
-	2. At the top of the screen, UI with introduction and general overview of the game
-	3. Walks player to fridge so show the infinite food
-	4. Then brings player to cutting board and tells them to cut a bread loaf
-	5. Shows that food will despawn after being left alone for too long
-	6. Then brings player to fryer and shows that only certain foods can be fried and only at the frying location
-	7. Does the same thing with the pan
-	8. Brings player to the dinner bell and upon pressing it, gives the player TestRecipe to try
-	9. Upon completing the recipe, player is awarded a free head, some money, and is brought back to the main menu
-
-
-	TODO: 
-	If pan or fryer hits interactable location, changes bool to true and that determines if the cooking starts
-	Fix turkey
-	If tutorial button hit twice, doesn't run tutorial twice
+	
+	Todo:
+	Add indicators to tools for food so that when you grab the tool you see the indicator on teh food
+	Tutorial events are wrong, make sure using right event
 	Make new events for when a singular food is cooked and when a singular food starts cooking (Current event tells you when the cookware starts to cook and when it is done cooking)
-
-	Audios:
-	Intro to game and tutorial
-	Audio for all steps (Every method needs its own audio, make it mp3)
-	Tutorial completion audio
 
 	
 
