@@ -22410,6 +22410,7 @@ MonoBehaviour:
   recipeOngoing: 0
   money: 0
   testRecipe: {fileID: 11400000, guid: 5959186ba0d10cd428742111f7b44a85, type: 2}
+  tutorialOngoing: 0
   recipeList:
   - {fileID: 11400000, guid: 593e589cdf227b74c883ad24978a5e89, type: 2}
   - {fileID: 11400000, guid: 1ff92a13f5825094695364e4ddc3087a, type: 2}
@@ -22460,7 +22461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SortKey: 3559549830
   ObjectInterest: 1
-  Flags: 1
+  Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 1531295012}
@@ -25739,7 +25740,7 @@ MonoBehaviour:
   - key: KnifeCutStep2
     value: {fileID: 8300000, guid: bf681ed8b174a5b44ba1c5641eef99e1, type: 3}
   - key: PreSearingStep
-    value: {fileID: 8300000, guid: 7a816baae0034e94f9e834f12761c0bd, type: 3}
+    value: {fileID: 8300000, guid: fb983c0a68fddaa48a7cad28f9845d40, type: 3}
   - key: RemovedFromStove
     value: {fileID: 8300000, guid: f955d045c3d14f846908eb9f1557d9a7, type: 3}
   - key: SearingStep1
@@ -25747,7 +25748,7 @@ MonoBehaviour:
   - key: SearingStep2
     value: {fileID: 8300000, guid: 285fdd326b76ddf449d3a889d040638d, type: 3}
   - key: PreFryingStep
-    value: {fileID: 8300000, guid: 9bdbd2513364f0f45b2acab4ebb4e901, type: 3}
+    value: {fileID: 8300000, guid: 89563a2c5419e094b976b24ed9e3cc70, type: 3}
   - key: RemovedFromFryer
     value: {fileID: 8300000, guid: 5f9b46782f91c4e44a64fd69525d387e, type: 3}
   - key: FryStep1

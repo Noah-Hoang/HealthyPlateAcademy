@@ -101,8 +101,7 @@ Grabbing Food:
 	
 	Todo:
 	Add indicators to tools for food so that when you grab the tool you see the indicator on teh food
-	Tutorial events are wrong, make sure using right event
-	Make new events for when a singular food is cooked and when a singular food starts cooking (Current event tells you when the cookware starts to cook and when it is done cooking)
+	Extend tutorial to work with recipe (custom recipe and tray audio)
 
 	
 

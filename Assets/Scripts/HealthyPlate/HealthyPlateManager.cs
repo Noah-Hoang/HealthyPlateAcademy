@@ -23,6 +23,7 @@ public class HealthyPlateManager : NetworkBehaviour
     public bool recipeOngoing;
     public int money;
     public RecipeSO testRecipe;
+    public bool tutorialOngoing;
     public List<RecipeSO> recipeList;
     public TMP_Text timerText;
 
@@ -90,9 +91,16 @@ public class HealthyPlateManager : NetworkBehaviour
     {
         if (!recipeOngoing)
         {
+            if (tutorialOngoing)
+            {
+                currentRecipeIndex = -1;
+            }
+            else
+            {
+                currentRecipeIndex = UnityEngine.Random.Range(0, recipeList.Count);
+            }
             // Start the tick timer
-            recipeTickTimer = TickTimer.CreateFromSeconds(Runner, totalTime); 
-            currentRecipeIndex = UnityEngine.Random.Range(0, recipeList.Count);
+            recipeTickTimer = TickTimer.CreateFromSeconds(Runner, totalTime);
             StartRecipeRPC();
         }
     }  

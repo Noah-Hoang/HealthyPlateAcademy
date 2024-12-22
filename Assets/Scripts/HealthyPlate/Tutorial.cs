@@ -62,11 +62,12 @@ public class Tutorial : NetworkBehaviour
         if (!isTutorialOngoing)
         {
             Debug.Log("Welcome to Game");
+            isTutorialOngoing = true;
+            HealthyPlateManager.Instance.tutorialOngoing = true;
             //Press button
             //Use UI to give overview of game and talk about what to do
             Debug.Log("Start with grabbing a food");
             NetworkedGrab.OnObjectGrabbedStatic.AddListener(ObjectGrabbedStep);
-            isTutorialOngoing = true;
             PlayAudio("StartTutorial");
         }
     }
@@ -183,5 +184,6 @@ public class Tutorial : NetworkBehaviour
         bell.selectEntered.RemoveListener(Bell);
         //Start test recipe
         isTutorialOngoing = false;
+        HealthyPlateManager.Instance.tutorialOngoing = false;
     }
 }
