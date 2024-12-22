@@ -109,7 +109,7 @@ public class Tutorial : NetworkBehaviour
     {
         Debug.Log("Try searing a food on the pan now");
         ChefPan.onCookwareEnabledStatic.RemoveListener(PreSearingStep);
-        ChefPan.onCookingCompleteStatic.AddListener(SearingStep);
+        ChefPan.onCookingIngredientCompleteStatic.AddListener(SearingStep);
         PlayAudio("PreSearingStep");
     }
 
@@ -128,7 +128,7 @@ public class Tutorial : NetworkBehaviour
             //Wait 3 seconds with confetti
             Debug.Log("Now place the fryer in the frying station");
             //Highlight fryer and fryable foods
-            ChefPan.onCookingCompleteStatic.RemoveListener(SearingStep);
+            ChefPan.onCookingIngredientCompleteStatic.RemoveListener(SearingStep);
             ChefPan.onCookwareDisabledStatic.RemoveListener(RemovedFromStove);
             ChefFryer.onCookwareEnabledStatic.AddListener(PreFryingStep);
             ChefFryer.onCookwareDisabledStatic.AddListener(RemovedFromFryer);
@@ -146,7 +146,7 @@ public class Tutorial : NetworkBehaviour
     {
         Debug.Log("Try frying a food in the fryer now");
         ChefFryer.onCookwareEnabledStatic.RemoveListener(PreFryingStep);
-        ChefFryer.onCookingFoodCompleteStatic.AddListener(FryStep);
+        ChefFryer.onCookingIngredientCompleteStatic.AddListener(FryStep);
         PlayAudio("PreFryingStep");
     }
 
@@ -165,7 +165,7 @@ public class Tutorial : NetworkBehaviour
             //Wait 3 seconds with confetti
             Debug.Log("Now hit the bell to start a recipe");
             //Highlight bell
-            ChefFryer.onCookingFoodCompleteStatic.RemoveListener(FryStep);
+            ChefFryer.onCookingIngredientCompleteStatic.RemoveListener(FryStep);
             ChefFryer.onCookwareDisabledStatic.RemoveListener(RemovedFromFryer);
             bell.selectEntered.AddListener(Bell);
             PlayAudio("FryStep2");

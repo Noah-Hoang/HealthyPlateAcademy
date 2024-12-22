@@ -449,21 +449,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOnSearingLocation: 0
-  onCookingFoodStarted:
+  onCookingStarted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2689649928234139148}
-        m_TargetAssemblyTypeName: ParticleController, Assembly-CSharp
-        m_MethodName: StartParticleEffectRPC
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1548244242806575262}
         m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: StartSoundEffectRPC
@@ -476,12 +464,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onCookingFoodComplete:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 2689649928234139148}
         m_TargetAssemblyTypeName: ParticleController, Assembly-CSharp
-        m_MethodName: StopParticleEffectRPC
+        m_MethodName: StartParticleEffectRPC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -491,6 +476,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onCookingComplete:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 1548244242806575262}
         m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: StopSoundEffectRPC
@@ -503,7 +491,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2689649928234139148}
+        m_TargetAssemblyTypeName: ParticleController, Assembly-CSharp
+        m_MethodName: StopParticleEffectRPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onCookingIngredientStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onCookingIngredientComplete:
+    m_PersistentCalls:
+      m_Calls: []
   onOvercookedFood:
+    m_PersistentCalls:
+      m_Calls: []
+  onCookwareEnabled:
+    m_PersistentCalls:
+      m_Calls: []
+  onCookwareDisabled:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &7472887022492461451 stripped

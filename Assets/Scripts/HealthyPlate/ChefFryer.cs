@@ -11,13 +11,17 @@ public class ChefFryer : NetworkBehaviour
 
     public bool isOnFryingLocation;
 
-    public UnityEvent onCookingFoodStarted = new UnityEvent();
-    public UnityEvent onCookingFoodComplete = new UnityEvent();
+    public UnityEvent onCookingStarted = new UnityEvent();
+    public UnityEvent onCookingComplete = new UnityEvent();
+    public UnityEvent onCookingIngredientStarted = new UnityEvent();
+    public UnityEvent onCookingIngredientComplete = new UnityEvent();
     public UnityEvent onOvercookedFood = new UnityEvent();
     public UnityEvent onCookwareEnabled = new UnityEvent();
     public UnityEvent onCookwareDisabled = new UnityEvent();
-    public static UnityEvent onCookingFoodStartedStatic = new UnityEvent();
-    public static UnityEvent onCookingFoodCompleteStatic = new UnityEvent();
+    public static UnityEvent onCookingStartedStatic = new UnityEvent();
+    public static UnityEvent onCookingCompleteStatic = new UnityEvent();
+    public static UnityEvent onCookingIngredientStartedStatic = new UnityEvent();
+    public static UnityEvent onCookingIngredientCompleteStatic = new UnityEvent();
     public static UnityEvent onOvercookedFoodStatic = new UnityEvent();
     public static UnityEvent onCookwareEnabledStatic = new UnityEvent();
     public static UnityEvent onCookwareDisabledStatic = new UnityEvent();
@@ -32,17 +36,19 @@ public class ChefFryer : NetworkBehaviour
             onCookwareEnabled.Invoke();
             onCookwareEnabledStatic.Invoke();
 
+            if (ingredientCoroutines.Count > 0)
+            {
+                onCookingStarted.Invoke();
+                onCookingStartedStatic.Invoke();
+            }
+
             // Going through all ingredients in the dictionary and replacing their values with the new coroutine
             foreach (var ingredient in ingredientCoroutines.Keys)
             {
                 Coroutine fryingCoroutine = StartCoroutine(FryTime(ingredient.GetComponent<Collider>()));
                 ingredientCoroutines[ingredient] = fryingCoroutine;
-            }
-
-            if (ingredientCoroutines.Count > 0)
-            {
-                onCookingFoodStarted.Invoke();
-                onCookingFoodStartedStatic.Invoke();
+                onCookingIngredientStarted.Invoke();
+                onCookingIngredientStartedStatic.Invoke();
             }
         }
 
@@ -68,14 +74,16 @@ public class ChefFryer : NetworkBehaviour
                 {
                     Coroutine fryingCoroutine = StartCoroutine(FryTime(other));
                     ingredientCoroutines[ingredient] = fryingCoroutine;
+                    onCookingIngredientStarted.Invoke();
+                    onCookingIngredientStartedStatic.Invoke();
                 }
             }
 
             // Check if the dictionary is empty and invoke the event if this is the first ingredient
             if (ingredientCoroutines.Count == 1 && isOnFryingLocation)
             {
-                onCookingFoodStarted.Invoke();
-                onCookingFoodStartedStatic.Invoke();
+                onCookingStarted.Invoke();
+                onCookingStartedStatic.Invoke();
             }
         }
     }
@@ -95,10 +103,17 @@ public class ChefFryer : NetworkBehaviour
             List<Coroutine> valuesList = new List<Coroutine>(ingredientCoroutines.Values);
             for (int i = 0; i < valuesList.Count; i++)
             {
-                StopCoroutine(valuesList[i]);
+                if (valuesList[i] != null)
+                {
+                    StopCoroutine(valuesList[i]);
+                }
             }
-            onCookingFoodComplete.Invoke();
-            onCookingFoodCompleteStatic.Invoke();
+
+            if (ingredientCoroutines.Count > 0)
+            {
+                onCookingComplete.Invoke();
+                onCookingCompleteStatic.Invoke();
+            }
         }
 
         if (other.transform.root.gameObject.tag == "Ingredient")
@@ -119,8 +134,8 @@ public class ChefFryer : NetworkBehaviour
 
             if (ingredientCoroutines.Count == 0)
             {
-                onCookingFoodComplete.Invoke();
-                onCookingFoodCompleteStatic.Invoke();
+                onCookingComplete.Invoke();
+                onCookingCompleteStatic.Invoke();
             }
         }
     }
@@ -137,6 +152,11 @@ public class ChefFryer : NetworkBehaviour
         {
             cookedFood = Runner.Spawn(ingredient.GetComponent<Ingredient>().ingredientSO.friedPrefab, ingredient.transform.position, ingredient.transform.rotation).GetComponent<Ingredient>();
 
+            // Remove the ingredient from the dictionary once the searing is complete
+            ingredientCoroutines.Remove(ingredient);
+            onCookingIngredientComplete.Invoke();
+            onCookingIngredientCompleteStatic.Invoke();
+
             // Checks to see if ingredient put in pan has been added to the dictionary yet.
             //If it has not, starts the SearTime Coroutine and adds ingredient and coroutine to dictionary
             if (!ingredientCoroutines.ContainsKey(cookedFood))
@@ -145,8 +165,6 @@ public class ChefFryer : NetworkBehaviour
                 ingredientCoroutines.Add(cookedFood, overcookedCoroutine);
             }
 
-            // Remove the ingredient from the dictionary once the searing is complete
-            ingredientCoroutines.Remove(ingredient);
 
             if (ingredient.GetComponent<Ingredient>().ingredientSO.destroyAfterFried)
             {
@@ -155,8 +173,8 @@ public class ChefFryer : NetworkBehaviour
 
             if (ingredientCoroutines.Count == 0)
             {
-                onCookingFoodComplete.Invoke();
-                onCookingFoodCompleteStatic.Invoke();
+                onCookingComplete.Invoke();
+                onCookingCompleteStatic.Invoke();
             }
         }
     }
