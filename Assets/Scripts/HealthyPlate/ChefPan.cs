@@ -11,13 +11,13 @@ public class ChefPan : NetworkBehaviour
 
     public bool isOnSearingLocation;
 
-    public UnityEvent onCookingFoodStarted = new UnityEvent();
-    public UnityEvent onCookingFoodComplete = new UnityEvent();
+    public UnityEvent onCookingStarted = new UnityEvent();
+    public UnityEvent onCookingComplete = new UnityEvent();
     public UnityEvent onOvercookedFood = new UnityEvent();
     public UnityEvent onCookwareEnabled = new UnityEvent();
     public UnityEvent onCookwareDisabled = new UnityEvent();
-    public static UnityEvent onCookingFoodStartedStatic = new UnityEvent();
-    public static UnityEvent onCookingFoodCompleteStatic = new UnityEvent();
+    public static UnityEvent onCookingStartedStatic = new UnityEvent();
+    public static UnityEvent onCookingCompleteStatic = new UnityEvent();
     public static UnityEvent onOvercookedFoodStatic = new UnityEvent();
     public static UnityEvent onCookwareEnabledStatic = new UnityEvent();
     public static UnityEvent onCookwareDisabledStatic = new UnityEvent();
@@ -41,8 +41,8 @@ public class ChefPan : NetworkBehaviour
 
             if (ingredientCoroutines.Count > 0)
             {
-                onCookingFoodStarted.Invoke();
-                onCookingFoodStartedStatic.Invoke();
+                onCookingStarted.Invoke();
+                onCookingStartedStatic.Invoke();
             }
         }
 
@@ -74,8 +74,8 @@ public class ChefPan : NetworkBehaviour
             // Check if the dictionary is empty and invoke the event if this is the first ingredient
             if (ingredientCoroutines.Count == 1 && isOnSearingLocation) 
             {
-                onCookingFoodStarted.Invoke();
-                onCookingFoodStartedStatic.Invoke();
+                onCookingStarted.Invoke();
+                onCookingStartedStatic.Invoke();
             }
         }
     }
@@ -95,10 +95,17 @@ public class ChefPan : NetworkBehaviour
             List<Coroutine> valuesList = new List<Coroutine>(ingredientCoroutines.Values);
             for (int i = 0; i < valuesList.Count; i++)
             {
-                StopCoroutine(valuesList[i]);
+                if (valuesList[i] != null)
+                {
+                    StopCoroutine(valuesList[i]);
+                }
             }
-            onCookingFoodComplete.Invoke();
-            onCookingFoodCompleteStatic.Invoke();
+
+            if (ingredientCoroutines.Count > 0)
+            {
+                onCookingComplete.Invoke();
+                onCookingCompleteStatic.Invoke();
+            }
         }
 
         if (other.transform.root.gameObject.tag == "Ingredient")
@@ -119,8 +126,8 @@ public class ChefPan : NetworkBehaviour
 
             if (ingredientCoroutines.Count == 0)
             {
-                onCookingFoodComplete.Invoke();
-                onCookingFoodCompleteStatic.Invoke();
+                onCookingComplete.Invoke();
+                onCookingCompleteStatic.Invoke();
             }
         }
     }
@@ -155,8 +162,8 @@ public class ChefPan : NetworkBehaviour
 
             if (ingredientCoroutines.Count == 0) 
             {
-                onCookingFoodComplete.Invoke();
-                onCookingFoodCompleteStatic.Invoke();
+                onCookingComplete.Invoke();
+                onCookingCompleteStatic.Invoke();
             }            
         }       
     }

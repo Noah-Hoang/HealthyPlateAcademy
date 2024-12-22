@@ -109,7 +109,7 @@ public class Tutorial : NetworkBehaviour
     {
         Debug.Log("Try searing a food on the pan now");
         ChefPan.onCookwareEnabledStatic.RemoveListener(PreSearingStep);
-        ChefPan.onCookingFoodCompleteStatic.AddListener(SearingStep);
+        ChefPan.onCookingCompleteStatic.AddListener(SearingStep);
         PlayAudio("PreSearingStep");
     }
 
@@ -128,7 +128,7 @@ public class Tutorial : NetworkBehaviour
             //Wait 3 seconds with confetti
             Debug.Log("Now place the fryer in the frying station");
             //Highlight fryer and fryable foods
-            ChefPan.onCookingFoodCompleteStatic.RemoveListener(SearingStep);
+            ChefPan.onCookingCompleteStatic.RemoveListener(SearingStep);
             ChefPan.onCookwareDisabledStatic.RemoveListener(RemovedFromStove);
             ChefFryer.onCookwareEnabledStatic.AddListener(PreFryingStep);
             ChefFryer.onCookwareDisabledStatic.AddListener(RemovedFromFryer);
