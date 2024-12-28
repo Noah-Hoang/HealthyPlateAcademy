@@ -100,8 +100,6 @@ Grabbing Food:
 	FireEffect10
 	
 	Todo:
-	Add indicators to tools for food so that when you grab the tool you see the indicator on teh food
-		(make ui for ingredients that shows picture of spongebob whenever any tool that it interacts with is grabbed)
 	Extend tutorial to work with recipe (custom recipe and tray audio)
 
 	
