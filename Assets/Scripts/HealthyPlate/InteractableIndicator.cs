@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 public class InteractableIndicator : MonoBehaviour
 {
-    public Canvas image;
-    // Start is called before the first frame update
+    public Canvas canvas;
+    public Image image;
+    public Sprite knifeIcon;
+    public Sprite panIcon;
+    public Sprite fryerIcon;
+
     private void OnEnable()
     {
         NetworkedGrab.OnObjectGrabbedStatic.AddListener(DisplayImage);
@@ -29,21 +33,24 @@ public class InteractableIndicator : MonoBehaviour
             {
                 if (gameObject.GetComponent<Ingredient>().ingredientSO.cutPrefab != null)
                 {
-                    image.enabled = true;
+                    image.sprite = knifeIcon;
+                    canvas.enabled = true;
                 }
             }
             else if (obj.GetComponent<ChefPan>() != null)
             {
                 if (gameObject.GetComponent<Ingredient>().ingredientSO.searedPrefab != null)
                 {
-                    image.enabled = true;
+                    image.sprite = panIcon;
+                    canvas.enabled = true;
                 }
             }
             else if (obj.GetComponent<ChefFryer>() != null)
             {
                 if (gameObject.GetComponent<Ingredient>().ingredientSO.friedPrefab != null)
                 {
-                    image.enabled = true;
+                    image.sprite = fryerIcon;
+                    canvas.enabled = true;
                 }
             }
         }
@@ -57,21 +64,21 @@ public class InteractableIndicator : MonoBehaviour
             {
                 if (gameObject.GetComponent<Ingredient>().ingredientSO.cutPrefab != null)
                 {
-                    image.enabled = false;
+                    canvas.enabled = false;
                 }
             }
             else if (obj.GetComponent<ChefPan>() != null)
             {
                 if (gameObject.GetComponent<Ingredient>().ingredientSO.searedPrefab != null)
                 {
-                    image.enabled = false;
+                    canvas.enabled = false;
                 }
             }
             else if (obj.GetComponent<ChefFryer>() != null)
             {
                 if (gameObject.GetComponent<Ingredient>().ingredientSO.friedPrefab != null)
                 {
-                    image.enabled = false;
+                    canvas.enabled = false;
                 }
             }
         }
