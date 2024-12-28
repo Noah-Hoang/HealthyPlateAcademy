@@ -640,10 +640,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8696729035884437208, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: CookingTool
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4265718819436604863, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
+    - {fileID: -6614006407620406896, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 648531938030029472, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}

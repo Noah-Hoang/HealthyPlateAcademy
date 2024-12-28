@@ -198,10 +198,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8696729035884437208, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: CookingTool
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4265718819436604863, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
+    - {fileID: -6614006407620406896, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 648531938030029472, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}
@@ -229,6 +230,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232caf5889aaf834096c9ee147b3dd85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onFoodCut:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1896576771120621388 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7773023045798640834, guid: 8ce97d83a9b2c704f98ea05d8ce9c967, type: 3}

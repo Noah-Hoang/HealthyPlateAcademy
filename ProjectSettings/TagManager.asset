@@ -9,6 +9,7 @@ TagManager:
   - Ingredient
   - SearLocation
   - FryLocation
+  - CookingTool
   layers:
   - Default
   - TransparentFX
