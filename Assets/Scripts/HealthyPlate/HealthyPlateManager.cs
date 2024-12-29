@@ -100,6 +100,7 @@ public class HealthyPlateManager : NetworkBehaviour
                 currentRecipeIndex = UnityEngine.Random.Range(0, recipeList.Count);
             }
             // Start the tick timer
+            totalTime = recipeList[currentRecipeIndex].recipeTime;
             recipeTickTimer = TickTimer.CreateFromSeconds(Runner, totalTime);
             StartRecipeRPC();
         }

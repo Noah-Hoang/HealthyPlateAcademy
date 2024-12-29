@@ -13,6 +13,7 @@ public struct IngredientHolder
 public class RecipeSO : IngredientSO
 {
     [Header("Recipe")]
+    public float recipeTime = 60.0f;
     public GameObject completedRecipe;
     public List<IngredientHolder> ingredientHolders;
 }
