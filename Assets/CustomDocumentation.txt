@@ -100,8 +100,10 @@ Grabbing Food:
 	FireEffect10
 	
 	Todo:
-	2) Connect to VR keyboard
-	make something to enter name and display name above head while playing
+	Make keyboard connect to selected input fielf
+	network name above players heads
+
+
 	
 
 

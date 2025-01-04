@@ -11,23 +11,49 @@ using Keyboard;
 public class IntroButtons : MonoBehaviour
 {
     public TMP_InputField roomNameInputField;
+    public TMP_InputField characterNameInputField;
+    public static string characterName;
     public FusionBootstrap fusionBootstrap;
     public KeyChannel keyChannel;
+    public KeyboardManager keyboardManager;
 
     public void OnEnable()
     {
         //FindObjectOfType searches through entire scene for something, in this case FusionBootstrap
         fusionBootstrap = FindObjectOfType<FusionBootstrap>();
         //Listens for when the text of the input field changes then calls the method
-        roomNameInputField.onEndEdit.AddListener(UpdateRoomName);   
+        roomNameInputField.onEndEdit.AddListener(UpdateRoomName);
+        characterNameInputField.onEndEdit.AddListener(UpdateCharacterName);
         roomNameInputField.text = "Room:" + Random.Range(0000, 9999).ToString();
-        keyChannel.OnKeyPressed += OnKeyPressed;
+        keyChannel.OnKeyPressed += OnRoomKeyPressed;
+        roomNameInputField.onSelect.AddListener(OnRoomInputFieldSelected);
+        characterNameInputField.onSelect.AddListener(OnCharacterInputFieldSelected);
     }
     
-    public void OnKeyPressed(string character)
+    public void OnRoomInputFieldSelected(string str)
+    {
+        keyboardManager.outputField = roomNameInputField;
+        keyChannel.OnKeyPressed -= OnCharacterKeyPressed;
+        keyChannel.OnKeyPressed += OnRoomKeyPressed;
+    }
+
+    public void OnCharacterInputFieldSelected(string str)
+    {
+        keyboardManager.outputField = characterNameInputField;
+        keyChannel.OnKeyPressed -= OnRoomKeyPressed;
+        keyChannel.OnKeyPressed += OnCharacterKeyPressed;
+    }
+
+    public void OnRoomKeyPressed(string character)
     {
         roomNameInputField.text = character;
-        keyChannel.OnKeyPressed -= OnKeyPressed;
+        keyChannel.OnKeyPressed -= OnRoomKeyPressed;
+    }
+
+    public void OnCharacterKeyPressed(string character)
+    {
+        characterNameInputField.text = character;
+        keyChannel.OnKeyPressed -= OnCharacterKeyPressed;
     }
 
     public void StandardMode()
@@ -92,6 +118,14 @@ public class IntroButtons : MonoBehaviour
         else
         {
             Debug.LogWarning("Room name is empty!");
+        }
+    }
+
+    public void UpdateCharacterName(string charName)
+    {
+        if (!string.IsNullOrEmpty(charName))
+        {
+            characterName = characterNameInputField.text;
         }
     }
 }
