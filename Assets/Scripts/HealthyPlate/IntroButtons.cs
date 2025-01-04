@@ -5,11 +5,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement; // For scene management
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
+using Keyboard;
 
 public class IntroButtons : MonoBehaviour
 {
     public TMP_InputField roomNameInputField;
     public FusionBootstrap fusionBootstrap;
+    public KeyChannel keyChannel;
 
     public void OnEnable()
     {
@@ -17,9 +20,16 @@ public class IntroButtons : MonoBehaviour
         fusionBootstrap = FindObjectOfType<FusionBootstrap>();
         //Listens for when the text of the input field changes then calls the method
         roomNameInputField.onEndEdit.AddListener(UpdateRoomName);   
-        fusionBootstrap.DefaultRoomName = "Room:" + Random.Range(0000, 9999).ToString();
-        roomNameInputField.text = fusionBootstrap.DefaultRoomName;
+        roomNameInputField.text = "Room:" + Random.Range(0000, 9999).ToString();
+        keyChannel.OnKeyPressed += OnKeyPressed;
     }
+    
+    public void OnKeyPressed(string character)
+    {
+        roomNameInputField.text = character;
+        keyChannel.OnKeyPressed -= OnKeyPressed;
+    }
+
     public void StandardMode()
     {
         Debug.Log("Play Standard Mode");

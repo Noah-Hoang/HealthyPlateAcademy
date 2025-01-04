@@ -100,7 +100,6 @@ Grabbing Food:
 	FireEffect10
 	
 	Todo:
-	1) Make good looking worldspace ui and make scene a scene
 	2) Connect to VR keyboard
 	make something to enter name and display name above head while playing
 	
