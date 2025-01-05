@@ -100,8 +100,11 @@ Grabbing Food:
 	FireEffect10
 	
 	Todo:
-	Make keyboard connect to selected input fielf
-	network name above players heads
+	Add money system
+	Add freeplay mode
+	Add menu to change mode while playing
+	Add more cooking tools (Pots, Blender, Oven)
+	Add liquid?
 
 
 	
