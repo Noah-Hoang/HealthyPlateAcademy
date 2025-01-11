@@ -15,10 +15,6 @@ public class Tutorial : NetworkBehaviour
         public AudioClip value; // Reference to the AudioClip
     }
 
-    public bool grabStepCompleted;
-    public bool knifeStepCompleted;
-    public bool panStepCompleted;
-    public bool fryerStepCompleted;
     public int cutCount;
     public int searedCount;
     public int fryCount;
@@ -75,7 +71,6 @@ public class Tutorial : NetworkBehaviour
     public void ObjectGrabbedStep(GameObject gameObject, bool grabbed)
     {
         Debug.Log("Grabbing Done");
-        grabStepCompleted = true;
         // Wait 3 seconds with confetti
         Debug.Log("Grab a knife and try cutting a food");
         //Highlight around all cuttable foods and knife
@@ -88,8 +83,7 @@ public class Tutorial : NetworkBehaviour
     {
         if (cutCount >= 4)
         {
-            Debug.Log("Cutting Done");
-            knifeStepCompleted = true;
+            Debug.Log("Cutting Done");            
             //Wait 3 seconds with confetti
             Debug.Log("Grab a pan and put it on the stove");
             //Highlight pan and searable foods
@@ -125,7 +119,6 @@ public class Tutorial : NetworkBehaviour
         if (searedCount >= 2)
         {
             Debug.Log("Searing Done");
-            panStepCompleted = true;
             //Wait 3 seconds with confetti
             Debug.Log("Now place the fryer in the frying station");
             //Highlight fryer and fryable foods
@@ -162,7 +155,6 @@ public class Tutorial : NetworkBehaviour
         if (fryCount >= 2)
         {
             Debug.Log("Frying Done");
-            fryerStepCompleted = true;
             //Wait 3 seconds with confetti
             Debug.Log("Now hit the bell to start a recipe");
             //Highlight bell

@@ -12,14 +12,14 @@ public class ChefPan : NetworkBehaviour
     public bool isOnSearingLocation;
 
     public UnityEvent onCookingStarted = new UnityEvent();
-    public UnityEvent onCookingComplete = new UnityEvent();
+    public UnityEvent onCookingStopped = new UnityEvent();
     public UnityEvent onCookingIngredientStarted = new UnityEvent();
     public UnityEvent onCookingIngredientComplete = new UnityEvent();
     public UnityEvent onOvercookedFood = new UnityEvent();
     public UnityEvent onCookwareEnabled = new UnityEvent();
     public UnityEvent onCookwareDisabled = new UnityEvent();
     public static UnityEvent onCookingStartedStatic = new UnityEvent();
-    public static UnityEvent onCookingCompleteStatic = new UnityEvent();
+    public static UnityEvent onCookingStoppedStatic = new UnityEvent();
     public static UnityEvent onCookingIngredientStartedStatic = new UnityEvent();
     public static UnityEvent onCookingIngredientCompleteStatic = new UnityEvent();
     public static UnityEvent onOvercookedFoodStatic = new UnityEvent();
@@ -111,8 +111,8 @@ public class ChefPan : NetworkBehaviour
 
             if (ingredientCoroutines.Count > 0)
             {
-                onCookingComplete.Invoke();
-                onCookingCompleteStatic.Invoke();
+                onCookingStopped.Invoke();
+                onCookingStoppedStatic.Invoke();
             }
         }
 
@@ -134,8 +134,8 @@ public class ChefPan : NetworkBehaviour
 
             if (ingredientCoroutines.Count == 0)
             {
-                onCookingComplete.Invoke();
-                onCookingCompleteStatic.Invoke();
+                onCookingStopped.Invoke();
+                onCookingStoppedStatic.Invoke();
             }
         }
     }
@@ -172,8 +172,8 @@ public class ChefPan : NetworkBehaviour
 
             if (ingredientCoroutines.Count == 0) 
             {
-                onCookingComplete.Invoke();
-                onCookingCompleteStatic.Invoke();
+                onCookingStopped.Invoke();
+                onCookingStoppedStatic.Invoke();
             }            
         }       
     }

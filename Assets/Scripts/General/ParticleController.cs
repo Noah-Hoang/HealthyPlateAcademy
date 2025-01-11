@@ -18,17 +18,17 @@ public class ParticleController : NetworkBehaviour
     // Start is called before the first frame update
     public virtual void OnEnable()
     {
-        //Setting up the InputActionAsset for use
-        inputActions = new XRIDefaultInputActions();
-        inputActions.General.Enable();
-        inputActions.General.Test.started += TestButton;
+        ////Setting up the InputActionAsset for use
+        //inputActions = new XRIDefaultInputActions();
+        //inputActions.General.Enable();
+        //inputActions.General.Test.started += TestButton;
         onParticleEffectStarted.AddListener(StartParticleEffectCallback);
         onParticleEffectEnded.AddListener(StopParticleEffectCallback);
     }
 
     public virtual void OnDisable()
     {
-        inputActions.General.Test.started -= TestButton;
+        //inputActions.General.Test.started -= TestButton;
         onParticleEffectStarted.RemoveListener(StartParticleEffectCallback);
         onParticleEffectEnded.RemoveListener(StopParticleEffectCallback);
     }
@@ -102,6 +102,6 @@ public class ParticleController : NetworkBehaviour
             
             particle.Stop();  // Stop it first to ensure it restarts from the beginning
         }
-    }
+    } 
 }
 
