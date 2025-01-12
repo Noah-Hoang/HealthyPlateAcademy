@@ -44,13 +44,13 @@ public class HealthyPlateManager : NetworkBehaviour
 
     void OnEnable()
     {
-        onRecipeSucceded.AddListener(RecipeSucceded);
+        onRecipeSucceded.AddListener(RecipeSuccededRPC);
         onRecipeFailed.AddListener(RecipeFailed);
     }
 
     private void OnDisable()
     {
-        onRecipeSucceded.RemoveListener(RecipeSucceded);
+        onRecipeSucceded.RemoveListener(RecipeSuccededRPC);
         onRecipeFailed.RemoveListener(RecipeFailed);
     }
 
@@ -153,7 +153,8 @@ public class HealthyPlateManager : NetworkBehaviour
         }
     }
 
-    public void RecipeSucceded()
+    [Rpc]
+    public void RecipeSuccededRPC()
     {
         //currentRecipeIndex set to -100 is the base for when there is no recipe ongoing
         currentRecipeIndex = -100;

@@ -77,6 +77,8 @@ public class IntroButtons : MonoBehaviour
         // Load the target scene asynchronously
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
 
+        //Wait a frame so the asyncLoad variable is set up before we start to use it
+        yield return null;
         // Wait for the scene to finish loading
         while (!asyncLoad.isDone)
         {

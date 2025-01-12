@@ -31,15 +31,15 @@ public class RecipeContainer : NetworkBehaviour, IPlayerJoined
     private void OnEnable()
     {
         HealthyPlateManager.Instance.onRecipeAssigned.AddListener(SetRecipe);
-        HealthyPlateManager.Instance.onRecipeSucceded.AddListener(ClearBoard);
-        HealthyPlateManager.Instance.onRecipeFailed.AddListener(ClearBoard);
+        HealthyPlateManager.Instance.onRecipeSucceded.AddListener(ClearBoardRPC);
+        HealthyPlateManager.Instance.onRecipeFailed.AddListener(ClearBoardRPC);
     }
 
     private void OnDisable()
     {
         HealthyPlateManager.Instance.onRecipeAssigned.RemoveListener(SetRecipe);
-        HealthyPlateManager.Instance.onRecipeSucceded.RemoveListener(ClearBoard);
-        HealthyPlateManager.Instance.onRecipeFailed.RemoveListener(ClearBoard);
+        HealthyPlateManager.Instance.onRecipeSucceded.RemoveListener(ClearBoardRPC);
+        HealthyPlateManager.Instance.onRecipeFailed.RemoveListener(ClearBoardRPC);
     }
 
     [ContextMenu("Set Recipe")]
@@ -104,6 +104,7 @@ public class RecipeContainer : NetworkBehaviour, IPlayerJoined
             //Goes through all of the IngredientRequiremt in ingredientRequirements
             for (int i = 0; i < ingredientRequirements.Count; i++)
             {
+                //Goes to the next ingredient in the list if the ingredient requirement in the recipe has been met
                 if (ingredientRequirements[i].hasEnough)
                 {
                     continue;
@@ -183,7 +184,8 @@ public class RecipeContainer : NetworkBehaviour, IPlayerJoined
         recipeIngredientsDisplay.text = progressText;
     }
 
-    public void ClearBoard()
+    [Rpc]
+    public void ClearBoardRPC()
     {
         recipeNameDisplay.text = "";
         recipeIngredientsDisplay.text = "";
