@@ -477,12 +477,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onCookingComplete:
+  onCookingStopped:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1548244242806575262}
-        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
-        m_MethodName: StopSoundEffectRPC
+      - m_Target: {fileID: 2689649928234139148}
+        m_TargetAssemblyTypeName: ParticleController, Assembly-CSharp
+        m_MethodName: StopParticleEffectRPC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -492,9 +492,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2689649928234139148}
-        m_TargetAssemblyTypeName: ParticleController, Assembly-CSharp
-        m_MethodName: StopParticleEffectRPC
+      - m_Target: {fileID: 1548244242806575262}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: StopSoundEffectRPC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

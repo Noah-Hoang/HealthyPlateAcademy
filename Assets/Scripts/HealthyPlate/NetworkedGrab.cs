@@ -20,6 +20,18 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
     public static UnityEvent<GameObject, bool> OnObjectGrabbedStatic = new UnityEvent<GameObject, bool>();
     public static UnityEvent<GameObject, bool> OnObjectReleasedStatic = new UnityEvent<GameObject, bool>();
 
+    public void OnEnable()
+    {
+        gameObject.GetComponent<XRGrabInteractable>().firstSelectEntered.AddListener(OnGrab);
+        gameObject.GetComponent<XRGrabInteractable>().lastSelectExited.AddListener(OnRelease);
+    }
+
+    public void OnDisable()
+    {
+        gameObject.GetComponent<XRGrabInteractable>().firstSelectEntered.RemoveListener(OnGrab);
+        gameObject.GetComponent<XRGrabInteractable>().lastSelectExited.RemoveListener(OnRelease);
+    }
+
     //If you don't have state authority over the object, you get it and returns out of the method
     public void OnGrab(SelectEnterEventArgs enter)
     {
@@ -62,7 +74,7 @@ public class NetworkedGrab : NetworkBehaviour, IStateAuthorityChanged
     }
 
     //Is called when object is released and sets the onHeld variable to false
-    public void OnRelease()
+    public void OnRelease(SelectExitEventArgs enter)
     {
         OnHeldChangedRPC(false);
 
