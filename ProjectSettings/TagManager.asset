@@ -10,6 +10,7 @@ TagManager:
   - SearLocation
   - FryLocation
   - CookingTool
+  - OvenLocation
   layers:
   - Default
   - TransparentFX

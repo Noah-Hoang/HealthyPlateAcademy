@@ -10333,7 +10333,6 @@ Transform:
   - {fileID: 8033024014913503362}
   - {fileID: 4400858400668750405}
   - {fileID: 5649775182845629044}
-  - {fileID: 126985944801133518}
   - {fileID: 5614179388583715707}
   - {fileID: 649186760}
   - {fileID: 2431061235059329458}
@@ -25720,10 +25719,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47935a34a5edf37459f476754986a1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabStepCompleted: 0
-  knifeStepCompleted: 0
-  panStepCompleted: 0
-  fryerStepCompleted: 0
   cutCount: 0
   searedCount: 0
   fryCount: 0
@@ -31556,7 +31551,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 734423113}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 183271544307201437, guid: a92b44a9c94f7f4418370170cfbc769c, type: 3}
       propertyPath: m_Convex
@@ -31567,16 +31562,20 @@ PrefabInstance:
       value: 132
       objectReference: {fileID: 0}
     - target: {fileID: 2760597056420908670, guid: a92b44a9c94f7f4418370170cfbc769c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.67808
+      objectReference: {fileID: 0}
+    - target: {fileID: 2760597056420908670, guid: a92b44a9c94f7f4418370170cfbc769c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.171999
+      value: 3.161999
       objectReference: {fileID: 0}
     - target: {fileID: 2760597056420908670, guid: a92b44a9c94f7f4418370170cfbc769c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.591
+      value: -1.3288252
       objectReference: {fileID: 0}
     - target: {fileID: 2760597056420908670, guid: a92b44a9c94f7f4418370170cfbc769c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.7249985
+      value: 0.28499848
       objectReference: {fileID: 0}
     - target: {fileID: 2760597056420908670, guid: a92b44a9c94f7f4418370170cfbc769c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -31606,9 +31605,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2760698185976449494, guid: a92b44a9c94f7f4418370170cfbc769c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7164411
+      objectReference: {fileID: 0}
+    - target: {fileID: 2760698185976449494, guid: a92b44a9c94f7f4418370170cfbc769c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.69764775
+      objectReference: {fileID: 0}
+    - target: {fileID: 2760698185976449494, guid: a92b44a9c94f7f4418370170cfbc769c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 88.478
+      objectReference: {fileID: 0}
     - target: {fileID: 2763942517018500414, guid: a92b44a9c94f7f4418370170cfbc769c, type: 3}
       propertyPath: m_Name
-      value: plate
+      value: ChefOven
       objectReference: {fileID: 0}
     - target: {fileID: 4456087398476423421, guid: a92b44a9c94f7f4418370170cfbc769c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31631,11 +31642,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 126985944801133522}
   m_SourcePrefab: {fileID: 100100000, guid: a92b44a9c94f7f4418370170cfbc769c, type: 3}
---- !u!4 &126985944801133518 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2760597056420908670, guid: a92b44a9c94f7f4418370170cfbc769c, type: 3}
-  m_PrefabInstance: {fileID: 126985944801133517}
-  m_PrefabAsset: {fileID: 0}
 --- !u!65 &126985944801133522
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32439,3 +32445,4 @@ SceneRoots:
   - {fileID: 1806813847}
   - {fileID: 1478835846}
   - {fileID: 1748910934}
+  - {fileID: 126985944801133517}
