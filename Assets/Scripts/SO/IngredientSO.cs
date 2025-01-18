@@ -17,12 +17,24 @@ public class IngredientSO : ScriptableObject
     [Header("Cut")]
     public GameObject cutPrefab;
     public bool destroyAfterCut;
-    [Header("fried")]
+
+    [Header("Fried")]
     public GameObject friedPrefab;
     public bool destroyAfterFried;
     public float timeUntilFried;
+
     [Header("Seared")]
     public GameObject searedPrefab;
     public bool destroyAfterSeared;
     public float timeUntilSeared;
+
+    [Header("Boil")]
+    public GameObject boiledPrefab;
+    public bool destroyAfterBoiled;
+    public float timeUntilBoiled;
+
+    [Header("Oven Cooked")]
+    public GameObject ovenCookedPrefab;
+    public bool destroyAfterOvenCooked;
+    public float timeUntilOvenCooked;
 }

@@ -11,9 +11,9 @@ public class CookingTool : NetworkBehaviour
 
     public bool isOnCookingLocation;
     public virtual string cookingLocation { get; set; }
-    public GameObject nextFood;
-    public float timeUntilCooked;
-    public bool destroyAfterCooked;
+    protected GameObject nextFood;
+    protected float timeUntilCooked;
+    protected bool destroyAfterCooked;
 
     public UnityEvent onCookingStarted = new UnityEvent();
     public UnityEvent onCookingStopped = new UnityEvent();

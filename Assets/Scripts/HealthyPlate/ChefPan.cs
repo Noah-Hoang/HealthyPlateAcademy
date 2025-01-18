@@ -23,6 +23,7 @@ public class ChefPan : CookingTool
         Ingredient ingredientSetter = other.transform.GetComponentInParent<Ingredient>();
         timeUntilCooked = ingredientSetter.ingredientSO.timeUntilSeared;
         nextFood = ingredientSetter.ingredientSO.searedPrefab;
+        destroyAfterCooked = ingredientSetter.ingredientSO.destroyAfterSeared;
 
         return base.CookingTime(other);
     }

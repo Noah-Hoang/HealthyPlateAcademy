@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Fusion;
-using UnityEngine.Events;
 
-public class ChefFryer : CookingTool 
-{ 
-    public override string cookingLocation { get; set; } = "FryLocation";
+public class ChefOven : CookingTool
+{
+    public override string cookingLocation { get; set; } = "OvenLocation";
 
     public override void OnTriggerEnter(Collider other)
     {
@@ -21,9 +19,9 @@ public class ChefFryer : CookingTool
     public override IEnumerator CookingTime(Collider other)
     {
         Ingredient ingredientSetter = other.transform.GetComponentInParent<Ingredient>();
-        timeUntilCooked = ingredientSetter.ingredientSO.timeUntilFried;
-        nextFood = ingredientSetter.ingredientSO.friedPrefab;
-        destroyAfterCooked = ingredientSetter.ingredientSO.destroyAfterFried;
+        timeUntilCooked = ingredientSetter.ingredientSO.timeUntilOvenCooked;
+        nextFood = ingredientSetter.ingredientSO.ovenCookedPrefab;
+        destroyAfterCooked = ingredientSetter.ingredientSO.destroyAfterOvenCooked;
 
         return base.CookingTime(other);
     }
