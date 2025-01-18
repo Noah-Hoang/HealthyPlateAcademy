@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using Fusion;
+using Unity.VisualScripting;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class ParticleController : NetworkBehaviour
 {
@@ -24,15 +26,24 @@ public class ParticleController : NetworkBehaviour
         //inputActions.General.Test.started += TestButton;
         onParticleEffectStarted.AddListener(StartParticleEffectCallback);
         onParticleEffectEnded.AddListener(StopParticleEffectCallback);
+        gameObject.transform.root.GetComponent<XRGrabInteractable>()?.firstSelectEntered.AddListener(StartParticleEffectGrab);
+        gameObject.transform.root.GetComponent<XRGrabInteractable>()?.lastSelectExited.AddListener(StopParticleEffectRelease);
     }
 
     public virtual void OnDisable()
     {
+        Debug.Log("HELLO1");
         //inputActions.General.Test.started -= TestButton;
         onParticleEffectStarted.RemoveListener(StartParticleEffectCallback);
         onParticleEffectEnded.RemoveListener(StopParticleEffectCallback);
+        gameObject.transform.root.GetComponent<XRGrabInteractable>()?.firstSelectEntered.RemoveListener(StartParticleEffectGrab);
+        gameObject.transform.root.GetComponent<XRGrabInteractable>()?.lastSelectExited.RemoveListener(StopParticleEffectRelease);
     }
 
+    private void OnDestroy()
+    {
+        Debug.Log("HELLO4");
+    }
     public virtual void TestButton(UnityEngine.InputSystem.InputAction.CallbackContext value)
     {
         if (!allowSpaceDebug)
@@ -45,6 +56,11 @@ public class ParticleController : NetworkBehaviour
         {
             //ChangeParticleState();
         }
+    }
+
+    public void StartParticleEffectGrab(SelectEnterEventArgs enter)
+    {
+        StartParticleEffectRPC();
     }
 
     [Rpc]
@@ -76,9 +92,16 @@ public class ParticleController : NetworkBehaviour
         }
     }
 
+    public void StopParticleEffectRelease(SelectExitEventArgs enter)
+    {
+        Debug.Log("HELLO2");
+        StopParticleEffectRPC();
+    }
+
     [Rpc]
     public void StopParticleEffectRPC()
     {
+        Debug.Log("HELLO3");
         StopParticleEffect();
     }
 

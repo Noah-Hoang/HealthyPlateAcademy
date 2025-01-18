@@ -359,6 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameDisplay: {fileID: 2573558428911770634}
+  _characterName: 
 --- !u!223 &3326328496170996404
 Canvas:
   m_ObjectHideFlags: 0

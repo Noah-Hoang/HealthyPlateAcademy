@@ -449,7 +449,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7c660e27f7ba4f8175aa36e3f3218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOnSearingLocation: 0
+  isOnCookingLocation: 0
+  cookingLocation: SearingLocation
+  nextFood: {fileID: 0}
+  timeUntilCooked: 0
+  destroyAfterCooked: 0
   onCookingStarted:
     m_PersistentCalls:
       m_Calls:

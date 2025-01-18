@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class AudioController : MonoBehaviour
 {
@@ -15,12 +16,21 @@ public class AudioController : MonoBehaviour
     {       
         onSoundEffectStarted.AddListener(StartSoundEffectCallback);
         onSoundEffectEnded.AddListener(StopSoundEffectCallback);
+        gameObject.transform.root.GetComponent<XRGrabInteractable>()?.firstSelectEntered.AddListener(StartSoundEffectGrab);
+        gameObject.transform.root.GetComponent<XRGrabInteractable>()?.lastSelectExited.AddListener(StopSoundEffectRelease);
     }
 
     public virtual void OnDisable()
     {        
         onSoundEffectStarted.RemoveListener(StartSoundEffectCallback);
         onSoundEffectEnded.RemoveListener(StopSoundEffectCallback);
+        gameObject.transform.root.GetComponent<XRGrabInteractable>()?.firstSelectEntered.RemoveListener(StartSoundEffectGrab);
+        gameObject.transform.root.GetComponent<XRGrabInteractable>()?.lastSelectExited.RemoveListener(StopSoundEffectRelease);
+    }
+
+    public void StartSoundEffectGrab(SelectEnterEventArgs enter)
+    {
+        StartSoundEffectRPC();
     }
 
     [Rpc]
@@ -50,6 +60,11 @@ public class AudioController : MonoBehaviour
             soundEffect.Stop();  // Stop it first to ensure it restarts from the beginning                
             soundEffect.Play();  // Play the soundEffect effect 
         }
+    }
+
+    public void StopSoundEffectRelease(SelectExitEventArgs enter)
+    {
+        StopSoundEffectRPC();
     }
 
     [Rpc]

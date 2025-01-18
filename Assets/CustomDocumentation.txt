@@ -105,6 +105,7 @@ Grabbing Food:
 	Add menu to change mode while playing
 	Add more cooking tools (Pots, Blender, Oven)
 	Add liquid?
+	Add voice chat
 
 
 	
