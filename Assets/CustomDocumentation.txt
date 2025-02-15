@@ -108,6 +108,12 @@ Grabbing Food:
 	Add voice chat
 
 
-	
+	Dictionaries: Has a key and value pair. If you are trying to add something to the dictionary with the same key as something else in the dictionary, key that already exists will have its value replaced with the new one trying to be added
+	Recursion: Runs through a method several times and returns a value each time; Ex. Adds numbers together and at the end, adds all the numbers together
+	Stacks: The last thing you put in, is the first thing you can take out. You can pop something out and get the value; Ex. Debug.Log(exampleStack.Pop()); You can peek which gives you the value of the last thing you put in
+	Queues; The first thing you put in is the first thing you can take out. Works pretty much the same as a Stack 
+	List: You can infinitely add to them and they use indecies to identify a specific position in the list to get a value from
+	Arrays: Have a set length and uses indecies to indentify a specific position in the array to get a value from
+	Hashsets: You can infinitely add to them but cannot have any duplicates. Does not use indecies to get a value from. Instead of using a for loop, uses foreach loop
 
 
