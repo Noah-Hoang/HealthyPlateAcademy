@@ -13,4 +13,6 @@ public class Node
         value = tempValue;
         nextNode = tempNextNode;
     }
+
+    
 }
