@@ -13,13 +13,13 @@ public class Chefs : Staff
     public void PrepareFood(Orders order, Waiters waiter)
     {
         TimerCoroutine(order, waiter);
-        Debug.Log("Preapared" + "" + order + "served by" + "" + waiter);
+        Debug.Log("[Chef.cs]Preapared" + "" + order + "served by" + "" + waiter);
     }
 
     public IEnumerator TimerCoroutine(Orders order, Waiters waiter)
     {
         yield return new WaitForSeconds(3.0f);
         waiter.ServeFood(order);
-        Debug.Log(waiter + "serving" + "" + order);
+        Debug.Log("[Chef.cs]" + waiter + "serving" + "" + order);
     }
 }

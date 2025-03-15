@@ -8,6 +8,7 @@ public class Tables : MonoBehaviour
     public int amountOfSeats;
     public Customers seatedCustomers;
     public float tip;
+    public float currentBill;
 
     // Start is called before the first frame update
     void Start()

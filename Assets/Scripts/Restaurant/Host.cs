@@ -21,7 +21,7 @@ public class Host : Staff
         {
             Customers customer = Restaurant.instance.customersQueue.Dequeue();  
             SeatCustomers(customer);
-            Debug.Log("Finding available table");
+            Debug.Log("[Host.cs]Finding available table");
         }
         else
         {
@@ -38,7 +38,7 @@ public class Host : Staff
             {
                 customer.currentTable = Restaurant.instance.tablesList[i];
                 Restaurant.instance.tablesList[i].seatedCustomers = customer;
-                Debug.Log("Customer seated at table");
+                Debug.Log("[Host.cs]Customer seated at table");
             }
                
         }

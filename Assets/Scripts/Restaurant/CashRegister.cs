@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class CashRegister : MonoBehaviour
 {
-   public void TakeMOney()
-    {
-
-    }
+    public float moneyInRegister;
 }

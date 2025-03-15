@@ -30,28 +30,28 @@ public class Restaurant : MonoBehaviour
         {
             Waiters waiter = new Waiters();
             waitersList.Add(waiter);
-            Debug.Log("Created" + "" + waiters + "" + "waiters");
+            Debug.Log("[Restaurant.cs]Created" + "" + waiters + "" + "waiters");
         }
 
         for (int i = 0; i < chefs; i++)
         {
             Chefs chef = new Chefs();
             chefsList.Add(chef);
-            Debug.Log("Created" + "" + chefs + "" + "chefs");
+            Debug.Log("[Restaurant.cs]Created" + "" + chefs + "" + "chefs");
         }
 
         for (int i = 0; i < busboys; i++)
         {
             Busboys busboy = new Busboys();
             busboysList.Add(busboy);
-            Debug.Log("Created" + "" + busboys + "" + "busboys");
+            Debug.Log("[Restaurant.cs]Created" + "" + busboys + "" + "busboys");
         }
 
         for (int i = 0; i < hosts; i++)
         {
             Host host = new Host();
             hostsList.Add(host);
-            Debug.Log("Created" + "" + hosts + "" + "hosts");
+            Debug.Log("[Restaurant.cs]Created" + "" + hosts + "" + "hosts");
         }
     }
 
@@ -64,7 +64,7 @@ public class Restaurant : MonoBehaviour
                 Tables table = new Tables();
                 tablesList.Add(table);
                 waitersList[i].assignedTables.Add(table);
-                Debug.Log("Created" + "" + tablesPerWaiter + "" + "Table Per Waiter");
+                Debug.Log("[Restaurant.cs]Created" + "" + tablesPerWaiter + "" + "Table Per Waiter");
             }
         }       
     }
@@ -75,8 +75,14 @@ public class Restaurant : MonoBehaviour
         {
             Customers customer = new Customers();
             customersQueue.Enqueue(customer);
-            Debug.Log("Created" + "" + customers + "" + "custoemrs");
+            Debug.Log("[Restaurant.cs]Created" + "" + customers + "" + "custoemrs");
         }
+    }
+
+    public void CreateRegister()
+    {
+        CashRegister cashRegister = new CashRegister();
+        Debug.Log("[Restaurant.cs]Created Cash Register");
     }
 
     public void PayEmployees()
