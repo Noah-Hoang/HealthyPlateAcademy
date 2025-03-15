@@ -117,3 +117,8 @@ Grabbing Food:
 	Hashsets: You can infinitely add to them but cannot have any duplicates. Does not use indecies to get a value from. Instead of using a for loop, uses foreach loop
 
 
+	Inheritance: Inheritance is when there is a base script that another script will then use components of. ONLY Virtual methods and variables can be overriden which changes the functionality of that method in the child script.
+	Interface: It gives methods and variables that can be used in another script, however the other script needs to utilize the given methods and can write those methods and variables in any way that they like. 
+	Abstract: Abstract classes cannot be initialized/instantiated but can be derived from and those dervied classes can be instantiated/initialized.
+
+
