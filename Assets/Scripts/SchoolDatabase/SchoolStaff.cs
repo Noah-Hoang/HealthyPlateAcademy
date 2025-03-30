@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using WebSocketSharp;
 
@@ -12,7 +13,8 @@ public class SchoolStaff : MonoBehaviour
 
     public List<SchoolStaff> ShowAllFaculty(string searchedName = "")
     {
-        List<SchoolStaff> schoolStaff = School.instance.staffList;
+        List<SchoolStaff> schoolStaff = School.instance.teachersList.Cast<SchoolStaff>().ToList();
+        schoolStaff.Add(School.instance.currentPrincipal);
         List<SchoolStaff> filteredStaff = new List<SchoolStaff>();
         if (searchedName.IsNullOrEmpty())
         {
@@ -37,7 +39,8 @@ public class SchoolStaff : MonoBehaviour
 
     public List<SchoolStaff> ShowAllFaculty(int tempFacultyID = -1)
     {
-        List<SchoolStaff> schoolStaff = School.instance.staffList;
+        List<SchoolStaff> schoolStaff = School.instance.teachersList.Cast<SchoolStaff>().ToList();
+        schoolStaff.Add(School.instance.currentPrincipal);
         List<SchoolStaff> filteredStaff = new List<SchoolStaff>();
         if (tempFacultyID == -1)
         {

@@ -5,6 +5,13 @@ using UnityEngine;
 public class Principal : SchoolStaff, IClubHandler, ISchoolRegistry
 {
     public List<Club> allClubsList;
+
+    public Principal(string tempName, int tempAge)
+    {
+        staffName = tempName;
+        age = tempAge;
+        facultyID = Random.Range(100000000, 1000000000);
+    }
     public void RequestFunding(float money, int clubID)
     {
         //TODO
@@ -34,53 +41,60 @@ public class Principal : SchoolStaff, IClubHandler, ISchoolRegistry
     public void AddStduentToClub(int studentID, int clubID)
     {
         //TODO: add logic for student/club name or student/club id
-        Student student = School.instance.GetStudent("", studentID);
-        Club club = School.instance.GetClub("" , clubID);
+        Student student = School.instance.GetStudent(studentID, "");
+        Club club = School.instance.GetClub(clubID, "");
         club.membersList.Add(student);
     }
 
-    public void RemoveStudentFromClub(int studnetID, int clubID)
+    public void RemoveStudentFromClub(int studentID, int clubID)
     {
-
+        Student student = School.instance.GetStudent(studentID, "");
+        Club club = School.instance.GetClub(clubID, "");
+        club.membersList.Remove(student);
     }
 
     public Student RequestCreateStudents(string name, int grade)
     {
-        throw new System.NotImplementedException();
+        Student student = School.instance.CreateStudents(name, grade);
+        return student;
     }
 
     public void RequestRemoveStudents(int studentID)
     {
-        throw new System.NotImplementedException();
+        School.instance.RemoveStudents(studentID);
     }
 
     public Teacher RequestCreateTeachers(string name, string subject, int age)
     {
-        throw new System.NotImplementedException();
+        Teacher teacher = School.instance.CreateTeachers(name, subject, age);
+        return teacher;
     }
 
     public void RequestRemoveTeachers(int facultyID)
     {
+        School.instance.RemoveTeachers(facultyID);
         throw new System.NotImplementedException();
     }
 
     public Principal RequestCreatePrincipal(string name, int age)
     {
-        throw new System.NotImplementedException();
+        Principal principal = School.instance.CreatePrincipal(name, age);
+        return principal;
     }
 
-    public void RequestRemovePrincipal(int facultyID)
+    public void RequestRemovePrincipal()
     {
-        throw new System.NotImplementedException();
+        School.instance.RemovePrincipal();
     }
 
     public Classroom RequestCreateClassroom(int maxCapacity)
     {
-        throw new System.NotImplementedException();
+        Classroom classroom = School.instance.CreateClassroom(maxCapacity);
+        return classroom;
     }
 
     public void RequestRemoveClassrooms(int classRoomID)
     {
-        throw new System.NotImplementedException();
+        School.instance.RemoveClassrooms(classRoomID);
     }
 }

@@ -9,4 +9,11 @@ public class Student : MonoBehaviour
     public int grade;
     public int studentID;
     public string studentName;
+
+    public Student(string tempName, int tempGrade)
+    {
+        studentName = tempName;
+        grade = tempGrade;
+        studentID = Random.Range(100000000, 1000000000);
+    }
 }

@@ -11,7 +11,7 @@ public interface ISchoolRegistry
     public void RequestRemoveTeachers(int facultyID);
 
     public Principal RequestCreatePrincipal(string name, int age);
-    public void RequestRemovePrincipal(int facultyID);
+    public void RequestRemovePrincipal();
 
     public Classroom RequestCreateClassroom(int maxCapacity);
     public void RequestRemoveClassrooms(int classRoomID);
