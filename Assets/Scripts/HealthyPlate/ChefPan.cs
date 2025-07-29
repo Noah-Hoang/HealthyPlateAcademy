@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class ChefPan : CookingTool
 {
-    public override string cookingLocation { get; set; } = "SearingLocation";
+    public override string cookingLocation { get; set; } = "SearLocation";
 
     public override void OnTriggerEnter(Collider other)
     {
